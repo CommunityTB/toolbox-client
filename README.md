@@ -8,7 +8,6 @@ https://gist.github.com/ryan582647/f0612382ff7e9baeb1881bc8859a6e0b
 
 user flows:
 https://drive.google.com/file/d/1fg_FrqBkFUFDMk4TjcBBVAGzkjoQJTVq/view
-![User Flows](https://drive.google.com/file/d/1fg_FrqBkFUFDMk4TjcBBVAGzkjoQJTVq/view "Tool Library User Flows")
 
 wire frame links:
 landing page:
