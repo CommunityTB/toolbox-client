@@ -23,6 +23,7 @@ class AppRouter extends Component {
 
                 </header>
                 <main>
+                    {this.state.errorPresent && <p className='Error-message'>We have an error! Please try again!</p>}
                     <Switch>
                         <PublicRoute 
                             exact
@@ -44,9 +45,7 @@ class AppRouter extends Component {
                 </main>
             </div>
         );
-
     }
-
 }
 
-
+export default AppRouter;
