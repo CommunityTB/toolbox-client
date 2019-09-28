@@ -20,21 +20,21 @@ class AppRouter extends Component {
         return (
             <div className='AppRouter'>
                 <header>
-                    
+
                 </header>
                 <main>
                     {this.state.errorPresent && <p className='Error-message'>We have an error! Please try again!</p>}
                     <Switch>
-                        <PublicRoute 
+                        <Route 
                             exact
                             path={'/'}
                             component={HomePage}
                         />
-                        <PublicRoute 
+                        <Route 
                             path={'/login'}
                             component={LoginPage}
                         />
-                        <PublicRoute 
+                        <Route 
                             path={'/register'}
                             component={RegisterPage}
                         />
