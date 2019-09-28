@@ -23,7 +23,7 @@ class AppProvider extends Component {
                     },
                 }}>    
                 {this.props.children}    
-                </AppContext.Provider>
+            </AppContext.Provider>
         )
     }
 }
