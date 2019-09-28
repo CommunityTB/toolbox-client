@@ -1,31 +1,52 @@
 import React from 'react';
 import './App.css';
+import STORE from './STORE'
+import AutoComplete from './AutoComplete'
 
 class App extends React.Component {
 constructor(props){
   super(props);
   this.state = {
-    value: 'lookup a tool my guy'
+    userInput: 'lookup a tool my guy',
+    value: '',
+    filteredResults: [],
+    currentResult: '',   //more for styling purposes - highlights the current selection out of the list of filtered results
+    showDropdown: false
   }
   
-  this.handleChange = this.handleChange.bind(this);
+  //this.handleChange = this.handleChange.bind(this);
 }
 
-handleChange(){
-  
+/*handleChange(e){
+  this.setState({
+   value: e.target.value
+  }, () => {
+  const suggestions = STORE.tools.map(tool => {
+    //tool.tool.filter(index => index.includes(this.state.value));
+    this.state.filteredResults.push(tool.tool)
+  })
+  console.log(this.state.filteredResults);
+})
+}*/
+
+componentDidMount(){
+//parsed data from objects into a single array to be filtered in AutoComplete.js
+  for(let i = 0; i < STORE.tools.length; i++){
+    STORE.tools[i].tool.map(index => this.state.filteredResults.push(index))
+  }
 }
 
 render() {
   return (
  
     <body>
-      <nav role="navigation">Nav <span class="login" role="login">Sign in</span></nav>
+      <nav role="navigation">Nav <span className="login" role="login">Sign in</span></nav>
       <section>
       <header role="banner">
          <h1 role="title">Tool Library?</h1>
          <h3>Channel your inner frugal handyman by BORROWING instead of BUYING your tools!!!!!</h3>
          <h3>Start here:</h3>
-         <input type='search' value={this.state.value} onChange={this.handleChange} role="searchbar"></input>
+         <AutoComplete suggestions={[this.state.filteredResults]}/>
          <input type='submit' value='submit' role="submit-button"></input>
       </header>
       </section>
@@ -45,3 +66,5 @@ render() {
 }
 
 export default App;
+
+//<input type='search' value={this.state.value} placeholder={this.state.userInput} ref={input => this.search = input} onChange={this.handleChange} role="searchbar"></input>
