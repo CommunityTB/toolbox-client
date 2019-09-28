@@ -1,0 +1,25 @@
+/******************************** 
+ * APP STYLES
+ ********************************/
+
+
+
+/******************************** 
+ * BEGIN Tool Card Styles
+ ********************************/
+.toolCard {
+  box-sizing: border-box;
+  border: 1px solid #888;
+  background-color: #efefef;
+  width: 360px;
+  height: 480px;
+}
+.toolCard:not(:last-child) {
+  margin-bottom: 2em
+}
+.toolCard img {
+  max-width: 100%;
+}
+/******************************** 
+ * END Tool Card Styles
+ ********************************/
