@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
-import AppProvider from './components/AppProvider/AppProvider';
-import AppRouter from './components/AppRouter/AppRouter';
-import history from './history';
+import AppProvider from './components/AppProvider';
+import AppRouter from './components/AppRouter';
+import history from './history.js';
 import './index.css';
 
 ReactDOM.render(
