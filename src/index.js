@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
+import AppProvider from './components/AppProvider/AppProvider';
+import AppRouter from './components/AppRouter/AppRouter';
+import history from './history';
 import './index.css';
-import AppRouter from './components/AppRouter/AppRouter'
-import history from './history'
 
 ReactDOM.render(
     <Router history={history}>
-        <AppRouter />
+        <AppProvider>
+            <AppRouter />
+        </AppProvider>
     </Router>,    
     document.getElementById('root')
 );
