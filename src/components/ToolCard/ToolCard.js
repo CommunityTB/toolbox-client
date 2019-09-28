@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import '../../styles/styles.css'
+import '../../assets/css/styles.css'
+
 
 class ToolCard extends Component {
   render() {
