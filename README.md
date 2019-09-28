@@ -19,9 +19,3 @@ https://repl.it/@ryan582647/Sign-in-Page
 tools menu:
 https://repl.it/@ryan582647/Tools-Menu
 
-![Mobile Wireframes](/src/images/mobile_homepage.jpg "Tool Library Mobile Homepage")  
-
-![Tablet Wireframes](/src/images/tablet_homepage.jpg "Tool Library Tablet Homepage")  
-
-
-user flows  https://drive.google.com/file/d/1fg_FrqBkFUFDMk4TjcBBVAGzkjoQJTVq/view
