@@ -7,19 +7,41 @@
 /******************************** 
  * BEGIN Tool Card Styles
  ********************************/
-.toolCard {
+.tool-card {
   box-sizing: border-box;
   border: 1px solid #888;
   background-color: #efefef;
-  width: 360px;
-  height: 480px;
+  padding: 20px;
 }
-.toolCard:not(:last-child) {
+.tool-card:not(:last-child) {
   margin-bottom: 2em
 }
-.toolCard img {
+.tool-card img {
   max-width: 100%;
+}
+
+.tool-card-wrapper {
+  display: grid;
+  grid-template-columns: 33.3333% 33.3333% 33.3333%;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
 }
 /******************************** 
  * END Tool Card Styles
  ********************************/
+
+
+ 
+
+
+
+
+
+ /**************************************************************** 
+ * Responsove Styles
+ ****************************************************************/
+/* TODO: ADD MEDIA QUERIES HERE */
+ .tool-card-wrapper {
+   width: 960px;
+ }
