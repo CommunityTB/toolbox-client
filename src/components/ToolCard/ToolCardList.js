@@ -5,6 +5,7 @@ import { AppContext } from '../AppProvider';
 class ToolCardList extends Component {
   render() {
     return (
+      <div className="tool-card-wrapper">
       <AppContext.Consumer>
         {value => (
           value.state.tools.map(tool =>
@@ -12,7 +13,7 @@ class ToolCardList extends Component {
           )
         )}
       </AppContext.Consumer>
-      
+      </div>
     );
   }
 }
