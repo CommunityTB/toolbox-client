@@ -3,11 +3,9 @@
  ********************************/
 
 
-
-/******************************** 
- * BEGIN Tool Card Styles
- ********************************/
-.tool-card {
+ /* BEGIN Tool Card Styles
+ ------------------------------*/
+ .tool-card {
   box-sizing: border-box;
   border: 1px solid #888;
   background-color: #efefef;
@@ -27,10 +25,20 @@
   background-color: #fff;
   color: #444;
 }
-/******************************** 
- * END Tool Card Styles
- ********************************/
+ /* END Tool Card Styles
+ ------------------------------*/
 
+
+ /* BEGIN Tool Detail Styles
+ ------------------------------*/
+.tool-detail {
+  width: 480px;
+}
+.tool-detail img {
+  max-width: 100%;
+}
+ /* END Tool Detail Styles
+ ------------------------------*/
 
  
 
