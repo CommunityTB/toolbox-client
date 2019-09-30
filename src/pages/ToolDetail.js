@@ -15,11 +15,13 @@ class ToolDetail extends Component {
             const url = `https://res.cloudinary.com/tooltimeshare/image/upload/tools/${thisTool.tool_img_filename}`;
             return (
               <div className="tool-detail">
-                <img alt={thisTool.tool_img_alt} src={url} />
+                <div className="tool-img-wrapper">
+                  <img alt={thisTool.tool_img_alt} src={url} />
+                </div>
                 <div className="tool-detail-text">
                   <h3 className="tool-name">{thisTool.tool_name}</h3>
                   <p>{thisTool.tool_desc}</p>
-                  <button onClick={(e) => value.actions.reserveTool(thisTool.id, e)} className="reserve-tool-btn">Reserve Tool 2</button>
+                  <button onClick={(e) => value.actions.reserveTool(thisTool.id, e)} className="reserve-tool-btn">Reserve Tool</button>
                   <Link className="keep-browsing" to='/'>Keep Browsing</Link>
                 </div>
               </div>              
