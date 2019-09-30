@@ -12,10 +12,11 @@ body {
 
 .reserve-tool-btn {
   display: block;
-  font-size: 1em;
+  width: 100%;
+  font-size: 1.2em;
   text-transform: uppercase;
   padding: 1em;
-  margin: 0 auto;
+  margin: 18px auto;
   background-color: #3c3c3c;
   border-color: #3c3c3c;
   color: #ffffff;
@@ -40,7 +41,7 @@ body {
 
 .tool-card-wrapper {
   display: grid;
-  grid-template-columns: 33.3333% 33.3333% 33.3333%;
+  grid-template-columns: auto auto auto;
   grid-gap: 10px;
   background-color: #fff;
   color: #444;
@@ -70,6 +71,7 @@ body {
 .keep-browsing {
   display: block;
   text-transform: uppercase;
+  font-size: 1.2em;
 }
 
 a.keep-browsing:active,
@@ -110,6 +112,18 @@ a.keep-browsing:visited {
     /* TESTING BREAKPOINTS */
     /* color: green; */
   }
+  .tool-detail {
+    display: flex;
+  }
+  .tool-img-wrapper, .tool-detail-text {
+    width: 50%;
+    padding: 0 36px;
+  }
+  .tool-detail-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }  
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
