@@ -2,17 +2,37 @@
  * APP STYLES
  ********************************/
 
-
- /* BEGIN Tool Card Styles
+/* BEGIN General Styles
  ------------------------------*/
- .tool-card {
+body {
+  background-color: #f7bb66;
+  font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.reserve-tool-btn {
+  display: block;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 1em;
+  margin: 0 auto;
+  background-color: #3c3c3c;
+  border-color: #3c3c3c;
+  color: #ffffff;
+}
+/* END General Styles
+ ------------------------------*/
+
+/* BEGIN Tool Card Styles
+ ------------------------------*/
+.tool-card {
   box-sizing: border-box;
   border: 1px solid #888;
   background-color: #efefef;
   padding: 20px;
 }
 .tool-card:not(:last-child) {
-  margin-bottom: 2em
+  margin-bottom: 2em;
 }
 .tool-card img {
   max-width: 100%;
@@ -25,31 +45,82 @@
   background-color: #fff;
   color: #444;
 }
- /* END Tool Card Styles
+/* END Tool Card Styles
  ------------------------------*/
 
-
- /* BEGIN Tool Detail Styles
+/* BEGIN Tool Detail Styles
  ------------------------------*/
 .tool-detail {
-  width: 480px;
+  padding: 96px 48px 0;
 }
 .tool-detail img {
-  max-width: 100%;
+  width: 100%;
 }
- /* END Tool Detail Styles
+.tool-detail-text {
+  text-align: center;
+}
+.tool-detail-text .tool-name {
+  font-weight: 400;
+  font-family: "Holtwood One SC";
+  color: #3c3c3c;
+}
+.tool-detail-text p {
+  text-transform: capitalize;
+}
+.keep-browsing {
+  display: block;
+  text-transform: uppercase;
+}
+
+a.keep-browsing:active,
+a.keep-browsing:hover,
+a.keep-browsing:visited {
+  color: #ffffff;
+}
+/* END Tool Detail Styles
  ------------------------------*/
 
- 
-
-
-
-
-
- /**************************************************************** 
+/**************************************************************** 
  * Responsove Styles
  ****************************************************************/
 /* TODO: ADD MEDIA QUERIES HERE */
- .tool-card-wrapper {
-   width: 960px;
- }
+.tool-card-wrapper {
+  width: 960px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  * {
+    /* TESTING BREAKPOINTS */
+    /* color: red; */
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  * {
+    /* TESTING BREAKPOINTS */
+    /* color: blue; */
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  * {
+    /* TESTING BREAKPOINTS */
+    /* color: green; */
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  * {
+    /* TESTING BREAKPOINTS */
+    /* color: magenta; */
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {
+
+} */

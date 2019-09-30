@@ -14,9 +14,8 @@ class ToolCard extends Component {
         <h4>{t.tool_name}</h4>
         <p>{t.tool_desc}</p>
         {/* <p>{availabilityStatus}</p> */}
-        <Link className="whatever" to='/'>Reserve This Item</Link>
-        <br />
-        <Link className="reserve-link" to={toolPageLink}>View Details</Link>              
+        {/* <Link className="whatever" to='/'>Reserve This Item</Link> */}
+        <Link className="reserve-link" to={toolPageLink}>Details</Link>              
       </div>
     );
   }
