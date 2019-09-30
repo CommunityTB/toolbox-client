@@ -12,10 +12,11 @@ body {
 
 .reserve-tool-btn {
   display: block;
+  width: 100%;
   font-size: 1em;
   text-transform: uppercase;
   padding: 1em;
-  margin: 0 auto;
+  margin: 18px auto;
   background-color: #3c3c3c;
   border-color: #3c3c3c;
   color: #ffffff;

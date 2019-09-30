@@ -42,6 +42,9 @@ class AppProvider extends Component {
                         // passes state to other components
                     },
                     actions: {
+                      reserveTool: (toolId) => {
+                        alert(`This should reserve tool ${toolId}. TODO: Update AppProvider.js to make the API call.`)
+                      },
                       
                     },
                 }}>    
