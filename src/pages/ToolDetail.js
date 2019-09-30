@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { AppContext } from '../components/AppProvider'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { AppContext } from '../components/AppProvider';
 
 class ToolDetail extends Component {
   render() {
@@ -15,10 +16,12 @@ class ToolDetail extends Component {
             return (
               <div className="tool-detail">
                 <img alt={thisTool.tool_img_alt} src={url} />
-                <h4>{thisTool.tool_name}</h4>
-                <p>{thisTool.tool_desc}</p>
-                {/* <p>{availabilityStatus}</p> */}
-                <a href="/">Reserve This Item</a>
+                <div className="tool-detail-text">
+                  <h3 className="tool-name">{thisTool.tool_name}</h3>
+                  <p>{thisTool.tool_desc}</p>
+                  <button className="reserve-tool-btn">Reserve Tool</button>
+                  <Link className="keep-browsing" to='/'>Keep Browsing</Link>
+                </div>
               </div>              
             )
           }
