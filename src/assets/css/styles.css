@@ -21,6 +21,10 @@ body {
   border-color: #3c3c3c;
   color: #ffffff;
 }
+
+main {
+  padding: 0 24px;
+}
 /* END General Styles
  ------------------------------*/
 
@@ -36,13 +40,10 @@ body {
   margin-bottom: 2em;
 }
 .tool-card img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .tool-card-wrapper {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 10px;
   background-color: #fff;
   color: #444;
 }
@@ -85,11 +86,6 @@ a.keep-browsing:visited {
 /**************************************************************** 
  * Responsove Styles
  ****************************************************************/
-/* TODO: ADD MEDIA QUERIES HERE */
-.tool-card-wrapper {
-  width: 960px;
-}
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   * {
@@ -104,6 +100,11 @@ a.keep-browsing:visited {
     /* TESTING BREAKPOINTS */
     /* color: blue; */
   }
+  .tool-card-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 18px;
+  }  
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -132,9 +133,18 @@ a.keep-browsing:visited {
     /* TESTING BREAKPOINTS */
     /* color: magenta; */
   }
+  .tool-card-wrapper {
+    width: 960px;
+  }
+  .tool-card-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 18px;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* @media only screen and (min-width: 1200px) {
 
 } */
+
