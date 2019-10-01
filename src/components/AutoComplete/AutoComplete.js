@@ -13,25 +13,53 @@ export class AutoComplete extends Component {
     this.state = {
       currentValue: 0,
       filteredValues: [],
+      filteredCategories: [],
       filteredResults: [],
       showDropdowns: false,
+      parsed: false,
       userInput: ""
     };
   }
 
   onChange = e => {
-    this.setState({ filteredResults: []}) //clears existing array of choices
+    this.setState({ filteredResults: [], filteredCategories: []}) //clears existing array of choices
+    console.log("did I delete myself?")
     const { suggestions } = this.props;
     const userInput = e.currentTarget.value;
+    suggestions.map(category => this.state.filteredCategories.push(category.tool_category))
     suggestions.map(tool => this.state.filteredResults.push(tool.tool_name))
+    
+    //console.log(suggestions)
+    //console.log("filter", this.state.filteredValues);
+    
+    if(this.state.filteredCategories.includes(userInput)){
+       console.log("ding!")
+       if(this.state.filteredValues){ this.state.filteredValues.splice(0, this.state.filteredValues.length) }
+       const filteredValues = suggestions.map(results => {
+            if (Object.values(results).includes(userInput)){
+                console.log(this.state.filteredValues)
+                console.log("dong!!")
+                this.state.filteredValues.push(results.tool_name)
+            }
+            
+        })
 
-    console.log("filter", this.state.filteredValues);
-
+        this.setState({
+            currentValue: 0,
+            filteredValues,
+            showDropdowns: true,
+            userInput: e.currentTarget.value
+          })
+          
+    } 
+    console.log(this.state.filteredValues)
+    //console.log(this.state.filteredCategories)
     const filterList = this.state.filteredResults;  //deconstruction
     const filteredValues = filterList.filter(
       suggestion =>
         suggestion.toLowerCase().includes(userInput.toLowerCase())
     );
+    
 
     this.setState({
       currentValue: 0,
@@ -58,7 +86,7 @@ export class AutoComplete extends Component {
       onClick,
       state: {currentValue, filteredValues, showDropdowns, userInput}
     } = this;
-    
+    console.log("Bink!", this.state.filteredValues)
     
     let listComponents;
 
