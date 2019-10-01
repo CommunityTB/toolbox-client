@@ -14,7 +14,7 @@ class AutoCompleteWrap extends Component {
       <div className="search-wrapper">
       <AppContext.Consumer>
         {value => (
-            <AutoComplete suggestions={value.state.tools} />
+            <AutoComplete sendUpToolIDs={this.props.sendUpToolIDs} suggestions={value.state.tools} />
         )}
       </AppContext.Consumer>
       </div>
