@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import ToolDetail from '../pages/ToolDetail';
+import Navigation from '../components/Navigation';
 import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
 import NotFoundPage from '../pages/NotFoundPage';
@@ -20,9 +21,9 @@ class AppRouter extends Component {
     render() {
         return (
             <div className='AppRouter'>
-                <header>
-
-                </header>
+                <div>
+                    <Navigation />
+                </div>
                 <main>
                     {this.state.errorPresent && <p className='Error-message'>We have an error! Please try again!</p>}
                     <Switch>

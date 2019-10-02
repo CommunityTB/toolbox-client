@@ -15,7 +15,7 @@
   --black: #000;
 }
 
-* {
+html {
   box-sizing: border-box;
 }
 
@@ -23,19 +23,11 @@ body {
   /* background-color: #f7bb66; */
   font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.reserve-tool-btn {
-  display: block;
-  width: 100%;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  padding: 1em;
-  margin: 18px auto;
-  background-color: var(--gray);
-  border-color: var(--gray);
-  color: var(--white);
-}
+
 
 .fancy-titles {
   font-weight: 400;
@@ -43,6 +35,62 @@ body {
 }
 /* END General Styles
  ------------------------------*/
+
+
+/* BEGIN Navigation Styles
+ ------------------------------*/
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px 0 25px;
+  font-family: 'Barlow', sans-serif; 
+  background-color: rgb(247,244,234,.6);
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-top: 7px;
+}
+
+a {
+  color: var(--gray);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+}
+
+.link_space {
+  padding-left: 12px;
+}
+
+/* END Navigation Styles
+ ------------------------------*/
+
+/* BEGIN Header Styles
+ ------------------------------*/
+
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+/* END Header Styles
+ ------------------------------*/ 
 
 
 /* BEGIN Tool Card Styles
@@ -99,6 +147,18 @@ a.keep-browsing:visited {
   color: var(--white);
 }
 
+.reserve-tool-btn {
+  display: block;
+  width: 100%;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  padding: 1em;
+  margin: 18px auto;
+  background-color: var(--gray);
+  border-color: var(--gray);
+  color: var(--white);
+}
+
 .tool-detail-wrapper {
   background-image: url("../images/tool_detail_bg.png");
   padding: 60px 0;
@@ -123,7 +183,7 @@ a.keep-browsing:visited {
 
 
 /**************************************************************** 
- * Responsove Styles
+ * Responsive Styles
  ****************************************************************/
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -172,6 +232,12 @@ a.keep-browsing:visited {
   * {
     /* TESTING BREAKPOINTS */
     /* color: magenta; */
+  }
+  .tool-card-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 18px;
+    width: 960px;
   }
   /* main {
     padding: 0 24px;
