@@ -94,7 +94,7 @@ a.keep-browsing:visited {
 }
 
 .tool-detail-wrapper {
-  background-image: url(/static/media/tool_detail_bg.4096cf1c.png);
+  background-image: url("../images/tool_detail_bg.png");
   padding: 60px 0;
   background-repeat: no-repeat;
   background-size: cover;
