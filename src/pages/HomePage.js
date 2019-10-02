@@ -4,9 +4,17 @@ import Header from '../components/Header'
 
 
 class HomePage extends Component {
+    state = {
+        toolIdListFiltered: []
+    }
+
+    updateToolIDs(toolIDs) {
+        this.setState({
+            toolIdListFiltered: toolIDs
+        })
+    }
 
     render() {
-        console.log(this.props)
         return (
             <div className='HomePage'>
                 <Header />

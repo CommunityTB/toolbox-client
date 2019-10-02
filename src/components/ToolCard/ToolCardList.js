@@ -7,11 +7,15 @@ class ToolCardList extends Component {
     return (
       <div className="tool-card-wrapper">
       <AppContext.Consumer>
-        {value => (
-          value.state.tools.map(tool =>
-            <ToolCard key={tool.id} {...tool} />
-          )
-        )}
+        {
+          value => {
+            const toolsFiltered = value.state.tools.filter(item => this.props.toolIdListFiltered.includes(item.id))
+            if(toolsFiltered.length) {
+              return toolsFiltered.map(tool => <ToolCard key={tool.id} {...tool} />)
+            }
+            return value.state.tools.map(tool => <ToolCard key={tool.id} {...tool} />)
+          }
+        }
       </AppContext.Consumer>
       </div>
     );
