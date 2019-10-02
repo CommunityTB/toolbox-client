@@ -8,7 +8,7 @@ export default class Header extends Component {
         return(
             <header>
                 <img src={hero} alt='Community Toolbox Hero' className='hero'></img>
-                <AutoCompleteWrap />
+                <AutoCompleteWrap sendUpToolIDs={this.props.sendUpToolIDs} />
             </header>
         )
     }

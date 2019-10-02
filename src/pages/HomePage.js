@@ -8,7 +8,7 @@ class HomePage extends Component {
         toolIdListFiltered: []
     }
 
-    updateToolIDs(toolIDs) {
+    updateToolIDs = (toolIDs) => {
         this.setState({
             toolIdListFiltered: toolIDs
         })
@@ -17,8 +17,8 @@ class HomePage extends Component {
     render() {
         return (
             <div className='HomePage'>
-                <Header />
-                <ToolCardList />
+                <Header sendUpToolIDs={this.updateToolIDs} />
+                <ToolCardList toolIdListFiltered={this.state.toolIdListFiltered} />
             </div>
         )
     }
