@@ -18,19 +18,23 @@ export default class Navigation extends Component {
                     to='/login'>
                     Login    
                 </Link>
-                <Link 
+                <Link
+                    className='link_space' 
                     to='/register'>
                     Register
                 </Link>
                 <Link 
+                    className='link_space'
                     to='/inventory'>
                     Inventory    
                 </Link>
                 <Link
+                    className='link_space'
                     to='/find_us'>
                     Find Us    
                 </Link>
-                <Link 
+                <Link
+                    className='link_space' 
                     to='/about'>
                     About
                 </Link>
