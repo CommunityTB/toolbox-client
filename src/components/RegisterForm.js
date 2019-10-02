@@ -1,64 +1,75 @@
 import React, { Component } from 'react'
-//import TokenService from '../../services/token-service'
-//import { Button, Input } from '../Utils/Utils'
+import { Link } from 'react-router-dom'
+import { AppContext } from '../components/AppProvider';
+
 
 class RegisterForm extends Component {
-  static defaultProps = {
-    onLoginSuccess: () => {}
+  constructor(props) {
+    super(props);
+    this.state = {
+      first_name: `First Name`,
+      last_name: `Last Name`,
+      user_password: `********`,
+      email: `your-email@example.com`,
+      user_name: `your-username`
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // state = { error: null }
+  static contextType = AppContext
 
-  handleSubmitBasicAuth = ev => {
-    ev.preventDefault()
-    const { user_name, password } = ev.target
+  handleSubmit(e) {
+    e.preventDefault()
+    const newUser = {
+      first_name: e.target['firstName'].value,
+      last_name: e.target['lastName'].value,
+      email: e.target['email'].value,
+      user_name: e.target['userName'].value,
+      user_password: e.target['password'].value,
+    }
 
-    console.log('login form submitted')
-    console.log({ user_name, password })
-    TokenService.saveAuthToken(
-      TokenService.makeBasicAuthToken(user_name.value, password.value)
-    )
+    this.context.actions.registerUser(newUser)
+    this.props.onCreateNewUser()
+  }
 
-    user_name.value = ''
-    password.value = ''
-    this.props.onLoginSuccess()
+  handleChange(e) {
+    const { name, value } = e.target
+    this.setState({ [name]: value });
   }
 
   render() {
-    // const { error } = this.state
+    const { first_name, last_name, user_name, user_password, email } = this.state
     return (
-      <form
-        className='LoginForm'
-        onSubmit={this.handleSubmitBasicAuth}
-      >
-        {/* <div role='alert'>
-          {error && <p className='red'>{error}</p>}
-        </div> */}
-        <div className='user_name'>
-          <label htmlFor='LoginForm__user_name'>
-            User name
-          </label>
-          <Input
-            required
-            name='user_name'
-            id='LoginForm__user_name'>
-          </Input>
-        </div>
-        <div className='password'>
-          <label htmlFor='LoginForm__password'>
-            Password
-          </label>
-          <Input
-            required
-            name='password'
-            type='password'
-            id='LoginForm__password'>
-          </Input>
-        </div>
-        <Button type='submit'>
-          Login
-        </Button>
-      </form>
+      <form onSubmit={this.handleSubmit}>
+      <div className="form-section">
+        <div className="label-holder"><label htmlFor="first-name">First Name</label></div>
+        <input className="form-input-field" id="first-name" type="text" name="firstName" placeholder={first_name} onChange={this.handleChange} required />
+      </div>
+
+      <div className="form-section">
+        <div className="label-holder"><label htmlFor="last-name">Last Name</label></div>
+        <input className="form-input-field" id="last-name" type="text" name="lastName" placeholder={last_name} onChange={this.handleChange} required />
+      </div>
+
+      <div className="form-section">
+        <div className="label-holder"><label htmlFor="email">Email</label></div>
+        <input className="form-input-field" id="email" type="text" name="email" placeholder={email} onChange={this.handleChange} required />
+      </div>
+
+      <div className="form-section">
+        <div className="label-holder"><label htmlFor="user-name">Username</label></div>
+        <input className="form-input-field" id="user-name" type="text" name="userName" placeholder={user_name} onChange={this.handleChange} required />
+      </div>
+
+      <div className="form-section">
+        <div><label htmlFor="password">Password</label></div>
+        <input className="form-input-field" id="password" type="password" name="password" placeholder={user_password} onChange={this.handleChange} required />
+      </div>
+
+      <button type="submit">Submit</button>
+      <Link className="cancel-action" to='/'>Cancel</Link>
+    </form>
     )
   }
 }
