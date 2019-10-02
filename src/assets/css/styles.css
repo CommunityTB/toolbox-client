@@ -111,7 +111,6 @@ h4 {
 .tool-card-wrapper {
   background-color: var(--white);
   color: var(--gray);
-  display: none;
 }
 /* END Tool Card Styles
  ------------------------------*/
@@ -179,8 +178,7 @@ a.keep-browsing:visited {
     /* color: blue; */
   }
   .tool-card-wrapper {
-    display: none;
-    /* display: grid; */
+    display: grid;
     grid-template-columns: auto auto;
     grid-gap: 18px;
   }  
@@ -196,7 +194,6 @@ a.keep-browsing:visited {
     display: flex;
   }
   .tool-img-wrapper, .tool-detail-text {
-    display: none;
     width: 50%;
     padding: 0 36px;
   }
@@ -214,8 +211,8 @@ a.keep-browsing:visited {
     /* color: magenta; */
   }
   .tool-card-wrapper {
-    display: none;
-    /* display: grid; */
+    margin: 0 auto;
+    display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 18px;
     width: 960px;
