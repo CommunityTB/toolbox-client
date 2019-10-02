@@ -33,6 +33,25 @@ class AppProvider extends Component {
       })
   }
 
+  registerUser = (u) => {
+    // console.log('TODO: Create a new user with these properties:\n', u)
+    fetch(`${API_BASE_URL}/users`, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, cors, *same-origin
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(u)
+      // body data type must match "Content-Type" header)
+    })
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(e => Promise.reject(e));
+      }
+      return response.json()
+    })
+  }
+
   render() {
     return (
       <AppContext.Provider
@@ -46,15 +65,7 @@ class AppProvider extends Component {
               alert(`This should reserve tool ${toolId}. TODO: Update AppProvider.js to make the API call.`)
             },
             registerUser: (newUser) => {
-              console.log('TODO: Create a new user with these properties:\n', newUser)
-              /* POST to the API /users endpoint */
-              /*
-                user_name TEXT NOT NULL UNIQUE,
-                user_password TEXT NOT NULL,
-                email TEXT NOT NULL,
-                first_name TEXT NOT NULL,
-                last_name TEXT NOT NULL,
-              */
+              this.registerUser(newUser)
             }
           },
         }}>

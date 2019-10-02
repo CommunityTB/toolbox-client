@@ -31,7 +31,7 @@ class RegisterPage extends Component {
       last_name: e.target['lastName'].value,
       email: e.target['email'].value,
       user_name: e.target['userName'].value,
-      password: e.target['password'].value,
+      user_password: e.target['password'].value,
     }
     this.context.actions.registerUser(newUser)
     this.props.history.push('/')
