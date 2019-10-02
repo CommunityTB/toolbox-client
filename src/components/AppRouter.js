@@ -21,9 +21,9 @@ class AppRouter extends Component {
     render() {
         return (
             <div className='AppRouter'>
-                <header>
+                <div>
                     <Navigation />
-                </header>
+                </div>
                 <main>
                     {this.state.errorPresent && <p className='Error-message'>We have an error! Please try again!</p>}
                     <Switch>

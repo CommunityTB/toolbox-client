@@ -4,7 +4,8 @@ import { Router } from 'react-router-dom';
 import AppProvider from './components/AppProvider';
 import AppRouter from './components/AppRouter';
 import history from './history.js';
-import './index.css';
+import './assets/css/reset.css'
+
 
 ReactDOM.render(
     <Router history={history}>
