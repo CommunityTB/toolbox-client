@@ -36,13 +36,18 @@ body {
   border-color: var(--gray);
   color: var(--white);
 }
+
+.fancy-titles {
+  font-weight: 400;
+  font-family: 'Holtwood One SC', serif;
+}
 /* END General Styles
  ------------------------------*/
 
+
 /* BEGIN Tool Card Styles
  ------------------------------*/
-h4 {
-  font-family: 'Holtwood One SC', serif;
+.tool-card h4 {
   text-align: center;
 }
 
@@ -61,6 +66,7 @@ h4 {
 }
 /* END Tool Card Styles
  ------------------------------*/
+
 
 /* BEGIN Tool Detail Styles
  ------------------------------*/
@@ -101,6 +107,20 @@ a.keep-browsing:visited {
 }
 /* END Tool Detail Styles
  ------------------------------*/
+
+
+/* BEGIN Registration Form Styles
+ ------------------------------*/
+.label-holder {
+  width: 160px;
+}
+.form-input-field {
+  width: 240px;
+}
+/* END Registration Form Styles
+ ------------------------------*/
+
+
 
 /**************************************************************** 
  * Responsove Styles

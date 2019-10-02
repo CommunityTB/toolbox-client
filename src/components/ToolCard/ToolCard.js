@@ -11,7 +11,7 @@ class ToolCard extends Component {
     return (
       <div className="tool-card">
         <img alt={t.tool_img_alt} src={url} />
-        <h4>{t.tool_name}</h4>
+        <h4 className="fancy-titles">{t.tool_name}</h4>
         <p>{t.tool_desc}</p>
         {/* <p>{availabilityStatus}</p> */}
         {/* <Link className="whatever" to='/'>Reserve This Item</Link> */}
