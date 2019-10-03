@@ -89,6 +89,42 @@ a {
   z-index: -1;
 }
 
+.search-input {
+  display: block;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 210px;
+  height: 32px;
+  background-color: var(--sand);
+  -moz-box-shadow:    inset 0 0 8px var(--black);
+   -webkit-box-shadow: inset 0 0 8px var(--black);
+   box-shadow:         inset 0 0 8px var(--black);
+  border: 0; 
+}
+
+::placeholder {
+  text-align: center;
+}
+
+.top-title {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  color: var(--white);
+  font-size: 22px;
+  margin-top: 45px;
+}
+
+.bottom-title {
+  text-align: center;
+  display: block;
+  font-family: 'Holtwood One SC', serif;
+  color: var(--white);
+  margin-top: -10px;
+  font-size: 35px;
+}
+
 /* END Header Styles
  ------------------------------*/ 
 
@@ -109,6 +145,7 @@ a {
 }
 
 .tool-card-wrapper {
+  display: none;
   background-color: var(--white);
   color: var(--gray);
 }

@@ -2,52 +2,80 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/styles.css';
 import logo from '../assets/images/ct_logo_color.svg';
-// import history from '../history';
+import TokenService from '../services/token-service'
+import history from '../history';
+import $ from 'jquery';
 
 export default class Navigation extends Component {
 
     handleUserLogout = () => {
-        // TokenService.clearAuthToken()
-        // history.push('/')
+        TokenService.clearAuthToken()
+        history.push('/')
     }
+    
+    // mobileNav = () => {
+    //     if ($(window).width() <= 640) {
+    //         $(".cross").hide();
+    //         $(".menu").hide();
+    //         $(".hamburger").show();
+        
+    //         $(".hamburger").on("click", function () {
+    //             $(".menu").slideToggle("slow");
+    //             $(".hamburger").hide();
+    //             $(".cross").show();
+    //         });
+        
+    //         $(".cross").on("click", function () {
+    //             $(".menu").slideToggle("slow");
+    //             $(".cross").hide();
+    //             $(".hamburger").show();
+    //         });
+    //     }
+    // }
 
     renderLoginLinks = () => {
         return (
-            <div className='nav_not_logged_in'>
-                <Link
-                    to='/login'>
-                    Login    
-                </Link>
-                <Link
-                    className='link_space' 
-                    to='/register'>
-                    Register
-                </Link>
-                <Link 
-                    className='link_space'
-                    to='/inventory'>
-                    Inventory    
-                </Link>
-                <Link
-                    className='link_space' 
-                    to='/about'>
-                    About
+            <>
+                <div class="hamburger">
+                    <button class="hamburger"></button>
+                    <button class="cross"></button>
+                </div>
+                <ul className='nav_not_logged_in'>
+                    <Link
+                        to='/login'>
+                        Login    
+                    </Link>
+                    <Link
+                        className='link_space' 
+                        to='/register'>
+                        Register
+                    </Link>
+                    <Link 
+                        className='link_space'
+                        to='/inventory'>
+                        Inventory    
+                    </Link>
+                    <Link
+                        className='link_space' 
+                        to='/about'>
+                        About
+                    </Link>
+                </ul>
+            </>
+        )
+    }
+
+    renderLogoutLinks = () => {
+        return (
+            <div className='nav_logged_in'>
+                <Link to='/'
+                        onClick={this.handleUserLogout}
+                        >
+                        Logout
                 </Link>
             </div>
         )
     }
-
-    // renderLogoutLinks = () => {
-    //     return (
-    //         <div className='nav_logged_in'>
-    //             <Link to='/'
-    //                     onClick={this.handleUserLogout}
-    //                     >
-    //                     Logout
-    //             </Link>
-    //         </div>
-    //     )
-    // }
 
     render() {
         return (
