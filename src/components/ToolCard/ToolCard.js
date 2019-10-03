@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faCircle } from '@fortawesome/free-solid-svg-icons'
 import '../../assets/css/styles.css'
+
+
+
+
+
+
 
 class ToolCard extends Component {
   render() {
@@ -11,11 +19,11 @@ class ToolCard extends Component {
     return (
       <div className="tool-card">
         <img alt={t.tool_img_alt} src={url} />
-        <h4 className="fancy-titles">{t.tool_name}</h4>
-        <p>{t.tool_desc}</p>
-        {/* <p>{availabilityStatus}</p> */}
-        {/* <Link className="whatever" to='/'>Reserve This Item</Link> */}
-        <Link className="reserve-link" to={toolPageLink}>Details</Link>              
+        <h3 className="fancy-titles">{t.tool_name}</h3>
+        <div className="tool-card-info">
+          <div className="availability"><FontAwesomeIcon icon={faCircle} /><span className="" to={toolPageLink}>Available</span></div>
+          <div className="reserve-link"><FontAwesomeIcon icon={faPlus} /><Link className="" to={toolPageLink}>Details</Link></div>
+        </div>
       </div>
     );
   }
