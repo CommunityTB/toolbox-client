@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import UserApiService from '../services/user-api-service';
 import { API_BASE_URL } from '../config';
+import history from '../history';
 
 export const AppContext = React.createContext();
 
@@ -7,29 +9,22 @@ class AppProvider extends Component {
   state = {
     error: null,
     tools: [],
+    user: {},
+    isLoggedIn: false,
   }
 
-  componentDidMount = () => {
-    fetch(`${API_BASE_URL}/tools`, {
-      method: 'GET',
-      // headers: {
-      //   'content-type': 'application/json',
-      //   'Authorization': `Bearer ${config.API_KEY}`
-      // }
-    })
-      .then((toolsResponse) => {
-        if (!toolsResponse.ok) {
-          return toolsResponse.json().then(error => Promise.reject(error))
-        }
-        return toolsResponse.json()
-      })
-      .then((tools) => {
-        this.setState({ tools })
+  handleLoginSuccess = (userId) => {
+    UserApiService.getUser(userId)
+      .then(user => this.setState({
+        user, isLoggedIn: true
+      }))
+      .then(() => {
+        history.push('/')
       })
       .catch(err => {
         this.setState({
           error: err.message
-        });
+        })
       })
   }
 
@@ -52,6 +47,26 @@ class AppProvider extends Component {
     })
   }
 
+  componentDidMount = () => {
+    fetch(`${API_BASE_URL}/tools`, {
+      method: 'GET',
+    })
+      .then((toolsResponse) => {
+        if (!toolsResponse.ok) {
+          return toolsResponse.json().then(error => Promise.reject(error))
+        }
+        return toolsResponse.json()
+      })
+      .then((tools) => {
+        this.setState({ tools })
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        });
+      })
+  }
+
   render() {
     return (
       <AppContext.Provider
@@ -61,6 +76,9 @@ class AppProvider extends Component {
             // passes state to other components
           },
           actions: {
+            handleLoginSuccess: (userId) => {
+              this.handleLoginSuccess(userId)
+            },
             reserveTool: (toolId) => {
               alert(`This should reserve tool ${toolId}. TODO: Update AppProvider.js to make the API call.`)
             },
