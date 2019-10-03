@@ -5,6 +5,7 @@ import ToolDetail from '../pages/ToolDetail';
 import Navigation from '../components/Navigation';
 import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
+import MyToolsPage from '../pages/MyToolsPage';
 import NotFoundPage from '../pages/NotFoundPage';
 
 class AppRouter extends Component {
@@ -41,6 +42,10 @@ class AppRouter extends Component {
                             path={'/register'}
                             component={RegisterPage}
                         />
+                        <Route 
+                            path={'/mytools'}
+                            component={MyToolsPage}
+                        />                        
                         <Route 
                             component={NotFoundPage}
                         />

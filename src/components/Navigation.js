@@ -38,6 +38,11 @@ export default class Navigation extends Component {
                     to='/about'>
                     About
                 </Link>
+                <Link
+                    className='link_space' 
+                    to='/mytools'>
+                    My Tools
+                </Link>
             </div>
         )
     }
