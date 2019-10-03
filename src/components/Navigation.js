@@ -29,11 +29,6 @@ export default class Navigation extends Component {
                     Inventory    
                 </Link>
                 <Link
-                    className='link_space'
-                    to='/find_us'>
-                    Find Us    
-                </Link>
-                <Link
                     className='link_space' 
                     to='/about'>
                     About
