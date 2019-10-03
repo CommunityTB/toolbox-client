@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import LoginForm from '../components/Login/LoginForm';
+import { AppContext } from '../components/AppProvider';
 
 class LoginPage extends Component {
 
-    state = {
-    }
+  static contextType = AppContext;
 
     render() {
         return (
-          <p>PUT LOGIN HERE</p>
+          <section className='Login-page'>
+            <h1 className='page-title'>Login</h1>
+            <LoginForm onLoginSuccess={this.context.actions.handleLoginSuccess}/>
+          </section>
         );
     }
 }
