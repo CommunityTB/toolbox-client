@@ -10,7 +10,7 @@ class MyToolsPage extends Component {
   render() {
     return (
       <>
-        <h3>My Tools</h3>
+        <h2>My Tools</h2>
         <ToolsBasket />
         <CurrentCheckouts />
       </>
