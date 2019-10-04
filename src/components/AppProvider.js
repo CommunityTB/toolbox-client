@@ -10,6 +10,8 @@ class AppProvider extends Component {
     error: null,
     tools: [],
     user: {},
+    myCheckedOutTools: [],
+    myBasket: [],
     isLoggedIn: false,
   }
 
@@ -28,23 +30,29 @@ class AppProvider extends Component {
       })
   }
 
-  registerUser = (u) => {
-    // console.log('TODO: Create a new user with these properties:\n', u)
-    fetch(`${API_BASE_URL}/users`, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, cors, *same-origin
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(u)
-      // body data type must match "Content-Type" header)
-    })
-    .then(response => {
-      if (!response.ok) {
-        return response.json().then(e => Promise.reject(e));
-      }
-      return response.json()
-    })
+  registerUser = (user) => {
+    UserApiService.registerUser(user)
+      .then(newUserObj => {
+        return newUserObj.json()
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        })
+      })
+  }
+
+  reserveTool = (toolId) => {
+    //console.log(`This should reserve tool ${toolId}. TODO: Update user-api-service.js to make the API call and complete the reserve action.`)
+    if(this.state.myBasket.includes(toolId)) {
+      console.log(`Tool ${toolId} is already in your basket`)
+    } else {
+      let updatedBasket = this.state.myBasket
+      updatedBasket.push(toolId)
+      this.setState({
+        myBasket: updatedBasket
+      }, console.log(`Basket now contains: ${this.state.myBasket}`))
+    }
   }
 
   componentDidMount = () => {
@@ -76,15 +84,9 @@ class AppProvider extends Component {
             // passes state to other components
           },
           actions: {
-            handleLoginSuccess: (userId) => {
-              this.handleLoginSuccess(userId)
-            },
-            reserveTool: (toolId) => {
-              alert(`This should reserve tool ${toolId}. TODO: Update AppProvider.js to make the API call.`)
-            },
-            registerUser: (newUser) => {
-              this.registerUser(newUser)
-            }
+            handleLoginSuccess: this.handleLoginSuccess,
+            reserveTool: this.reserveTool,
+            registerUser: this.registerUser
           },
         }}>
         {this.props.children}

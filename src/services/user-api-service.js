@@ -15,6 +15,23 @@ const UserApiService = {
                 return res.json()
         })
     },
+    registerUser(u) {
+        return fetch(`${API_BASE_URL}/users`, {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          mode: 'cors', // no-cors, cors, *same-origin
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(u)
+          // body data type must match "Content-Type" header)
+        })
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(e => Promise.reject(e));
+          }
+          return response.json()
+        })
+      }    
 }
 
 export default UserApiService;
