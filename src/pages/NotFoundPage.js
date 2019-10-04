@@ -7,7 +7,7 @@ class NotFoundPage extends Component {
 
     render() {
         return (
-          <p>PUT REGISTRATION FORM HERE</p>
+          <p>NOT FOUND, SORRY</p>
         );
     }
 }
