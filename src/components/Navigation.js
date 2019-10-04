@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/styles.css';
 import logo from '../assets/images/ct_logo_color.svg';
+import cart from '../assets/images/toolbox_cart_checkout.svg';
 import { AppContext } from './AppProvider';
 
 // import history from '../history';
@@ -44,7 +45,7 @@ export default class Navigation extends Component {
                 <Link
                     className='link_space' 
                     to='/mytools'>
-                    My Tools [{this.context.state.myBasket.length}]
+                    My Tools <img src={cart} className="cart-icon" alt="cart" />{this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>}
                 </Link>
             </div>
         )

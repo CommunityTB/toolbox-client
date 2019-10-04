@@ -71,6 +71,13 @@ a {
   width: 100px;
 }
 
+.cart-icon {
+  height: 28px;
+  width: 28px;
+  vertical-align: -8px;
+  margin: 0 4px;
+}
+
 .link_space {
   padding-left: 12px;
 }

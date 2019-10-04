@@ -3,11 +3,8 @@ import { AppContext } from '../AppProvider';
 
 class ToolsBasket extends Component {
 
-  state = {
-    // This is temporary. MyBasket should be
-    // stored in app state and/or context
-    myBasket: [1, 2, 3, 4]
-  }
+  // state = {
+  // }
   
   checkout(toolIds) {
     alert("This doesn't do anything yet.", toolIds)
@@ -15,13 +12,12 @@ class ToolsBasket extends Component {
   }
 
   render() {
-    const { myBasket } = this.state
     return (
       <div>
         <AppContext.Consumer>
           {
             value => {
-              const { tools } = value.state
+              const { tools, myBasket } = value.state
               if (myBasket.length && tools.length) {
                 const basketOfTools = []
                 myBasket.forEach(id => {
