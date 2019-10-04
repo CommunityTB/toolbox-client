@@ -2,21 +2,14 @@ import React, { Component } from 'react';
 import { AppContext } from '../AppProvider';
 
 class CurrentCheckouts extends Component {
-
-  state = {
-    // This is temporary. MyBasket should be
-    // stored in app state and/or context
-    myCheckedOutTools: [21, 22, 23, 24]
-  }
-
   render() {
-    const { myCheckedOutTools } = this.state
     return (
-      <div>
+      <section className="current-checkouts">
         <AppContext.Consumer>
           {
             value => {
-              const { tools } = value.state
+              const { tools, myCheckedOutTools } = value.state
+              const sectionHeader = <h3>Currently Checked Out</h3>
               if (myCheckedOutTools.length && tools.length) {
                 const bunchOfTools = []
                 myCheckedOutTools.forEach(id => {
@@ -25,24 +18,21 @@ class CurrentCheckouts extends Component {
                 })
                 return (
                   <div>
-                    ________________________________
-                    <h4>Current Checkouts</h4>
-                    {bunchOfTools.map(t => <p key={t.id}>&nbsp;| {t.tool_name}</p>)}
-                  </div>
-                )
-              } else {
-                return (
-                  <div>
-                    ________________________________
-                    <h4>Current Checkouts</h4>
-                    <p>&nbsp;| No items checked out</p>
+                    {sectionHeader}
+                    {bunchOfTools.map(t => <p key={t.id}>{t.tool_name}</p>)}
                   </div>
                 )
               }
+              return (
+                <div>
+                  {sectionHeader}
+                  <p className="no-items"><em>No items checked out</em></p>
+                </div>
+                )
             }
           }
         </AppContext.Consumer>
-      </div>
+      </section>
     );
   }
 }

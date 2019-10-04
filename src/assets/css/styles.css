@@ -77,6 +77,13 @@ a {
   width: 100px;
 }
 
+.cart-icon {
+  height: 28px;
+  width: 28px;
+  vertical-align: -8px;
+  margin: 0 4px;
+}
+
 .link_space {
   padding-left: 12px;
 }
@@ -247,6 +254,53 @@ address {
 }
 /* END Tool Card Styles
  ------------------------------*/
+
+
+ /* BEGIN Checkout Styles
+ ------------------------------*/
+.tool-line-item {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  border-bottom: 1px solid #ddd;
+  padding: 1em 0;
+}
+
+.tool-line-item .title {
+  padding-left: 2em;
+  font-size: 1.2em;
+  text-transform: capitalize;
+}
+
+.no-items {
+  opacity: 0.75;
+}
+
+.checkout-btn {
+  display: block;
+  width: 80%;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  padding: 1em;
+  margin: 18px 0;
+  border-color: var(--gray);
+  border-width: 2px;
+}
+
+.tools-basket, .current-checkouts {
+  padding: 2em 0;
+}
+
+.current-checkouts p {
+  text-transform: capitalize;
+  margin: .5em 0;
+}
+
+.current-checkouts {
+  background-color: #f8f8f8;
+}
+/* END Checkout Styles
+ ------------------------------*/ 
 
 
 /* BEGIN Tool Detail Styles
