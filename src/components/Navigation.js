@@ -4,6 +4,7 @@ import '../assets/css/styles.css';
 import logo from '../assets/images/ct_logo_color.svg';
 import cart from '../assets/images/toolbox_cart_checkout.svg';
 import TokenService from '../services/token-service'
+import BadgeCounter from './BadgeCounter/BadgeCounter';
 import history from '../history';
 import { AppContext } from './AppProvider';
 
@@ -59,7 +60,7 @@ export default class Navigation extends Component {
                 <Link
                     className='link_space' 
                     to='/mytools'>
-                    My Tools <img src={cart} className="cart-icon" alt="cart" />{this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>}
+                    My Tools <img src={cart} className="cart-icon" alt="cart" /><BadgeCounter count={this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>} />
                 </Link>
             </div>
         )
