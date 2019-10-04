@@ -95,7 +95,7 @@ a {
 
 /* BEGIN Tool Card Styles
  ------------------------------*/
-.tool-card h4 {
+.tool-card h3 {
   text-align: center;
 }
 
@@ -103,14 +103,50 @@ a {
   box-sizing: border-box;
   box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, .12);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
 }
 .tool-card img {
-  width: 100%;
+  /* width: 100%; */
+  width: 80%;
 }
 
 .tool-card-wrapper {
   background-color: var(--white);
   color: var(--gray);
+  padding: 0 24px;
+}
+
+.reserve-link, .availability {
+  color: var(--gray);
+  text-transform: uppercase;
+  display: block;
+  font-size: 1.2em;
+}
+
+.availability {
+  margin-bottom: .15em;
+}
+
+.availability,
+.reserve-link a {
+  font-weight: normal
+}
+
+.tool-card .fa-circle {
+  color: var(--green);
+}
+
+.tool-card .fa-circle,
+.tool-card .fa-plus {
+  margin-right: 0.5em;
+}
+
+.tool-card-info {
+  width: fit-content;
+  margin: .25em auto 0;
 }
 /* END Tool Card Styles
  ------------------------------*/
@@ -233,15 +269,18 @@ a.keep-browsing:visited {
     /* TESTING BREAKPOINTS */
     /* color: magenta; */
   }
+
   .tool-card-wrapper {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 18px;
     width: 960px;
   }
+
   /* main {
     padding: 0 24px;
   } */
+
   .tool-card-wrapper, .tool-detail-wrapper {
     width: 960px;
     margin: 0 auto;
@@ -251,9 +290,12 @@ a.keep-browsing:visited {
     grid-template-columns: auto auto auto;
     grid-gap: 30px;
   }
+
+  .tool-card {
+    margin-bottom: 0;
+  }
+  
+  .tool-card-wrapper {
+    padding: 0;
+  }  
 }
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-/* @media only screen and (min-width: 1200px) {
-
-} */
