@@ -147,8 +147,10 @@ export class AutoComplete extends Component {
       <React.Fragment>   {/* Borrowed. didn't know how to send data back to app, and some dude online sent it using an input element. what do you know */}
         <input
           type="text"
+          className="search-input"
           onChange={onChange}
           value={userInput}
+          placeholder="ENTER A TOOL"
         />
         {listComponents}
       </React.Fragment>
