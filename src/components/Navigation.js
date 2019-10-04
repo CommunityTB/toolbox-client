@@ -4,7 +4,6 @@ import '../assets/css/styles.css';
 import logo from '../assets/images/ct_logo_color.svg';
 import TokenService from '../services/token-service'
 import history from '../history';
-import $ from 'jquery';
 
 export default class Navigation extends Component {
 
@@ -13,33 +12,13 @@ export default class Navigation extends Component {
         history.push('/')
     }
     
-    // mobileNav = () => {
-    //     if ($(window).width() <= 640) {
-    //         $(".cross").hide();
-    //         $(".menu").hide();
-    //         $(".hamburger").show();
-        
-    //         $(".hamburger").on("click", function () {
-    //             $(".menu").slideToggle("slow");
-    //             $(".hamburger").hide();
-    //             $(".cross").show();
-    //         });
-        
-    //         $(".cross").on("click", function () {
-    //             $(".menu").slideToggle("slow");
-    //             $(".cross").hide();
-    //             $(".hamburger").show();
-    //         });
-    //     }
-    // }
-
     renderLoginLinks = () => {
         return (
             <>
-                <div class="hamburger">
+                {/* <div class="hamburger">
                     <button class="hamburger"></button>
                     <button class="cross"></button>
-                </div>
+                </div> */}
                 <ul className='nav_not_logged_in'>
                     <Link
                         to='/login'>
@@ -78,12 +57,12 @@ export default class Navigation extends Component {
     }
 
     render() {
+       
         return (
             <nav className ='nav'>
                 <div><Link to='/'><img src={logo} className='logo' alt='Community Toolbox Logo'></img></Link></div>
                 <ul className='nav_items'>
-                    {this.renderLoginLinks()}
-                    {/* { TokenService.hasAuthToken() ? this.renderLoginLinks() : this.renderLogoutLinks() } */}
+                    { TokenService.hasAuthToken() ? this.renderLogoutLinks() : this.renderLoginLinks() }
                 </ul>
             </nav>
         )
