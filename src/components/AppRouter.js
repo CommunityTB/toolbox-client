@@ -6,6 +6,8 @@ import Navigation from '../components/Navigation';
 import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
 import MyToolsPage from '../pages/MyToolsPage';
+import Footer from '../components/Footer'
+// import AboutUs from '../pages/AboutUs';
 import NotFoundPage from '../pages/NotFoundPage';
 
 class AppRouter extends Component {
@@ -22,10 +24,8 @@ class AppRouter extends Component {
     render() {
         return (
             <div className='AppRouter'>
-                <div>
-                    <Navigation />
-                </div>
                 <main>
+                    <Navigation />
                     {this.state.errorPresent && <p className='Error-message'>We have an error! Please try again!</p>}
                     <Switch>
                         <Route 
@@ -45,11 +45,16 @@ class AppRouter extends Component {
                         <Route 
                             path={'/mytools'}
                             component={MyToolsPage}
-                        />                        
+                        />
+                        {/* <Route 
+                            path={'/about'}
+                            component={AboutUs}
+                        />                             */}
                         <Route 
                             component={NotFoundPage}
                         />
                     </Switch>
+                    <Footer />
                 </main>
             </div>
         );

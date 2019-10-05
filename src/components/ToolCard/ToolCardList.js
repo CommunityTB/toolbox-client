@@ -14,6 +14,7 @@ class ToolCardList extends Component {
               return toolsFiltered.map(tool => <ToolCard key={tool.id} {...tool} />)
             }
             return value.state.tools.map(tool => <ToolCard key={tool.id} {...tool} />)
+            // return <p>No tools found!</p>
           }
         }
       </AppContext.Consumer>

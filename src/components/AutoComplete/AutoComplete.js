@@ -104,7 +104,6 @@ export class AutoComplete extends Component {
     });
   };
 
-
   render() {
     //this.props.suggestions.map(tool => this.state.filteredResults.push(tool.tool_name))
     const {
