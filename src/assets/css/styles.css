@@ -13,6 +13,7 @@
   --brown: #913d14;
   --white: #fff;
   --black: #000;
+  --red: #d20000;
 }
 
 * {
@@ -253,7 +254,12 @@ address {
   color: var(--green);
 }
 
+.tool-card .fa-circle-unavailable {
+  color: var(--red);
+}
+
 .tool-card .fa-circle,
+.tool-card .fa-circle-unavailable,
 .tool-card .fa-plus {
   margin-right: 0.5em;
 }
