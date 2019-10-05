@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
-import config from '../../config';
+import config from '../../config'
 
  class ToolBoxMap extends Component {
   
@@ -24,5 +24,5 @@ import config from '../../config';
 }
 
   export default GoogleApiWrapper({
-    apiKey: config.GOOGLE_MAPS_API_KEY
+    apiKey: config.MAPS_API_KEY
   })(ToolBoxMap);
