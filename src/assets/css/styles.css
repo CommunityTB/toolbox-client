@@ -216,8 +216,7 @@ address {
 }
 
 .tool-card-wrapper {
-  margin-top: 20px;
-  /* display: none; */
+  margin-top: 50px;
   background-color: var(--white);
   color: var(--gray);
   padding: 0 24px;
@@ -382,10 +381,7 @@ a.keep-browsing:visited {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  * {
-    /* TESTING BREAKPOINTS */
-    /* color: blue; */
-  }
+
   .tool-card-wrapper {
     display: grid;
     grid-template-columns: auto auto;
@@ -395,10 +391,30 @@ a.keep-browsing:visited {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  * {
-    /* TESTING BREAKPOINTS */
-    /* color: green; */
+
+
+   /* BEGIN Header Styles
+ ------------------------------*/
+
+  .search-input {
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px;
+    height: 35px;
+  
   }
+
+  .top-title {
+    font-size: 30px;
+  }
+
+  .bottom-title {
+    margin-top: -14px;
+    font-size: 44px;
+  }
+
+/* END Header Styles
+ ------------------------------*/ 
   .tool-detail {
     display: flex;
   }
@@ -448,6 +464,7 @@ a.keep-browsing:visited {
 .search-input {
   font-size: 16px;
   padding-left: 10px;
+  max-width: 350px;
 }
 
 ::placeholder {
