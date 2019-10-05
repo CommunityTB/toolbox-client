@@ -15,6 +15,7 @@ export default class Navigation extends Component {
     handleUserLogout = () => {
         TokenService.clearAuthToken()
         history.push('/')
+        window.location.reload()
     }
     
     renderLoginLinks = () => {
@@ -34,15 +35,10 @@ export default class Navigation extends Component {
                         to='/register'>
                         Register
                     </Link>
-                    <Link 
-                        className='link_space'
-                        to='/inventory'>
-                        Inventory    
-                    </Link>
                     <Link
                         className='link_space' 
                         to='/about'>
-                        About
+                        About Us
                     </Link>
                 </ul>
             </>
@@ -60,7 +56,7 @@ export default class Navigation extends Component {
                 <Link
                     className='link_space' 
                     to='/mytools'>
-                    My Tools <img src={cart} className="cart-icon" alt="cart" /><BadgeCounter count={this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>} />
+                    <img src={cart} className="cart-icon" alt="cart" /><BadgeCounter count={this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>} />
                 </Link>
             </div>
         )
