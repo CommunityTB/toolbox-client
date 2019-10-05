@@ -9,6 +9,7 @@ import MyToolsPage from '../pages/MyToolsPage';
 import Footer from '../components/Footer'
 import AboutUs from '../pages/AboutUs';
 import NotFoundPage from '../pages/NotFoundPage';
+import HowItWorks from '../pages/HowItWorks';
 
 class AppRouter extends Component {
 
@@ -28,29 +29,33 @@ class AppRouter extends Component {
                     <Navigation />
                     {this.state.errorPresent && <p className='Error-message'>We have an error! Please try again!</p>}
                     <Switch>
-                        <Route 
+                        <Route
                             exact
                             path={'/'}
                             component={HomePage}
                         />
                         <Route path='/tools/:toolId' component={ToolDetail} />
-                        <Route 
+                        <Route
                             path={'/login'}
                             component={LoginPage}
                         />
-                        <Route 
+                        <Route
                             path={'/register'}
                             component={RegisterPage}
                         />
-                        <Route 
+                        <Route
                             path={'/mytools'}
                             component={MyToolsPage}
                         />
-                        <Route 
+                        <Route
                             path={'/about'}
                             component={AboutUs}
-                        />                            
-                        <Route 
+                        />
+                        <Route
+                            path={'/how'}
+                            component={HowItWorks}
+                        />
+                        <Route
                             component={NotFoundPage}
                         />
                     </Switch>
