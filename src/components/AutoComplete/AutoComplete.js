@@ -14,7 +14,6 @@ export class AutoComplete extends Component {
       currentValue: 0,
       filteredValues: [],
       filteredToolIDs: [],
-      //filteredCategories: [],
       filteredResults: [],
       showDropdowns: false,
       parsed: false,
@@ -24,63 +23,23 @@ export class AutoComplete extends Component {
 
   onChange = e => {
     this.setState({ filteredResults: [], userInput: e.currentTarget.value }) //clears existing array of choices
-    // this.setState({ filteredResults: [], filteredCategories: []}) //clears existing array of choices
-    //console.log("did I delete myself?")
     const { suggestions } = this.props;
-    // this.setState({
-    //   userInput: e.currentTarget.value
-    // });
-    //const { userInput } = this.state
     const userInput = e.currentTarget.value
-    //console.log(this.state.userInput)
-    //suggestions.map(category => this.state.filteredCategories.push(category.tool_category))
-    //suggestions.map(tool => this.state.filteredResults.push(tool.tool_name))
-    // let filtRes = []
-    // suggestions.forEach(tool => {
-    //   filtRes.push(tool.tool_name)
-    // })
     
     let filtRes = suggestions.map(tool => {
-      return {name: tool.tool_name, id: tool.id}
+      return {name: tool.tool_name, id: tool.id, category: tool.tool_category}
     })
 
     this.setState({filteredResults: filtRes})
     
-    //console.log(suggestions)
-    //console.log("filter", this.state.filteredValues);
-    
-    // if(this.state.filteredCategories.includes(userInput)) {
-    //    //console.log("ding!")
-    //    if(this.state.filteredValues){ this.state.filteredValues.splice(0, this.state.filteredValues.length) }
-    //    const filteredValues = suggestions.map(results => {
-    //         if (Object.values(results).includes(userInput)){
-    //             //console.log(this.state.filteredValues)
-    //             //console.log("dong!!")
-    //             this.state.filteredValues.push(results.tool_name)
-    //         }
-            
-    //     })
-
-    //     this.setState({
-    //         currentValue: 0,
-    //         filteredValues,
-    //         showDropdowns: true,
-    //         userInput: e.currentTarget.value
-    //       })
-    // } 
-    //console.log(this.state.filteredValues)
-    //console.log(this.state.filteredCategories)
-
     const filterList = this.state.filteredResults;  //deconstruction    
-    //console.log(filterList)
     const filteredValues = []
     const filteredToolIDs = []
-    // const filteredValues = filterList.filter(
-    //   suggestion =>
-    //     suggestion.name.toLowerCase().includes(userInput.toLowerCase())
-    // );
     filterList.forEach(item => {
-      if(item.name.toLowerCase().includes(userInput.toLowerCase())) {
+      let cat = item.category.toLowerCase()
+      let name = item.name.toLowerCase()
+      let searchTerm = userInput.toLowerCase()
+      if(cat.includes(searchTerm) || name.includes(searchTerm)) {
         filteredValues.push(item.name)
         filteredToolIDs.push(item.id)
       }
@@ -105,13 +64,11 @@ export class AutoComplete extends Component {
   };
 
   render() {
-    //this.props.suggestions.map(tool => this.state.filteredResults.push(tool.tool_name))
     const {
       onChange,
       onClick,
       state: {currentValue, filteredValues, showDropdowns, userInput}
     } = this;
-    //console.log("Bink!", this.state.filteredValues)
     
     let listComponents;
 
