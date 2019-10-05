@@ -22,13 +22,13 @@ https://repl.it/@ryan582647/Sign-in-Page
 tools menu:
 https://repl.it/@ryan582647/Tools-Menu
 
-![Community Toolbox Mock-up Screenshot](/src/images/HOME_Desktop.pdf "Community Toolbox")
+![Community Toolbox Mock-up Screenshot](/src/assets/images/HOME_Desktop.pdf "Community Toolbox")
 
-![Community Toolbox Mock-up Screenshot](/src/images/HOME_mobile_menu.pdf "Community Toolbox")
+![Community Toolbox Mock-up Screenshot](/src/assets/images/HOME_mobile_menu.pdf "Community Toolbox")
 
-![Community Toolbox Mock-up Screenshot](/src/images/HOME_mobile.pdf "Community Toolbox")
+![Community Toolbox Mock-up Screenshot](/src/assets/images/HOME_mobile.pdf "Community Toolbox")
 
-![Community Toolbox Mock-up Screenshot](/src/images/TOOLCARD_Desktop.pdf "Community Toolbox")
+![Community Toolbox Mock-up Screenshot](/src/assets/images/TOOLCARD_Desktop.pdf "Community Toolbox")
 
-![Community Toolbox Mock-up Screenshot](/src/images/HOME_mobile.pdf "Community Toolbox")
+![Community Toolbox Mock-up Screenshot](/src/assets/images/HOME_mobile.pdf "Community Toolbox")
 
