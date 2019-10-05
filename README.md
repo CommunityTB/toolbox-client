@@ -1,5 +1,8 @@
 # Tool-Library-Client
 Brandon El Haj, Ryan Kaw, Jeanine Hoffman
+Deployed front end URL:
+https://zeit.co/teamredpanda/toolbox-client/1tmvih8re
+
 initial notes
 https://gist.github.com/JeanineHoffman/9cdf0a39031eea8db05da3cc616d868b
 
