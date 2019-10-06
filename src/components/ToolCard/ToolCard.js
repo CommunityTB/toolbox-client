@@ -16,7 +16,13 @@ class ToolCard extends Component {
         <img alt={t.tool_img_alt} src={url} />
         <h3 className="fancy-titles">{t.tool_name}</h3>
         <div className="tool-card-info">
-          <div className="availability"><FontAwesomeIcon icon={faCircle} /><span className="" to={toolPageLink}>Available</span></div>
+          <div className="availability">            
+            {
+              (!t.return_date)
+              ? <><FontAwesomeIcon icon={faCircle} /><span className="" to={toolPageLink}>Available</span></>
+              : <><FontAwesomeIcon className="fa-circle-unavailable" icon={faCircle} /><span className="" to={toolPageLink}><strike>Unavailable</strike></span> </>
+            }
+          </div>
           <div className="reserve-link"><FontAwesomeIcon icon={faPlus} /><Link className="" to={toolPageLink}>Details</Link></div>
         </div>
       </div>
