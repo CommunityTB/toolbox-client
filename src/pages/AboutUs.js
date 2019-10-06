@@ -14,6 +14,7 @@ export default class AboutUs extends Component {
           <p>Our tools do not include the blades or bits but we have them here for purchase or to borrow. Our team will gladly assist you in finding the right components to help you finish your projects. Welcome to our community!</p>
         </article>
         <section>
+          
           {/* replace with general button later */}
           <Link to='/' className="back-link">back</Link>
         </section>

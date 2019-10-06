@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import ToolBoxMap from '../components/ToolBoxMap/ToolBoxMap';
 
-export default class HowItWorks extends Component {
+
+  export default class HowItWorks extends Component {
   
   render() {
+    
     return (
       <div className="howItWorks">
         <article>
@@ -18,11 +20,12 @@ export default class HowItWorks extends Component {
           </ul>
         </article>
         <section>
-          {/* replace with general button later */}
-          <Link to='/home' className="home">Home</Link>
+          <ToolBoxMap />
         </section>
       </div>
     );
   }
 }
 
+
+  
