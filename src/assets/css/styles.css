@@ -68,23 +68,52 @@ body {
   background-color: rgb(247,244,234,.6);
 }
 
-.nav-items {
+ul {
+  display: block;
+  height: 0;
+  list-style-type: none;
+  opacity: 0;
+  text-align: center;
+  transition: all 1s ease;
+  width: 100%;
+  visibility: hidden;
+}
+
+#menu-toggle:checked ~ ul {
+  opacity: 1;
+  height: 100vh;
+  visibility: visible;
+}
+
+.label-toggle {
+  cursor: pointer;
+  display: block;
+  float: right;
+  height: 35px;
+  margin-top: 1em;
+  width: 35px;
+    
+}
+
+/* .nav-items {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   list-style: none;
   margin-top: 7px;
-}
+} */
 
 a {
   color: var(--gray);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
+  transition: all .5s ease;
 }
 
 .logo {
+  display: inline-block;
   height: 100px;
   width: 100px;
 }
@@ -99,10 +128,10 @@ a {
 .link_space {
   padding-left: 11px;
 }
-
+/* 
 .nav_items {
   padding-right: 45px;
-}
+} */
 
 /* END Navigation Styles
  ------------------------------*/
@@ -631,15 +660,33 @@ address {
   background-color: var(--white);
   color: var(--gray);
 }
-/* END Tool Card Styles
- ------------------------------*/
 
+.tool-card {
+  margin-bottom: 0;
 }
 
-  .tool-card {
-    margin-bottom: 0;
-  }
+.tool-card-wrapper {
+  padding: 0;
+}  
+/* END Tool Card Styles
+ ------------------------------*/
+ ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  opacity: 1;
+  visibility: visible;
+}
   
-  .tool-card-wrapper {
-    padding: 0;
-  }  
+  #menu-toggle {
+    display: none;
+  }
+
+  .label-toggle {
+    display: none;
+  }
+
+  .nav_items {
+    padding-right: 45px;
+  }
+}

@@ -70,6 +70,8 @@ export default class Navigation extends Component {
                 <ul className='nav_items'>
                     { TokenService.hasAuthToken() ? this.renderLogoutLinks() : this.renderLoginLinks() }
                 </ul>
+                <input type='checkbox' id='menu-toggle'></input>
+                <label htmlFor='menu-toggle' className='label-toggle'></label>
             </nav>
         )
     }
