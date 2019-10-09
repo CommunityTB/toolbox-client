@@ -51,6 +51,14 @@ class AppProvider extends Component {
     }, console.log(`Removed item. Basket now contains: ${this.state.myBasket}`))
   }
 
+  checkOut = (toolIds) => {
+    console.log("Doesn't do anything yet, but should reserve tool IDs: ", toolIds)
+    this.setState({
+      myBasket: []
+    }, console.log(`Emptied basket`))
+  }
+
+
   reserveTool = (toolId) => {
     // TODO: Update user-api-service.js to make the API call and complete the reserve action.`)
     if (this.state.myBasket.includes(toolId)) {
@@ -97,6 +105,7 @@ class AppProvider extends Component {
             reserveTool: this.reserveTool,
             registerUser: this.registerUser,
             removeFromBasket: this.removeFromBasket,
+            checkOut: this.checkOut,
           },
         }}>
         {this.props.children}
