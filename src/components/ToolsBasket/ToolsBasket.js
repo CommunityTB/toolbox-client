@@ -5,13 +5,18 @@ import ToolBoxMap from '../ToolBoxMap/ToolBoxMap'
 
 
 class ToolsBasket extends Component {
+  static contextType = AppContext
   state = {
-    completedCheckout: false
+    completedCheckout: false,
+    reservedItems: []
   }
-  checkout(toolIds) {
-    console.log("Doesn't do anything yet, but should reserve tool IDs: ", toolIds)
+  handleClick(e, toolIds) {
+    e.preventDefault();
+    this.context.actions.checkOut(toolIds)
+    let reservedItems = toolIds.slice()
     this.setState({
-      completedCheckout: true
+      completedCheckout: true,
+      reservedItems: reservedItems
     })
   }
   render() {
@@ -21,11 +26,12 @@ class ToolsBasket extends Component {
           {
             value => {
               const { tools, myBasket } = value.state
-              const { completedCheckout } = this.state
+              const { completedCheckout, reservedItems } = this.state
+              const items = completedCheckout ? reservedItems : myBasket.slice()
               const listHeader = completedCheckout ? <h3>Reserved for Pick-Up</h3> : <h3>My Basket</h3>
-              if (myBasket.length && tools.length) {
+              if (items.length && tools.length) {
                 const basketOfTools = []
-                myBasket.forEach(id => {
+                items.forEach(id => {
                   let item = tools.find(t => t.id === id)
                   basketOfTools.push(item)
                 })
@@ -33,7 +39,7 @@ class ToolsBasket extends Component {
                   <div>
                     {listHeader}
                     {basketOfTools.map(t => <BasketItem key={t.id} tool={t} checkoutStatus={completedCheckout} />)}
-                    {!completedCheckout && <button className="checkout-btn" onClick={() => this.checkout(myBasket)}>Check Out</button>}
+                    {!completedCheckout && <button className="checkout-btn" onClick={(e) => this.handleClick(e, myBasket)}>Check Out</button>}
                     {completedCheckout && <div className="pickup-instructions">
                       <div>
                         <ul>
