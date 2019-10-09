@@ -10,8 +10,8 @@ class AppProvider extends Component {
     error: null,
     tools: [],
     user: {},
-    myCheckedOutTools: [], // THIS SHOULD BE EMPTY []
-    myBasket: [], // THIS SHOULD BE EMPTY []
+    myCheckedOutTools: [1, 2, 3], // THIS SHOULD BE EMPTY []
+    myBasket: [21, 22, 23], // THIS SHOULD BE EMPTY []
     isLoggedIn: false,
   }
 

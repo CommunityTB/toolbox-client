@@ -7,11 +7,10 @@ import config from '../../config'
   render() {
     const mapStyles = {
       width: '100%',
-      height: '200px',
+      height: '320px',
     };
     return (
       <div className="toolboxMap" aria-label="map">
-        <p>Our location</p>
         <Map
           google={this.props.google}
           zoom={8}
