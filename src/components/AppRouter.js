@@ -10,6 +10,8 @@ import Footer from '../components/Footer'
 import AboutUs from '../pages/AboutUs';
 import NotFoundPage from '../pages/NotFoundPage';
 import HowItWorks from '../pages/HowItWorks';
+import PublicRoute from '../helpers/PublicRoute';
+import PrivateRoute from '../helpers/PrivateRoute';
 
 class AppRouter extends Component {
 
@@ -29,29 +31,32 @@ class AppRouter extends Component {
                     <Navigation />
                     {this.state.errorPresent && <p className='Error-message'>We have an error! Please try again!</p>}
                     <Switch>
-                        <Route
+                        <PublicRoute
                             exact
                             path={'/'}
                             component={HomePage}
                         />
-                        <Route path='/tools/:toolId' component={ToolDetail} />
-                        <Route
+                        <PublicRoute 
+                            path='/tools/:toolId' 
+                            component={ToolDetail} 
+                        />
+                        <PublicRoute
                             path={'/login'}
                             component={LoginPage}
                         />
-                        <Route
+                        <PublicRoute
                             path={'/register'}
                             component={RegisterPage}
                         />
-                        <Route
+                        <PrivateRoute
                             path={'/mytools'}
                             component={MyToolsPage}
                         />
-                        <Route
+                        <PublicRoute
                             path={'/about'}
                             component={AboutUs}
                         />
-                        <Route
+                        <PublicRoute
                             path={'/how'}
                             component={HowItWorks}
                         />
