@@ -15,19 +15,14 @@ class ToolsBasket extends Component {
     })
   }
   render() {
-    // let thing = 'hello'
-    // if(this.state.tabNumber === 1) thing = 'goodbye'
-
     return (
-      <section className="tools-basket">
-        {/* <div><a href="/" onClick={(e) => this.handleClick(e, 0)}>My Basket</a> | <a href="/" onClick={(e) => this.handleClick(e, 1)}>Current Checkouts</a></div>
-        <p>{thing}</p> */}
+      <div className="tools-basket">
         <AppContext.Consumer>
           {
             value => {
               const { tools, myBasket } = value.state
               const { completedCheckout } = this.state
-              const sectionHeader = completedCheckout ? 'Reserved for Pick-Up' : 'My Basket'
+              const listHeader = completedCheckout ? <h3>Reserved for Pick-Up</h3> : <h3>My Basket</h3>
               if (myBasket.length && tools.length) {
                 const basketOfTools = []
                 myBasket.forEach(id => {
@@ -36,23 +31,32 @@ class ToolsBasket extends Component {
                 })
                 return (
                   <div>
-                    <h3>{sectionHeader}</h3>
-                    {basketOfTools.map(t => <BasketItem key={t.id} tool={t} />)}
+                    {listHeader}
+                    {basketOfTools.map(t => <BasketItem key={t.id} tool={t} checkoutStatus={completedCheckout} />)}
                     {!completedCheckout && <button className="checkout-btn" onClick={() => this.checkout(myBasket)}>Check Out</button>}
-                    {completedCheckout && <ToolBoxMap />}
+                    {completedCheckout && <div className="pickup-instructions">
+                      <div>
+                        <ul>
+                          <li>Step 1: Sed ut perspiciatis unde omnis iste natus error sit.</li>
+                          <li>Step 2: Voluptatem accusantium doloremque laudantium.</li>
+                          <li>Step 3: Rem aperiam, eaque ipsa quae ab illo inventore.</li>
+                        </ul>
+                      </div>
+                      <ToolBoxMap />
+                      </div>}
                   </div>
                 )
               }
               return (
                 <div>
-                  {sectionHeader}
+                  {listHeader}
                   <p className="no-items"><em>Your basket is empty</em></p>
                 </div>
                 )
             }
           }
         </AppContext.Consumer>
-      </section>
+      </div>
     );
   }
 }

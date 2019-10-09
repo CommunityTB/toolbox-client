@@ -44,6 +44,10 @@ body {
 .suggestions, .no-suggestions {
   display: none;
 }
+
+.tabs {
+  margin: 0.75em 0;
+}
 /* END General Styles
  ------------------------------*/
 
@@ -277,7 +281,8 @@ address {
 .tool-line-item {
   display: flex;
   align-items: center;
-  width: 80%;
+  justify-content: space-between;
+  /* width: 80%; */
   border-bottom: 1px solid #ddd;
   padding: 1em 0;
 }
@@ -287,17 +292,23 @@ address {
   font-size: 1.2em;
   text-transform: capitalize;
 }
-
+.tool-line-item .media {
+  display: flex;
+  align-items: center;
+}
+.remove-from-basket .fa-times {
+  color: var(--red);
+}
 .no-items {
   opacity: 0.75;
 }
 
 .checkout-btn {
   display: block;
-  width: 80%;
+  width: 100%;
   font-size: 1.2em;
   text-transform: uppercase;
-  padding: 1em;
+  padding: 1em 0;
   margin: 18px 0;
   border-color: var(--gray);
   border-width: 2px;
@@ -307,13 +318,16 @@ address {
   padding: 2em 0;
 }
 
-.current-checkouts p {
-  text-transform: capitalize;
-  margin: .5em 0;
+.tools-basket h3,
+.current-checkouts h3 {
+  font-weight: 600;
+  margin-bottom: 0.75em;
 }
 
-.current-checkouts {
-  background-color: #f8f8f8;
+.current-checkouts p {
+  text-transform: capitalize;
+  border-bottom: 1px solid #ddd;
+  padding: .75em 0;
 }
 
 .mytools-tab-active {
@@ -324,6 +338,21 @@ address {
 .mytools-tab-inactive {
   text-transform: none;
   text-decoration: none;
+  opacity: 0.64;
+}
+
+.my-tools-section {
+  padding: 0 1em;
+}
+
+.my-tools-section span {
+  margin-right: 1em;
+}
+
+.pickup-instructions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
 }
 /* END Checkout Styles
  ------------------------------*/ 
@@ -332,6 +361,7 @@ address {
   /* BEGIN Map Styles
  ------------------------------*/
 .toolbox-map {
+  width: 480px;
   height: 320px;
 }
 /* END Map Styles
@@ -488,14 +518,13 @@ a.keep-browsing:visited {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 18px;
-    width: 960px;
   }
 
   /* main {
     padding: 0 24px;
   } */
 
-  .tool-card-wrapper, .tool-detail-wrapper {
+  .tool-card-wrapper, .tool-detail-wrapper, .my-tools-section {
     width: 960px;
     margin: 0 auto;
   }

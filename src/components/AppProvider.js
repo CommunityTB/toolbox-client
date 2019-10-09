@@ -10,8 +10,8 @@ class AppProvider extends Component {
     error: null,
     tools: [],
     user: {},
-    myCheckedOutTools: [1, 2, 3], // THIS SHOULD BE EMPTY []
-    myBasket: [21, 22, 23], // THIS SHOULD BE EMPTY []
+    myCheckedOutTools: [1, 2, 3], // THIS SHOULD BE EMPTY BY DEFAULT
+    myBasket: [21, 22], // [21, 22] THIS SHOULD BE EMPTY BY DEFAULT
     isLoggedIn: false,
   }
 
@@ -42,16 +42,25 @@ class AppProvider extends Component {
       })
   }
 
+  removeFromBasket = (toolId) => {
+    let updatedBasket = this.state.myBasket.filter(item => {
+      return item !== toolId
+    })
+    this.setState({
+      myBasket: updatedBasket
+    }, console.log(`Removed item. Basket now contains: ${this.state.myBasket}`))
+  }
+
   reserveTool = (toolId) => {
-    //console.log(`This should reserve tool ${toolId}. TODO: Update user-api-service.js to make the API call and complete the reserve action.`)
-    if(this.state.myBasket.includes(toolId)) {
+    // TODO: Update user-api-service.js to make the API call and complete the reserve action.`)
+    if (this.state.myBasket.includes(toolId)) {
       console.log(`Tool ${toolId} is already in your basket`)
     } else {
       let updatedBasket = this.state.myBasket
       updatedBasket.push(toolId)
       this.setState({
         myBasket: updatedBasket
-      }, console.log(`Basket now contains: ${this.state.myBasket}`))
+      }, console.log(`Added item. Basket now contains: ${this.state.myBasket}`))
     }
   }
 
@@ -86,7 +95,8 @@ class AppProvider extends Component {
           actions: {
             handleLoginSuccess: this.handleLoginSuccess,
             reserveTool: this.reserveTool,
-            registerUser: this.registerUser
+            registerUser: this.registerUser,
+            removeFromBasket: this.removeFromBasket,
           },
         }}>
         {this.props.children}

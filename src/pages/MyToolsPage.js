@@ -6,30 +6,42 @@ class MyToolsPage extends Component {
 
   state = {
     basketView: true,
-    view1: 'mytools-tab-active',
-    view2: 'mytools-tab-inactive'
+    tab1: 'mytools-tab-active',
+    tab2: 'mytools-tab-inactive'
   }
 
   handleClick = (e, option) => {
     e.preventDefault();
-    let newBasketView = this.state.basketView ? false : true
-    this.setState({
-      basketView: newBasketView,
-      view1: 'mytools-tab-inactive',
-      view2: 'mytools-tab-active'
-    })
+    if(option === 1 && this.state.basketView) {
+      this.setState({
+        basketView: false,
+        tab1: 'mytools-tab-inactive',
+        tab2: 'mytools-tab-active'
+      })
+    }
+
+    if(option === 0 && !this.state.basketView) {
+      this.setState({
+        basketView: true,
+        tab1: 'mytools-tab-active',
+        tab2: 'mytools-tab-inactive'
+      })
+    }
   }
 
   render() {
-    const { basketView, view1, view2 } = this.state
+    const { basketView, tab1, tab2 } = this.state
     return (
-      <>
+      <section className="my-tools-section">
         <h2>My Tools</h2>
-        <div><a href="/" onClick={(e) => this.handleClick(e, 0)}><span className={view1}>Basket</span></a> <a href="/" onClick={(e) => this.handleClick(e, 1)}><span className={view2}>Current Checkouts</span></a></div>
+        <div className="tabs">
+          <a href="/" onClick={(e) => this.handleClick(e, 0)}><span className={tab1}>Basket</span></a>
+          <a href="/" onClick={(e) => this.handleClick(e, 1)}><span className={tab2}>Current Checkouts</span></a>
+        </div>
         {
           ( basketView ? <ToolsBasket /> : <CurrentCheckouts /> )
         }
-      </>
+      </section>
     );
   }
 }
