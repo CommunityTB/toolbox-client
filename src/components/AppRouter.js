@@ -36,7 +36,7 @@ class AppRouter extends Component {
                             path={'/'}
                             component={HomePage}
                         />
-                        <PublicRoute 
+                        <PrivateRoute 
                             path='/tools/:toolId' 
                             component={ToolDetail} 
                         />
