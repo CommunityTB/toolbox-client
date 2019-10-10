@@ -31,7 +31,7 @@ class AppRouter extends Component {
                     <Navigation />
                     {this.state.errorPresent && <p className='Error-message'>We have an error! Please try again!</p>}
                     <Switch>
-                        <PublicRoute
+                        <Route
                             exact
                             path={'/'}
                             component={HomePage}
