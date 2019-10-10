@@ -15,6 +15,11 @@
     color: var(--gold)
 }
 
+.Button:focus {
+    outline: none !important;
+    border:2.4px solid var(--brown);
+}
+
 .Input {
     font-size: 14px;
     width: 100%;
