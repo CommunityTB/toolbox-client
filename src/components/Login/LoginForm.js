@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
-import './LoginForm.css';
+import { Button, Input } from '../../helpers/Helpers';
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -34,43 +34,43 @@ export default class LoginForm extends Component {
     const { error } = this.state;
     return(
       <section>
-        <form 
-          className='login-form'
-          onSubmit={this.handleSubmitJwtAuth}
-        >
-          <div role='alert'>
-            {error && <p className='red'>{error}</p>}
-          </div>
-
-          <div className='form-section'>
-            <div className='label-holder'><label htmlFor='user_name'>Username</label></div>
-            <input
+        <div className='form-space'>
+          <form 
+            className='login-form'
+            onSubmit={this.handleSubmitJwtAuth}
+          >
+            <legend className='page-title'>Login</legend> 
+            <label htmlFor='user_name' className='user-name'>Username</label>
+            <Input
                 className='form-input-field'
                 type='text' 
                 id='user_name'
                 name='userName' 
-                placeholder='User name'
+                // placeholder='User name'
                 required>
-            </input> 
-          </div>          
-
-          <div className='form-section'>
-            <div className='label-holder'><label htmlFor='user_password'>Password</label></div>       
-            <input 
+            </Input> 
+            
+            <label htmlFor='user_password' className='user-password'>Password</label>       
+            <Input
               className="form-input-field"    
               type='password' 
               id='user_password'
               name='user_password' 
-              placeholder='user_password'
+              // placeholder='user_password'
               required>
-            </input>   
-          </div>
-           
-          <button type='submit'>
-              Login
-          </button>
-          <Link className="cancel-action" to='/'>Cancel</Link>
-        </form>
+            </Input>   
+            
+            <Button type='submit' className='login-button'>
+                Login
+            </Button>
+
+            <Link className="cancel-action" to='/'>Cancel</Link>
+            <Link className="cancel-action" to='/register'>Need an account?</Link>
+            <div role='alert'>
+              {error && <p className='red-error'>{error}</p>}
+            </div>
+          </form>
+        </div>
     </section>
     )
   }

@@ -127,10 +127,22 @@ a {
   -webkit-box-shadow: inset 0 0 8px var(--black);
   box-shadow: inset 0 0 8px var(--black);
   border: 0;
+  border-radius: 10px;
 }
 
-::placeholder {
+.search-input:focus {
+  outline: none !important;
+  border:2px solid var(--gold);
+  box-shadow: 0 0 10px var(--gold);
+  border-radius: 10px;
+  -moz-box-shadow: inset 0 0 8px var(--black);
+  -webkit-box-shadow: inset 0 0 8px var(--black);
+  box-shadow: inset 0 0 8px var(--black);
+}
+
+.search-input::placeholder {
   text-align: center;
+  color: var(--gray)
 }
 
 .top-title {
@@ -157,7 +169,7 @@ a {
  ------------------------------*/
 
 footer {
-  background-image: url("../images/footer_bg.png");
+  background-image: url('../images/footer_bg.png');
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -434,57 +446,129 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
 
 /* END Tool Detail Styles
  ------------------------------*/
-
-/* BEGIN Registration Form Styles
+/* BEGIN Login + Register Form Styles
  ------------------------------*/
-
-.label-holder {
-  width: 160px;
+ .red-error{
+  color: red;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.form-input-field {
-  width: 240px;
+.user-name, .user-password, .first-name,
+.last-name, .email {
+  display: block;
+  font-weight: bold;
+  font-size: 22px;
+  color: var(--gray);
+  padding: 10px;
 }
 
-/* END Registration Form Styles
+.login-button, .register-button {
+  display: block;
+  margin: 25px auto 25px auto;
+}
+
+.cancel-action {
+  cursor: pointer;
+  display: block;
+  padding-bottom: 18px;
+}
+
+/* END Login Form Styles
  ------------------------------*/
 
-/* BEGIN Login Page Styles
+/* BEGIN Login + Register Page Styles
+ ------------------------------*/
+ 
+ .form-space {
+   padding-top: 150px;
+   width: 100%;
+ }
+
+ .login-form, .register-form {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding: 4em;
+  background-color: var(--gold);
+  max-width: 300px;
+  border-radius: 4px;
+}
+.Login-page, .Register-page {
+  background-image: url('../images/tool-login-register-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+.page-title {
+  font-family: "Holtwood One SC";
+  text-align: center;
+  font-size: 50px;
+  color: var(--gray);
+  padding: 0;
+}
+
+/* END Login + Register Page Styles
  ------------------------------*/
 
-
-
-/* END Login Page Styles
- ------------------------------*/
 /* BEGIN About US Styles
  ------------------------------*/
 
 .divaboutUs {
   line-height: 1.3em;
-  background-image: url("../images/tool_detail_bg.png");
-  background-size: 100%vh;
-  padding: 3em;
-  text-align: justify;
+  background-image: url('../images/tool_detail_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
  }
- .divaboutUs p{
-   padding:1rem;
+
+ .text-wrapper {
+   padding-top: 135px;
+   margin: 0 auto;
+   max-width: 700px;
  }
+
+ .paragraph-text {
+   line-height: 1.6rem;
+   font-size: 16px;
+   padding-bottom: 5px;
+ }
+
+ .header-gap {
+   padding-top: 30px;
+ }
+
  .HowItworksTitle{
-  font-weight: 500;
-  padding: 1em;
+  font-weight: bold;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  text-align: center;
  }
- .nextSteps {
-  font-weight: 500;
-  padding-bottom: 1em;
+
+ .nextSteps { 
+  line-height: 1.6rem; 
+  padding-bottom: 10px;
  }
+
 .sectionTitle {
-  padding: 3%;
-  font-weight: 600;
+  font-family: "Holtwood One SC"; 
+  font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
 }
+
 .stepsList li{
-  line-height: 1.2rem;
-  padding: .8em;
+  line-height: 1.8rem;
 }
+
+.bold-list {
+  font-weight: bold;
+}
+
 /* END About Us Styles
  ------------------------------*/
 
@@ -495,7 +579,39 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
- 
+  .login-form, .register-form {
+    max-width: 192px;
+    width: 100%;
+  }
+
+  .page-title {
+    font-size: 35px;
+  }
+
+  .user-name, .user-password, .first-name,
+  .last-name, .email {
+  font-size: 20px;
+  }
+
+  .paragraph-text, .next-steps {
+    line-height: 1.4;
+  }
+
+  .form-space {
+    padding-top: 75px;
+  }
+
+  .text-wrapper {
+    padding-top: 40px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 30px;
+  }
+
+  .sectionTitle {
+    line-height: 1.2;
+    padding-bottom: 10px;
+  }
 
 }
 
@@ -507,6 +623,8 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     grid-template-columns: auto auto;
     grid-gap: 30px;
   }
+
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -543,6 +661,11 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .text-wrapper {
+    padding-top: 120px;
+    padding-bottom: 70px;
   }
 }
 
