@@ -40,7 +40,6 @@ class RegisterForm extends Component {
   }
 
   render() {
-    // const { first_name, last_name, user_name, user_password, email } = this.state
     return (
       <div className='form-space'>
         <form onSubmit={this.handleSubmit} className="register-form">
@@ -52,7 +51,6 @@ class RegisterForm extends Component {
               id="first-name" 
               type="text" 
               name="firstName" 
-              // placeholder={first_name} 
               onChange={this.handleChange} 
               required 
             />
@@ -63,7 +61,6 @@ class RegisterForm extends Component {
               id="last-name" 
               type="text" 
               name="lastName" 
-              // placeholder={last_name} 
               onChange={this.handleChange} 
               required 
             />
@@ -74,7 +71,6 @@ class RegisterForm extends Component {
               id="email" 
               type="text" 
               name="email" 
-              // placeholder={email} 
               onChange={this.handleChange} 
               required 
             />
@@ -85,7 +81,6 @@ class RegisterForm extends Component {
               id="user-name" 
               type="text" 
               name="userName" 
-              // placeholder={user_name} 
               onChange={this.handleChange} 
               required 
             />
@@ -96,7 +91,6 @@ class RegisterForm extends Component {
               id="password" 
               type="password" 
               name="password" 
-              // placeholder={user_password} 
               onChange={this.handleChange} 
               required 
             />
