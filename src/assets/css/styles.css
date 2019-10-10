@@ -662,6 +662,11 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     flex-direction: column;
     justify-content: center;
   }
+
+  .text-wrapper {
+    padding-top: 120px;
+    padding-bottom: 70px;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
