@@ -9,7 +9,9 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <RegistrationForm onCreateNewUser={this.pushLogin} />
+      <section className='Register-page'>
+        <RegistrationForm onCreateNewUser={this.pushLogin} />
+      </section>
     );
   }
 }

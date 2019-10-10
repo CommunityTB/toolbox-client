@@ -28,7 +28,7 @@ class ToolsBasket extends Component {
               const { tools, myBasket } = value.state
               const { completedCheckout, reservedItems } = this.state
               const items = completedCheckout ? reservedItems : myBasket.slice()
-              const listHeader = completedCheckout ? <h3>Reserved for Pick-Up</h3> : <h3>My Basket</h3>
+              const listHeader = completedCheckout ? <h3>Reserved for Pick-Up</h3> : <h3>My Toolbox</h3>
               if (items.length && tools.length) {
                 const basketOfTools = []
                 items.forEach(id => {
@@ -56,7 +56,7 @@ class ToolsBasket extends Component {
               return (
                 <div>
                   {listHeader}
-                  <p className="no-items"><em>Your basket is empty</em></p>
+                  <p className="no-items"><em>Your toolbox is empty</em></p>
                 </div>
                 )
             }

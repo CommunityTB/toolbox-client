@@ -1,0 +1,51 @@
+.Button {
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: var(--gray);
+    border-radius: 10px;
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.Button:hover {
+    color: var(--gold)
+}
+
+.Button:focus {
+    outline: none !important;
+    border:2.4px solid var(--brown);
+}
+
+.Input {
+    font-size: 14px;
+    width: 100%;
+    max-width: 250px;
+    height: 35px;
+    padding-left: 15px;
+    background-color: var(--sand);
+    color: var(--gray);
+    -moz-box-shadow: inset 0 0 8px var(--black);
+    -webkit-box-shadow: inset 0 0 8px var(--black);
+    box-shadow: inset 0 0 8px var(--black);
+    border: 0;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.Input::placeholder {
+    color: var(--gray);
+}
+
+.Input:focus {
+    outline: none !important;
+    border:2.4px solid var(--brown);
+    box-shadow: 0 0 10px var(--brown);
+    border-radius: 10px;
+    -moz-box-shadow: inset 0 0 8px var(--black);
+    -webkit-box-shadow: inset 0 0 8px var(--black);
+    box-shadow: inset 0 0 8px var(--black);
+}

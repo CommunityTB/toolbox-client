@@ -35,7 +35,7 @@ class MyToolsPage extends Component {
       <section className="my-tools-section">
         <h2>My Tools</h2>
         <div className="tabs">
-          <a href="/" onClick={(e) => this.handleClick(e, 0)}><span className={tab1}>Basket</span></a>
+          <a href="/" onClick={(e) => this.handleClick(e, 0)}><span className={tab1}>Toolbox</span></a>
           <a href="/" onClick={(e) => this.handleClick(e, 1)}><span className={tab2}>Current Checkouts</span></a>
         </div>
         {
