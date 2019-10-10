@@ -21,10 +21,6 @@ export default class Navigation extends Component {
     renderLoginLinks = () => {
         return (
             <>
-                {/* <div class="hamburger">
-                    <button class="hamburger"></button>
-                    <button class="cross"></button>
-                </div> */}
                 <ul className='nav_not_logged_in'>
                     <Link
                         to='/login'>
@@ -38,7 +34,7 @@ export default class Navigation extends Component {
                     <Link
                         className='link_space' 
                         to='/about'>
-                        About Us
+                        About
                     </Link>
                 </ul>
             </>
@@ -47,7 +43,7 @@ export default class Navigation extends Component {
 
     renderLogoutLinks = () => {
         return (
-            <div className='nav_logged_in'>
+            <ul className='nav_logged_in'>
                 <Link to='/'
                         onClick={this.handleUserLogout}
                         >
@@ -58,7 +54,7 @@ export default class Navigation extends Component {
                     to='/mytools'>
                     <img src={cart} className="cart-icon" alt="cart" /><BadgeCounter count={this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>} />
                 </Link>
-            </div>
+            </ul>
         )
     }
 
@@ -67,9 +63,7 @@ export default class Navigation extends Component {
         return (
             <nav className ='nav'>
                 <div><Link to='/'><img src={logo} className='logo' alt='Community Toolbox Logo'></img></Link></div>
-                <ul className='nav_items'>
-                    { TokenService.hasAuthToken() ? this.renderLogoutLinks() : this.renderLoginLinks() }
-                </ul>
+                { TokenService.hasAuthToken() ? this.renderLogoutLinks() : this.renderLoginLinks() }
             </nav>
         )
     }

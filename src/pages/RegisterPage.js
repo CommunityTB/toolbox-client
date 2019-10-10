@@ -3,13 +3,13 @@ import RegistrationForm from '../components/RegisterForm';
 
 
 class RegisterPage extends Component {
-  getBack = () => {
-    this.props.history.push('/')
+  pushLogin = () => {
+    this.props.history.push('/login')
   }
 
   render() {
     return (
-      <RegistrationForm onCreateNewUser={this.getBack} />
+      <RegistrationForm onCreateNewUser={this.pushLogin} />
     );
   }
 }
