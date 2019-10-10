@@ -449,6 +449,13 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
 /* END Registration Form Styles
  ------------------------------*/
 
+/* BEGIN Login Page Styles
+ ------------------------------*/
+
+
+
+/* END Login Page Styles
+ ------------------------------*/
 /* BEGIN About US Styles
  ------------------------------*/
 
@@ -489,7 +496,7 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
 
 @media only screen and (max-width: 600px) {
  
-  
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
