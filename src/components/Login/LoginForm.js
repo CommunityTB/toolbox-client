@@ -65,6 +65,7 @@ export default class LoginForm extends Component {
             </Button>
 
             <Link className="cancel-action" to='/'>Cancel</Link>
+            <Link className="cancel-action" to='/register'>Need an account?</Link>
             <div role='alert'>
               {error && <p className='red-error'>{error}</p>}
             </div>

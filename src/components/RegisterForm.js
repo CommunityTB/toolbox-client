@@ -40,7 +40,7 @@ class RegisterForm extends Component {
   }
 
   render() {
-    const { first_name, last_name, user_name, user_password, email } = this.state
+    // const { first_name, last_name, user_name, user_password, email } = this.state
     return (
       <div className='form-space'>
         <form onSubmit={this.handleSubmit} className="register-form">
