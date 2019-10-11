@@ -44,10 +44,16 @@ export default class Navigation extends Component {
     renderLogoutLinks = () => {
         return (
             <ul className='nav_logged_in'>
-                <Link to='/'
-                        onClick={this.handleUserLogout}
-                        >
-                        Logout
+                <Link 
+                    to='/'
+                    onClick={this.handleUserLogout}
+                    >
+                    Logout
+                </Link>
+                <Link
+                    className='link_space' 
+                    to='/about'>
+                    About
                 </Link>
                 <Link
                     className='link_space' 

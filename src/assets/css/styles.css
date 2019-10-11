@@ -310,7 +310,7 @@ address {
   align-items: center;
 }
 
-.remove-from-basket .fa-times {
+.remove-from-basket .x-symbol {
   color: var(--red);
 }
 
@@ -360,14 +360,27 @@ address {
   margin: 4em 0;
 }
 
-.my-tools-section span {
+.tabs span {
   margin-right: 1em;
 }
 
-.pickup-instructions {
+.pickup-step {
+  font-weight: bold;
+}
+
+.pickup-info {
   display: flex;
   justify-content: space-between;
   margin-top: 1em;
+}
+
+.instructions {
+  padding: 1em 2em 1em 1em;
+  background-color: #fafafa
+}
+
+.pickup-info p:not(:last-child) {
+  margin-bottom: 1em;
 }
 
 /* END Checkout Styles
@@ -475,7 +488,12 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
   padding-bottom: 18px;
 }
 
-/* END Login Form Styles
+.password-instructions {
+  padding-top: 15px;
+  font-size: 12px;
+}
+
+/* END Login + Register Form Styles
  ------------------------------*/
 
 /* BEGIN Login + Register Page Styles
@@ -579,26 +597,44 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
+  
+  
+  /* BEGIN Login + Register Page Styles
+ ------------------------------*/
   .login-form, .register-form {
-    max-width: 192px;
-    width: 100%;
+    width: auto;
+    border-radius: 0;
   }
 
   .page-title {
     font-size: 35px;
   }
 
+  .form-space {
+    padding-top: 75px;
+  }
+
+  .Register-page {
+    padding-bottom: 60px;
+  }
+  
+  /* END Login + Register Page Styles
+ ------------------------------*/
+  /* BEGIN Login + Register Form Styles
+ ------------------------------*/
+
   .user-name, .user-password, .first-name,
   .last-name, .email {
   font-size: 20px;
   }
 
+  /* END Login + Register Form Styles
+ ------------------------------*/
+  
+  /* BEGIN About US Styles
+ ------------------------------*/
   .paragraph-text, .next-steps {
     line-height: 1.4;
-  }
-
-  .form-space {
-    padding-top: 75px;
   }
 
   .text-wrapper {
@@ -613,6 +649,8 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     padding-bottom: 10px;
   }
 
+  /* END About Us Styles
+ ------------------------------*/
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -667,6 +705,17 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     padding-top: 120px;
     padding-bottom: 70px;
   }
+
+ /* BEGIN Login + Register Page Styles
+ ------------------------------*/
+
+ .Register-page {
+   padding-bottom: 100px;
+ }
+
+   /* END Login + Register Page  Styles
+ ------------------------------*/
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -683,8 +732,7 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     padding: 0 24px;
   } */
 
-  .tool-card-wrapper, .tool-detail-wrapper, .my-tools-section 
-  .divaboutUs{
+  .tool-card-wrapper, .my-tools-section {
     width: 960px;
     margin: 4em auto;
   }
