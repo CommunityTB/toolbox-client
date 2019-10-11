@@ -420,9 +420,10 @@ address {
   padding-bottom: 15px;
 }
 
-.tool-detail-text p {
+.tool-detail-paragraph {
   text-transform: capitalize;
   color: var(--gray);
+  padding-bottom: 20px;
 }
 
 .keep-browsing {
@@ -449,6 +450,18 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
   background-color: var(--gray);
   border-color: var(--gray);
   color: var(--white);
+  border-radius: 10px;
+}
+
+.reserve-tool-btn:hover {
+  color: var(--gold);
+}
+
+.reserve-tool-btn:focus {
+  outline: none !important;
+  border:2px solid var(--brown);
+  box-shadow: 0 0 10px var(--brown);
+  border-radius: 10px;
 }
 
 .center-button {
@@ -466,8 +479,11 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
 /* END Tool Detail Styles
  ------------------------------*/
 /* BEGIN Login + Register Form Styles
- ------------------------------*/
- .red-error{
+------------------------------*/
+legend {
+  margin: 0 auto;
+}
+.red-error{
   color: red;
   display: inline-block;
   font-size: 18px;
@@ -481,11 +497,6 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
   font-size: 22px;
   color: var(--gray);
   padding: 10px;
-}
-
-.login-button, .register-button {
-  display: block;
-  margin: 25px auto 25px auto;
 }
 
 .cancel-action {
@@ -612,7 +623,7 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     border-radius: 0;
   }
 
-  .page-title {
+  legend.page-title  {
     font-size: 35px;
   }
 
@@ -667,8 +678,6 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     grid-template-columns: auto auto;
     grid-gap: 30px;
   }
-
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -845,6 +854,15 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     padding: 0;
   }
 
-  /* END Tool Card Styles
+ /* BEGIN Tool Detail Styles
+ ------------------------------*/
+  .tool-detail {
+    padding-top: 65px;
+  }
+
+  .tool-name {
+    font-size: 25px;
+  }
+ /* END Tool Detail Styles
  ------------------------------*/
 }
