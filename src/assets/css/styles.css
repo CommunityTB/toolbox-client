@@ -595,6 +595,10 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
   .form-space {
     padding-top: 75px;
   }
+
+  .Register-page {
+    padding-bottom: 60px;
+  }
   
   /* END Login + Register Page Styles
  ------------------------------*/
