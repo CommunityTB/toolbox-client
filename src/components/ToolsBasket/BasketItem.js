@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AppContext } from '../AppProvider';
 
 class BasketItem extends Component {
@@ -15,7 +13,7 @@ class BasketItem extends Component {
   render() {
     const { tool, checkoutStatus } = this.props
     const imageUrl = `https://res.cloudinary.com/tooltimeshare/image/upload/w_48/tools/${tool.tool_img_filename}`;
-    const removeBtn = checkoutStatus ? null : <a href="/" onClick={(e)=>this.handleClick(e)}><FontAwesomeIcon icon={faTimes} /></a>
+    const removeBtn = checkoutStatus ? null : <a href="/" onClick={(e)=>this.handleClick(e)}><span className="x-symbol">&#x2715;</span></a>
     return (
       <div className="tool-line-item">
         <div className="media">

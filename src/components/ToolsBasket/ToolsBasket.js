@@ -40,16 +40,33 @@ class ToolsBasket extends Component {
                     {listHeader}
                     {basketOfTools.map(t => <BasketItem key={t.id} tool={t} checkoutStatus={completedCheckout} />)}
                     {!completedCheckout && <button className="checkout-btn" onClick={(e) => this.handleClick(e, myBasket)}>Check Out</button>}
-                    {completedCheckout && <div className="pickup-instructions">
-                      <div>
-                        <ul>
-                          <li>Step 1: Sed ut perspiciatis unde omnis iste natus error sit.</li>
-                          <li>Step 2: Voluptatem accusantium doloremque laudantium.</li>
-                          <li>Step 3: Rem aperiam, eaque ipsa quae ab illo inventore.</li>
-                        </ul>
+                    {completedCheckout &&
+                      <div className="pickup-info">
+                        <div className="instructions">
+                          <p>
+                            <span className="pickup-step">1/</span><br />
+                            Bring your ID (state ID, passport, photo id work badge)
+                          </p>
+
+                          <p>
+                            <span className="pickup-step">2/</span><br />
+                            Bring cash or debit/credit card to join if you aren't already a member of the co-op (if planning on sliding scale or volunteer hours please bring proof of income in the form of two recent paystubs or direct deposit proof of income.)
+                          </p>
+
+                          <p>
+                            <span className="pickup-step">3/</span><br />
+                            Go through safety checklist with staff member
+                          </p>
+
+                          <p>
+                            <span className="pickup-step">4/</span><br />
+                            Checkout your tool(s) and get to work!
+                          </p>
+
+                        </div>
+                        <ToolBoxMap />
                       </div>
-                      <ToolBoxMap />
-                      </div>}
+                    }
                   </div>
                 )
               }
@@ -58,7 +75,7 @@ class ToolsBasket extends Component {
                   {listHeader}
                   <p className="no-items"><em>Your toolbox is empty</em></p>
                 </div>
-                )
+              )
             }
           }
         </AppContext.Consumer>
