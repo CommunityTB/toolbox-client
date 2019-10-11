@@ -30,18 +30,6 @@ class AppProvider extends Component {
       })
   }
 
-  registerUser = (user) => {
-    UserApiService.registerUser(user)
-      .then(newUserObj => {
-        return newUserObj.json()
-      })
-      .catch(err => {
-        this.setState({
-          error: err.message
-        })
-      })
-  }
-
   removeFromBasket = (toolId) => {
     let updatedBasket = this.state.myBasket.filter(item => {
       return item !== toolId
@@ -103,7 +91,6 @@ class AppProvider extends Component {
           actions: {
             handleLoginSuccess: this.handleLoginSuccess,
             reserveTool: this.reserveTool,
-            registerUser: this.registerUser,
             removeFromBasket: this.removeFromBasket,
             checkOut: this.checkOut,
           },

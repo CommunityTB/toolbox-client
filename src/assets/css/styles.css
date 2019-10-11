@@ -475,6 +475,11 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
   padding-bottom: 18px;
 }
 
+.password-instructions {
+  padding-top: 15px;
+  font-size: 12px;
+}
+
 /* END Login + Register Form Styles
  ------------------------------*/
 
