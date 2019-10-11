@@ -580,8 +580,8 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
 
 @media only screen and (max-width: 600px) {
   .login-form, .register-form {
-    max-width: 192px;
-    width: 100%;
+    width: auto;
+    border-radius: 0;
   }
 
   .page-title {
