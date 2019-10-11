@@ -310,7 +310,7 @@ address {
   align-items: center;
 }
 
-.remove-from-basket .fa-times {
+.remove-from-basket .x-symbol {
   color: var(--red);
 }
 
@@ -360,14 +360,27 @@ address {
   margin: 4em 0;
 }
 
-.my-tools-section span {
+.tabs span {
   margin-right: 1em;
 }
 
-.pickup-instructions {
+.pickup-step {
+  font-weight: bold;
+}
+
+.pickup-info {
   display: flex;
   justify-content: space-between;
   margin-top: 1em;
+}
+
+.instructions {
+  padding: 1em 2em 1em 1em;
+  background-color: #fafafa
+}
+
+.pickup-info p:not(:last-child) {
+  margin-bottom: 1em;
 }
 
 /* END Checkout Styles

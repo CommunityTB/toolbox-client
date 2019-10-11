@@ -22,7 +22,7 @@ class ToolDetail extends Component {
                   <div className="tool-detail-text">
                     <h3 className="tool-name">{thisTool.tool_name}</h3>
                     <p>{thisTool.tool_desc}</p>
-                    <button onClick={(e) => value.actions.reserveTool(thisTool.id, e)} className="reserve-tool-btn">Reserve Tool</button>
+                    <button onClick={(e) => value.actions.addToBasket(thisTool.id, e)} className="reserve-tool-btn">Reserve Tool</button>
                     <Link className="keep-browsing" to='/'>Keep Browsing</Link>
                   </div>
                 </div>
