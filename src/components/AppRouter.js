@@ -52,7 +52,7 @@ class AppRouter extends Component {
                             path={'/mytools'}
                             component={MyToolsPage}
                         />
-                        <PublicRoute
+                        <Route
                             path={'/about'}
                             component={AboutUs}
                         />
