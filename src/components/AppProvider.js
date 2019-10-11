@@ -48,9 +48,6 @@ class AppProvider extends Component {
     }, console.log(`Emptied basket`))
   }
 
-  reserveTool = (toolId) => {
-    // TODO: Update user-api-service.js to make the API call and complete the reserve action.`)
-
   addToBasket = (toolId) => {
     if (this.state.myBasket.includes(toolId)) {
       console.log(`Tool ${toolId} is already in your basket`)
