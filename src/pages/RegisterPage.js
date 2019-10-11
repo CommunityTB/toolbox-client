@@ -1,16 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import RegistrationForm from '../components/RegisterForm';
+import history from '../history';
 
 
 class RegisterPage extends Component {
   pushLogin = () => {
-    this.props.history.push('/login')
+    history.push('/login')
   }
 
   render() {
     return (
       <section className='Register-page'>
-        <RegistrationForm onCreateNewUser={this.pushLogin} />
+        <RegistrationForm onRegistrationSuccess={this.pushLogin} />
       </section>
     );
   }

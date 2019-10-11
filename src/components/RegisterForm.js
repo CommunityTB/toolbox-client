@@ -1,45 +1,42 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { AppContext } from '../components/AppProvider';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Input } from '../helpers/Helpers';
+import AuthApiService from '../services/auth-api-service';
 
 class RegisterForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      first_name: `First Name`,
-      last_name: `Last Name`,
-      user_password: `********`,
-      email: `your-email@example.com`,
-      user_name: `your-username`,
-      // error: null
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+
+  static defaultProps = {
+    onRegistrationSuccess: () => {}
   }
 
-  static contextType = AppContext
+  state = { error: null }
 
-  handleSubmit(e) {
-    e.preventDefault()
-    const newUser = {
-      first_name: e.target['firstName'].value,
-      last_name: e.target['lastName'].value,
-      email: e.target['email'].value,
-      user_name: e.target['userName'].value,
-      user_password: e.target['password'].value,
-    }
-
-    this.context.actions.registerUser(newUser)
-    this.props.onCreateNewUser()
+  handleSubmit = event => {
+    event.preventDefault()
+    const { first_name, last_name, email, user_name, user_password } = event.target
+    AuthApiService.postUser({
+      first_name: first_name.value,
+      last_name: last_name.value,
+      email: email.value,
+      user_name: user_name.value,
+      user_password: user_password.value
+    })
+    .then( () => {
+      first_name.value = ''
+      last_name.value = ''
+      email.value = ''
+      user_name.value = ''
+      user_password.value = ''
+      this.props.onRegistrationSuccess()
+    })
+    .catch( response => {
+      this.setState({ error: response.error })
+    }) 
   }
 
-  handleChange(e) {
-    const { name, value } = e.target
-    this.setState({ [name]: value });
-  }
 
   render() {
+    const { error } = this.state
     return (
       <div className='form-space'>
         <form onSubmit={this.handleSubmit} className="register-form">
@@ -48,50 +45,40 @@ class RegisterForm extends Component {
             <label htmlFor="first-name" className="first-name">First Name</label>
             <Input 
               className="form-input-field" 
-              id="first-name" 
               type="text" 
-              name="firstName" 
-              onChange={this.handleChange} 
+              name="first_name"  
               required 
             />
         
             <label htmlFor="last-name" className="last-name">Last Name</label>
             <Input 
-              className="form-input-field" 
-              id="last-name" 
+              className="form-input-field"  
               type="text" 
-              name="lastName" 
-              onChange={this.handleChange} 
+              name="last_name" 
               required 
             />
         
             <label htmlFor="email" className="email">Email</label>
             <Input 
-              className="form-input-field" 
-              id="email" 
+              className="form-input-field"  
               type="text" 
               name="email" 
-              onChange={this.handleChange} 
               required 
             />
           
             <label htmlFor="user-name" className="user-name">Username</label>
             <Input 
               className="form-input-field" 
-              id="user-name" 
               type="text" 
-              name="userName" 
-              onChange={this.handleChange} 
+              name="user_name" 
               required 
             />
           
             <label htmlFor="password" className="user-password">Password</label>
             <Input 
               className="form-input-field" 
-              id="password" 
               type="password" 
-              name="password" 
-              onChange={this.handleChange} 
+              name="user_password" 
               required 
             />
           
@@ -102,9 +89,11 @@ class RegisterForm extends Component {
             <Link className="cancel-action" to='/'>
               Cancel
             </Link>
-        {/* <div role='alert'>
-          {error && <p className='red-error'>{error}</p>}
-        </div> */}
+
+            <div role='alert'>
+              {error && <p className='red-error'>{error}</p>}
+            </div>
+            <p className='password-instructions'>* Password must contain 1 uppercase letter, 1 lowercase letter, a number, and a special character </p>
       </form>
     </div>
     )

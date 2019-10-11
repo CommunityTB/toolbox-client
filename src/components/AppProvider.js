@@ -31,16 +31,21 @@ class AppProvider extends Component {
       })
   }
 
-  registerUser = (user) => {
-    UserApiService.registerUser(user)
-      .then(newUserObj => {
-        return newUserObj.json()
-      })
-      .catch(err => {
-        this.setState({
-          error: err.message
-        })
-      })
+
+  removeFromBasket = (toolId) => {
+    let updatedBasket = this.state.myBasket.filter(item => {
+      return item !== toolId
+    })
+    this.setState({
+      myBasket: updatedBasket
+    }, console.log(`Removed item. Basket now contains: ${this.state.myBasket}`))
+  }
+
+  checkOut = (toolIds) => {
+    console.log("Doesn't do anything yet, but should reserve tool IDs: ", toolIds)
+    this.setState({
+      myBasket: []
+    }, console.log(`Emptied basket`))
   }
 
   addToBasket = (toolId) => {
@@ -110,8 +115,8 @@ class AppProvider extends Component {
           },
           actions: {
             handleLoginSuccess: this.handleLoginSuccess,
+            reserveTool: this.reserveTool,
             addToBasket: this.addToBasket,
-            registerUser: this.registerUser,
             removeFromBasket: this.removeFromBasket,
             checkOut: this.checkOut,
           },

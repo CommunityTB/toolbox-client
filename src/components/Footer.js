@@ -29,7 +29,7 @@ export default class Footer extends Component {
                     <Link 
                         className='white-link'
                         to='/about'>
-                        About Us  
+                        About 
                     </Link>
                 </div>
                 <address>

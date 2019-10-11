@@ -488,6 +488,11 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
   padding-bottom: 18px;
 }
 
+.password-instructions {
+  padding-top: 15px;
+  font-size: 12px;
+}
+
 /* END Login + Register Form Styles
  ------------------------------*/
 
@@ -727,7 +732,7 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     padding: 0 24px;
   } */
 
-  .tool-card-wrapper, .tool-detail-wrapper, .my-tools-section, .divaboutUs {
+  .tool-card-wrapper, .my-tools-section {
     width: 960px;
     margin: 4em auto;
   }
