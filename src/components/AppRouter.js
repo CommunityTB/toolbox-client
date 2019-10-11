@@ -9,7 +9,7 @@ import MyToolsPage from '../pages/MyToolsPage';
 import Footer from '../components/Footer'
 import AboutUs from '../pages/AboutUs';
 import NotFoundPage from '../pages/NotFoundPage';
-import HowItWorks from '../pages/HowItWorks';
+// import HowItWorks from '../pages/HowItWorks';
 import PublicRoute from '../helpers/PublicRoute';
 import PrivateRoute from '../helpers/PrivateRoute';
 
@@ -56,10 +56,10 @@ class AppRouter extends Component {
                             path={'/about'}
                             component={AboutUs}
                         />
-                        <PublicRoute
+                        {/* <PublicRoute
                             path={'/how'}
                             component={HowItWorks}
-                        />
+                        /> */}
                         <Route
                             component={NotFoundPage}
                         />
