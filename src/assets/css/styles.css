@@ -475,7 +475,7 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
   padding-bottom: 18px;
 }
 
-/* END Login Form Styles
+/* END Login + Register Form Styles
  ------------------------------*/
 
 /* BEGIN Login + Register Page Styles
@@ -579,26 +579,44 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
+  
+  
+  /* BEGIN Login + Register Page Styles
+ ------------------------------*/
   .login-form, .register-form {
-    max-width: 192px;
-    width: 100%;
+    width: auto;
+    border-radius: 0;
   }
 
   .page-title {
     font-size: 35px;
   }
 
+  .form-space {
+    padding-top: 75px;
+  }
+
+  .Register-page {
+    padding-bottom: 60px;
+  }
+  
+  /* END Login + Register Page Styles
+ ------------------------------*/
+  /* BEGIN Login + Register Form Styles
+ ------------------------------*/
+
   .user-name, .user-password, .first-name,
   .last-name, .email {
   font-size: 20px;
   }
 
+  /* END Login + Register Form Styles
+ ------------------------------*/
+  
+  /* BEGIN About US Styles
+ ------------------------------*/
   .paragraph-text, .next-steps {
     line-height: 1.4;
-  }
-
-  .form-space {
-    padding-top: 75px;
   }
 
   .text-wrapper {
@@ -613,6 +631,8 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     padding-bottom: 10px;
   }
 
+  /* END About Us Styles
+ ------------------------------*/
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -667,6 +687,17 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     padding-top: 120px;
     padding-bottom: 70px;
   }
+
+ /* BEGIN Login + Register Page Styles
+ ------------------------------*/
+
+ .Register-page {
+   padding-bottom: 100px;
+ }
+
+   /* END Login + Register Page  Styles
+ ------------------------------*/
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
