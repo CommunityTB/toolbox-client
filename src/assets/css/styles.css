@@ -714,8 +714,7 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
     padding: 0 24px;
   } */
 
-  .tool-card-wrapper, .tool-detail-wrapper, .my-tools-section 
-  .divaboutUs{
+  .tool-card-wrapper, .tool-detail-wrapper, .my-tools-section, .divaboutUs {
     width: 960px;
     margin: 4em auto;
   }
