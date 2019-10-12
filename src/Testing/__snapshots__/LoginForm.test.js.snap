@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm component renders a LoginForm by default 1`] = `
+<section>
+  <div
+    className="form-space"
+  >
+    <form
+      className="login-form"
+      onSubmit={[Function]}
+    >
+      <legend
+        className="page-title"
+      >
+        Login
+      </legend>
+      <label
+        className="user-name"
+        htmlFor="user_name"
+      >
+        Username
+      </label>
+      <Input
+        className="form-input-field"
+        id="user_name"
+        name="userName"
+        required={true}
+        type="text"
+      />
+      <label
+        className="user-password"
+        htmlFor="user_password"
+      >
+        Password
+      </label>
+      <Input
+        className="form-input-field"
+        id="user_password"
+        name="user_password"
+        required={true}
+        type="password"
+      />
+      <Button
+        className="login-button"
+        type="submit"
+      >
+        Login
+      </Button>
+      <Link
+        className="cancel-action"
+        to="/"
+      >
+        Cancel
+      </Link>
+      <Link
+        className="cancel-action"
+        to="/register"
+      >
+        Need an account?
+      </Link>
+      <div
+        role="alert"
+      />
+    </form>
+  </div>
+</section>
+`;

@@ -6,7 +6,7 @@ class BasketItem extends Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    console.log('Remove item id', this.props.tool.id)
+    //console.log('Remove item id', this.props.tool.id)
     this.context.actions.removeFromBasket(this.props.tool.id)
   }
 

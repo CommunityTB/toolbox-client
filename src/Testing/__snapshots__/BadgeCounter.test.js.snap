@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BadgeCounter component renders a BadgeCounter by default 1`] = `<div />`;
+
+exports[`BadgeCounter component renders the badge counter from props 1`] = `
+<div>
+  <div
+    className="tools_count"
+  >
+    1
+  </div>
+</div>
+`;
