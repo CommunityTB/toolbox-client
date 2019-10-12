@@ -4,13 +4,13 @@ import ToolsBasket from '../components/ToolsBasket/ToolsBasket'
 import CurrentCheckouts from '../components/CurrentCheckouts/CurrentCheckouts'
 
 
-it('CurrentCheckouts renders without crashing', () => {
+it.skip('CurrentCheckouts renders without crashing', () => {
    const div = document.createElement('div');
    ReactDOM.render(<CurrentCheckouts/>, div);
    ReactDOM.unmountComponentAtNode(div);
 });
 
-it('ToolsBasket renders without crashing', () => {
+it.skip('ToolsBasket renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<ToolsBasket/>, div);
   ReactDOM.unmountComponentAtNode(div);
