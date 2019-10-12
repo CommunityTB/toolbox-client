@@ -43,8 +43,7 @@ class RegisterForm extends Component {
           
             <legend className='page-title'>Register</legend> 
             <label htmlFor="first-name" className="first-name">First Name</label>
-            <Input 
-              className="form-input-field" 
+            <Input  
               type="text" 
               name="first_name"  
               required 
@@ -52,15 +51,13 @@ class RegisterForm extends Component {
         
             <label htmlFor="last-name" className="last-name">Last Name</label>
             <Input 
-              className="form-input-field"  
               type="text" 
               name="last_name" 
               required 
             />
         
             <label htmlFor="email" className="email">Email</label>
-            <Input 
-              className="form-input-field"  
+            <Input  
               type="text" 
               name="email" 
               required 
@@ -68,15 +65,13 @@ class RegisterForm extends Component {
           
             <label htmlFor="user-name" className="user-name">Username</label>
             <Input 
-              className="form-input-field" 
               type="text" 
               name="user_name" 
               required 
             />
           
             <label htmlFor="password" className="user-password">Password</label>
-            <Input 
-              className="form-input-field" 
+            <Input  
               type="password" 
               name="user_password" 
               required 

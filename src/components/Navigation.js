@@ -50,6 +50,11 @@ export default class Navigation extends Component {
                     >
                     Logout
                 </Link>
+                <Link 
+                    className='link_space' 
+                    to='/'>
+                    Tools
+                </Link>
                 <Link
                     className='link_space' 
                     to='/about'>

@@ -106,7 +106,7 @@ export class AutoComplete extends Component {
           className="search-input"
           onChange={onChange}
           value={userInput}
-          placeholder="ENTER A TOOL"
+          placeholder="FILTER TOOLS"
         />
         {listComponents}
       </React.Fragment>
