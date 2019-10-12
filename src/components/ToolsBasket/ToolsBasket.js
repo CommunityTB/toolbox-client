@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BasketItem from './BasketItem';
 import { AppContext } from '../AppProvider';
-import ToolBoxMap from '../ToolBoxMap/ToolBoxMap'
+import ToolBoxMap from '../ToolBoxMap/ToolBoxMap';
 
 
 class ToolsBasket extends Component {

@@ -32,6 +32,13 @@ export default class Footer extends Component {
                         Tools 
                     </Link>
                 </div>
+                <div className='about-footer'>
+                    <Link 
+                        className='white-link'
+                        to='/about'>
+                        About 
+                    </Link>
+                </div>
                 <address>
                     1234 Tooltime Rd.<br/> 
                     Timothy, California, 97123
