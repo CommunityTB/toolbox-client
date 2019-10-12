@@ -6,7 +6,7 @@ class ToolBoxMap extends Component {
   state = {
     mapStyles: {
       width: '480px',
-      height: '320px'
+      height: '360px'
     }
   }
   render() {

@@ -307,6 +307,10 @@ address {
   align-items: center;
 }
 
+.remove-from-basket {
+  margin-left: 1em;
+}
+
 .remove-from-basket .x-symbol {
   color: var(--red);
 }
@@ -369,11 +373,17 @@ address {
   display: flex;
   justify-content: space-between;
   margin-top: 1em;
+  flex-direction: column;
 }
 
 .instructions {
   padding: 1em 2em 1em 1em;
-  background-color: #fafafa
+  background-color: var(--gold);
+}
+
+.instructions h3 {
+  font-family: 'Holtwood One SC', serif;
+  font-weight: 400;
 }
 
 .pickup-info p:not(:last-child) {
@@ -388,7 +398,7 @@ address {
 
 .toolbox-map {
   width: 480px;
-  height: 320px;
+  height: 360px;
 }
 
 /* END Map Styles
@@ -737,6 +747,9 @@ legend {
 /* Large devices (laptops/desktops, 992px and up) */
 
 @media only screen and (min-width: 992px) {
+  .pickup-info {
+    flex-direction: unset;
+  }
   
   .tool-card-wrapper {
     display: grid;

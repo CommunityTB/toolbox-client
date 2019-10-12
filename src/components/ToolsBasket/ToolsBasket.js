@@ -43,6 +43,7 @@ class ToolsBasket extends Component {
                     {completedCheckout &&
                       <div className="pickup-info">
                         <div className="instructions">
+                          <h3>Next Steps</h3>
                           <p>
                             <span className="pickup-step">1.</span><br />
                             Bring your ID (state ID, passport, photo id work badge)
