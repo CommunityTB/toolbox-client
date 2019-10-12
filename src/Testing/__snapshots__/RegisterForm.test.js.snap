@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegisterForm component renders a RegisterForm by default 1`] = `
+<div
+  className="form-space"
+>
+  <form
+    className="register-form"
+    onSubmit={[Function]}
+  >
+    <legend
+      className="page-title"
+    >
+      Register
+    </legend>
+    <label
+      className="first-name"
+      htmlFor="first-name"
+    >
+      First Name
+    </label>
+    <Input
+      className="form-input-field"
+      id="first-name"
+      name="firstName"
+      onChange={[Function]}
+      required={true}
+      type="text"
+    />
+    <label
+      className="last-name"
+      htmlFor="last-name"
+    >
+      Last Name
+    </label>
+    <Input
+      className="form-input-field"
+      id="last-name"
+      name="lastName"
+      onChange={[Function]}
+      required={true}
+      type="text"
+    />
+    <label
+      className="email"
+      htmlFor="email"
+    >
+      Email
+    </label>
+    <Input
+      className="form-input-field"
+      id="email"
+      name="email"
+      onChange={[Function]}
+      required={true}
+      type="text"
+    />
+    <label
+      className="user-name"
+      htmlFor="user-name"
+    >
+      Username
+    </label>
+    <Input
+      className="form-input-field"
+      id="user-name"
+      name="userName"
+      onChange={[Function]}
+      required={true}
+      type="text"
+    />
+    <label
+      className="user-password"
+      htmlFor="password"
+    >
+      Password
+    </label>
+    <Input
+      className="form-input-field"
+      id="password"
+      name="password"
+      onChange={[Function]}
+      required={true}
+      type="password"
+    />
+    <Button
+      className="register-button"
+      type="submit"
+    >
+      Submit
+    </Button>
+    <Link
+      className="cancel-action"
+      to="/"
+    >
+      Cancel
+    </Link>
+  </form>
+</div>
+`;

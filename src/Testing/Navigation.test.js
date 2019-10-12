@@ -3,18 +3,17 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import AboutUs from '../pages/AboutUs.js';
+import Navigation from '../components/Navigation'
 
-describe(`AboutUs component`, () => {
+describe(`Navigation component`, () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(
-      <BrowserRouter> <AboutUs /></BrowserRouter>, div);
+    ReactDOM.render(<BrowserRouter><Navigation /></BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-  
-  it('renders AboutUs by default', () => {
-    const wrapper = shallow(<AboutUs />)
+
+  it('renders a Navigation by default', () => {
+    const wrapper = shallow(<Navigation />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 })

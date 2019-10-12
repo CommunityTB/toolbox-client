@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders a Header by default 1`] = `
+<header>
+  <img
+    alt="Community Toolbox Hero"
+    className="hero"
+    src="hero_bg.png"
+  />
+  <div
+    className="middle-align"
+  >
+    <h1
+      className="top-title"
+    >
+      THE COMMUNITY
+    </h1>
+    <h1
+      className="bottom-title"
+    >
+      TOOLBOX
+    </h1>
+    <AutoCompleteWrap />
+  </div>
+</header>
+`;

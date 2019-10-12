@@ -3,18 +3,17 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import AboutUs from '../pages/AboutUs.js';
+import Footer from '../components/Footer'
 
-describe(`AboutUs component`, () => {
+describe(`Footer component`, () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(
-      <BrowserRouter> <AboutUs /></BrowserRouter>, div);
+    ReactDOM.render(<BrowserRouter><Footer /></BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-  
-  it('renders AboutUs by default', () => {
-    const wrapper = shallow(<AboutUs />)
+
+  it('renders a Footer by default', () => {
+    const wrapper = shallow(<Footer />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 })
