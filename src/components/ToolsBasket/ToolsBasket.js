@@ -43,24 +43,28 @@ class ToolsBasket extends Component {
                     {completedCheckout &&
                       <div className="pickup-info">
                         <div className="instructions">
-                          <h3>Next Steps</h3>
+                          <h3 className="next-steps-header">Next Steps</h3>
                           <p>
-                            <span className="pickup-step">1.</span><br />
+                            <span className="pickup-step">1.</span>
+                            {' '}
                             Bring your ID (state ID, passport, photo id work badge)
                           </p>
 
                           <p>
-                            <span className="pickup-step">2.</span><br />
+                            <span className="pickup-step">2.</span>
+                            {' '}
                             Bring cash or debit/credit card to join if you aren't already a member of the co-op (if planning on sliding scale or volunteer hours please bring proof of income in the form of two recent paystubs or direct deposit proof of income.)
                           </p>
 
                           <p>
-                            <span className="pickup-step">3.</span><br />
+                            <span className="pickup-step">3.</span>
+                            {' '}
                             Go through safety checklist with staff member
                           </p>
 
                           <p>
-                            <span className="pickup-step">4.</span><br />
+                            <span className="pickup-step">4.</span>
+                            {' '}
                             Checkout your tool(s) and get to work!
                           </p>
 

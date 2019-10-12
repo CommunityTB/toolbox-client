@@ -336,7 +336,7 @@ address {
 
 .tools-basket h3, .current-checkouts h3 {
   font-weight: 600;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.3em;
 }
 
 .current-checkouts p {
@@ -374,6 +374,11 @@ address {
   justify-content: space-between;
   margin-top: 1em;
   flex-direction: column;
+}
+
+.next-steps-header {
+  color: var(--gray);
+  font-size: 25px;
 }
 
 .instructions {
@@ -601,6 +606,7 @@ legend {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
+  color: var(--gray);
 }
 
 .stepsList li{
@@ -639,7 +645,11 @@ legend {
   }
 
   .Register-page {
-    padding-bottom: 60px;
+    padding-bottom: 75px;
+  }
+
+  .Login-Page {
+    padding-bottom: 15px;
   }
   
   /* END Login + Register Page Styles
@@ -730,6 +740,10 @@ legend {
   .text-wrapper {
     padding-top: 120px;
     padding-bottom: 70px;
+  }
+
+  .tool-card {
+    margin-bottom: 0;
   }
 
  /* BEGIN Login + Register Page Styles
