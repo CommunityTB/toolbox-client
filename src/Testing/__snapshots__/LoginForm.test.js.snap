@@ -21,7 +21,6 @@ exports[`LoginForm component renders a LoginForm by default 1`] = `
         Username
       </label>
       <Input
-        className="form-input-field"
         id="user_name"
         name="userName"
         required={true}
@@ -34,7 +33,6 @@ exports[`LoginForm component renders a LoginForm by default 1`] = `
         Password
       </label>
       <Input
-        className="form-input-field"
         id="user_password"
         name="user_password"
         required={true}

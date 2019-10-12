@@ -32,9 +32,19 @@ exports[`Footer component renders a Footer by default 1`] = `
   >
     <Link
       className="white-link"
+      to="/"
+    >
+      Tools
+    </Link>
+  </div>
+  <div
+    className="about-footer"
+  >
+    <Link
+      className="white-link"
       to="/about"
     >
-      About Us
+      About
     </Link>
   </div>
   <address>

@@ -5,7 +5,7 @@ exports[`RegisterPage component renders a RegisterPage by default 1`] = `
   className="Register-page"
 >
   <RegisterForm
-    onCreateNewUser={[Function]}
+    onRegistrationSuccess={[Function]}
   />
 </section>
 `;

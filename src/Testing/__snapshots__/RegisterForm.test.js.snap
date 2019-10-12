@@ -20,10 +20,7 @@ exports[`RegisterForm component renders a RegisterForm by default 1`] = `
       First Name
     </label>
     <Input
-      className="form-input-field"
-      id="first-name"
-      name="firstName"
-      onChange={[Function]}
+      name="first_name"
       required={true}
       type="text"
     />
@@ -34,10 +31,7 @@ exports[`RegisterForm component renders a RegisterForm by default 1`] = `
       Last Name
     </label>
     <Input
-      className="form-input-field"
-      id="last-name"
-      name="lastName"
-      onChange={[Function]}
+      name="last_name"
       required={true}
       type="text"
     />
@@ -48,10 +42,7 @@ exports[`RegisterForm component renders a RegisterForm by default 1`] = `
       Email
     </label>
     <Input
-      className="form-input-field"
-      id="email"
       name="email"
-      onChange={[Function]}
       required={true}
       type="text"
     />
@@ -62,10 +53,7 @@ exports[`RegisterForm component renders a RegisterForm by default 1`] = `
       Username
     </label>
     <Input
-      className="form-input-field"
-      id="user-name"
-      name="userName"
-      onChange={[Function]}
+      name="user_name"
       required={true}
       type="text"
     />
@@ -76,10 +64,7 @@ exports[`RegisterForm component renders a RegisterForm by default 1`] = `
       Password
     </label>
     <Input
-      className="form-input-field"
-      id="password"
-      name="password"
-      onChange={[Function]}
+      name="user_password"
       required={true}
       type="password"
     />
@@ -95,6 +80,14 @@ exports[`RegisterForm component renders a RegisterForm by default 1`] = `
     >
       Cancel
     </Link>
+    <div
+      role="alert"
+    />
+    <p
+      className="password-instructions"
+    >
+      * Password must contain 1 uppercase letter, 1 lowercase letter, a number, and a special character 
+    </p>
   </form>
 </div>
 `;

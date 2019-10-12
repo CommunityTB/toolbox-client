@@ -31,6 +31,12 @@ exports[`Navigation component renders a Navigation by default 1`] = `
     </Link>
     <Link
       className="link_space"
+      to="/"
+    >
+      Tools
+    </Link>
+    <Link
+      className="link_space"
       to="/about"
     >
       About
