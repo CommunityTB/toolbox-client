@@ -21,10 +21,10 @@ export default class AboutUs extends Component {
             <h3 className="HowItworksTitle">I picked my tools—now what?</h3>
             <p className="nextSteps">We're happy we have what you needed! Just follow the list below and your pick up at our warehouse should go smoothly.</p>
             <ul className="stepsList">
-              <li className='bold-list'>1) Bring your ID (state ID, passport, photo id work badge)</li>
-              <li className='bold-list'>2) Bring cash or debit/credit card to join if you aren't already a member of the co-op (if planning on sliding scale or volunteer hours please bring proof of income in the form of two recent paystubs or direct deposit proof of income.)</li>
-              <li className='bold-list'>3) Go through safety checklist with staff member</li>
-              <li className='bold-list'>4) Checkout your tool(s) and get to work!</li>
+              <li className='bold-list'>1.{' '}Bring your ID (state ID, passport, photo id work badge)</li>
+              <li className='bold-list'>2.{' '}Bring cash or debit/credit card to join if you aren't already a member of the co-op (if planning on sliding scale or volunteer hours please bring proof of income in the form of two recent paystubs or direct deposit proof of income.)</li>
+              <li className='bold-list'>3.{' '}Go through safety checklist with staff member</li>
+              <li className='bold-list'>4.{' '}Checkout your tool(s) and get to work!</li>
             </ul>
           </article>
 
