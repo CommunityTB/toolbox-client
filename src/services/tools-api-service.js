@@ -15,7 +15,7 @@ const ToolsApiService = {
             }
                 return res.json()
         })
-    }   
+    }
 }
 
 export default ToolsApiService;
