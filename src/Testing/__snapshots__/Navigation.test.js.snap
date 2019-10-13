@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation component renders a Navigation by default 1`] = `
+<nav
+  className="nav"
+>
+  <div>
+    <Link
+      to="/"
+    >
+      <img
+        alt="Community Toolbox Logo"
+        className="logo"
+        src="ct_logo_color.svg"
+      />
+    </Link>
+  </div>
+  <ul
+    className="nav_not_logged_in"
+  >
+    <Link
+      to="/login"
+    >
+      Login
+    </Link>
+    <Link
+      className="link_space"
+      to="/register"
+    >
+      Register
+    </Link>
+    <Link
+      className="link_space"
+      to="/about"
+    >
+      About
+    </Link>
+  </ul>
+</nav>
+`;

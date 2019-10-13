@@ -42,21 +42,17 @@ export default class LoginForm extends Component {
             <legend className='page-title'>Login</legend> 
             <label htmlFor='user_name' className='user-name'>Username</label>
             <Input
-                className='form-input-field'
                 type='text' 
                 id='user_name'
                 name='userName' 
-                // placeholder='User name'
                 required>
             </Input> 
             
             <label htmlFor='user_password' className='user-password'>Password</label>       
-            <Input
-              className="form-input-field"    
+            <Input   
               type='password' 
               id='user_password'
               name='user_password' 
-              // placeholder='user_password'
               required>
             </Input>   
             

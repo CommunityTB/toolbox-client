@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegisterPage component renders a RegisterPage by default 1`] = `
+<section
+  className="Register-page"
+>
+  <RegisterForm
+    onCreateNewUser={[Function]}
+  />
+</section>
+`;

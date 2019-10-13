@@ -31,6 +31,11 @@ export default class Navigation extends Component {
                         to='/register'>
                         Register
                     </Link>
+                    <Link 
+                        className='link_space' 
+                        to='/'>
+                        Tools
+                    </Link>
                     <Link
                         className='link_space' 
                         to='/about'>
@@ -49,6 +54,11 @@ export default class Navigation extends Component {
                     onClick={this.handleUserLogout}
                     >
                     Logout
+                </Link>
+                <Link 
+                    className='link_space' 
+                    to='/'>
+                    Tools
                 </Link>
                 <Link
                     className='link_space' 

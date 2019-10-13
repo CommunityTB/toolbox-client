@@ -28,6 +28,13 @@ export default class Footer extends Component {
                 <div className='inventory-footer'>
                     <Link 
                         className='white-link'
+                        to='/'>
+                        Tools 
+                    </Link>
+                </div>
+                <div className='about-footer'>
+                    <Link 
+                        className='white-link'
                         to='/about'>
                         About 
                     </Link>
