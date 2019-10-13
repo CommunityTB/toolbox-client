@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import UserApiService from '../services/user-api-service';
 import BasketService from '../services/basket-service';
-import { API_BASE_URL } from '../config';
 import history from '../history';
+import ToolsApiService from '../services/tools-api-service';
 
 export const AppContext = React.createContext();
 
@@ -28,6 +28,18 @@ class AppProvider extends Component {
         this.setState({
           error: err.message
         })
+      })
+  }
+
+  retrieveTools = () => {
+    ToolsApiService.getAllTools()
+      .then((tools) => {
+        this.setState({ tools })
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        });
       })
   }
 
@@ -57,35 +69,47 @@ class AppProvider extends Component {
   }
   
   checkOut = (toolIds) => {
-    // TODO: Update user-api-service.js to make the API call and complete the reserve action.`)
-    // console.log("Doesn't do anything yet, but should reserve tool IDs: ", toolIds)
-    this.setState({
-      myBasket: []
+    // this function will aready contain myBasket. Map the user ID and tool ids into an object to push into the checkoutTools function below
+    const userId = this.state.user.id;
+
+    let myBasketArrOfObjs = [];
+    toolIds.map(tool => {
+      myBasketArrOfObjs.push(
+        {
+          tool_id: tool,
+          user_id: userId
+        }
+      )
     })
-    BasketService.clearBasket()
+    // send newly creeated object of tool_ids and user_id to server to store the data
+    ToolsApiService.checkoutTools(myBasketArrOfObjs)
+      .then(newlyCheckedoutTools => 
+        this.setState({
+          myBasket: [],
+          myCheckedOutTools: newlyCheckedoutTools
+        }, console.log(`Emptied basket`))
+      )
+      .then(() => {
+        this.retrieveTools()
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        })
+      })
+      BasketService.clearBasket()
   }
+
 
 
   componentDidMount = () => {
     let itemsInBasket = BasketService.getBasket()
     let myBasket = itemsInBasket.map(item => parseInt(item))
-    fetch(`${API_BASE_URL}/tools`, {
-      method: 'GET',
+
+    this.retrieveTools()
+    this.setState({
+      myBasket
     })
-      .then((toolsResponse) => {
-        if (!toolsResponse.ok) {
-          return toolsResponse.json().then(error => Promise.reject(error))
-        }
-        return toolsResponse.json()
-      })
-      .then((tools) => {
-        this.setState({ tools, myBasket })
-      })
-      .catch(err => {
-        this.setState({
-          error: err.message
-        });
-      })
   }
 
   render() {
@@ -101,7 +125,7 @@ class AppProvider extends Component {
             reserveTool: this.reserveTool,
             addToBasket: this.addToBasket,
             removeFromBasket: this.removeFromBasket,
-            checkOut: this.checkOut,
+            checkOut: this.checkOut
           },
         }}>
         {this.props.children}
