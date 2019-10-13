@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import UserApiService from '../services/user-api-service';
 import BasketService from '../services/basket-service';
-import { API_BASE_URL } from '../config';
 import history from '../history';
 import ToolsApiService from '../services/tools-api-service';
 
@@ -32,6 +31,17 @@ class AppProvider extends Component {
       })
   }
 
+  retrieveTools = () => {
+    ToolsApiService.getAllTools()
+      .then((tools) => {
+        this.setState({ tools })
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        });
+      })
+  }
 
   removeFromBasket = (toolId) => {
     let updatedBasket = this.state.myBasket.filter(item => {
@@ -68,7 +78,6 @@ class AppProvider extends Component {
   }
   
   checkOut = (toolIds) => {
-    // TODO: Update user-api-service.js to make the API call and complete the reserve action.`)
     // this function will aready contain myBasket. Map the user ID and tool ids into an object to push into the checkoutTools function below
     const userId = this.state.user.id;
 
@@ -89,6 +98,9 @@ class AppProvider extends Component {
           myCheckedOutTools: newlyCheckedoutTools
         }, console.log(`Emptied basket`))
       )
+      .then(() => {
+        this.retrieveTools()
+      })
       .catch(err => {
         this.setState({
           error: err.message
@@ -97,26 +109,16 @@ class AppProvider extends Component {
       BasketService.clearBasket()
   }
 
+
+
   componentDidMount = () => {
     let itemsInBasket = BasketService.getBasket()
     let myBasket = itemsInBasket.map(item => parseInt(item))
-    fetch(`${API_BASE_URL}/tools`, {
-      method: 'GET',
+
+    this.retrieveTools()
+    this.setState({
+      myBasket
     })
-      .then((toolsResponse) => {
-        if (!toolsResponse.ok) {
-          return toolsResponse.json().then(error => Promise.reject(error))
-        }
-        return toolsResponse.json()
-      })
-      .then((tools) => {
-        this.setState({ tools, myBasket })
-      })
-      .catch(err => {
-        this.setState({
-          error: err.message
-        });
-      })
   }
 
   render() {
