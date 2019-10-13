@@ -339,8 +339,12 @@ address {
   color: var(--gold);
 }
 
-.tools-basket, .current-checkouts {
+.tools-basket {
   padding: 2em 0;
+}
+
+.current-checkouts {
+  padding: 2em 1em;
 }
 
 .my-tools-section {
