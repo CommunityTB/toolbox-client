@@ -16,6 +16,7 @@
   --white: #fff;
   --black: #000;
   --red: #d20000;
+  --wd: 960px;
 }
 
 * {
@@ -342,6 +343,11 @@ address {
   padding: 2em 0;
 }
 
+.my-tools-section {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
 .tools-basket h3, .current-checkouts h3 {
   font-weight: 600;
   margin-bottom: 0.3em;
@@ -365,8 +371,7 @@ address {
 }
 
 .my-tools-section {
-  padding: 0 1em;
-  margin: 4em 0;
+  margin: 2em 1em;
 }
 
 .tabs span {
@@ -392,6 +397,7 @@ address {
 .instructions {
   padding: 1em 2em 1em 1em;
   background-color: var(--gold);
+  margin: 0 0.5em 1em 0.5em;
 }
 
 .instructions h3 {
@@ -401,6 +407,11 @@ address {
 
 .pickup-info p:not(:last-child) {
   margin-bottom: 1em;
+}
+
+.my-tools-header {
+  margin: 2em auto;
+  padding: 0 1em;
 }
 
 /* END Checkout Styles
@@ -772,6 +783,9 @@ legend {
 @media only screen and (min-width: 992px) {
   .pickup-info {
     flex-direction: unset;
+    width: var(--wd);
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .tool-card-wrapper {
@@ -780,13 +794,9 @@ legend {
     grid-gap: 18px;
   }
 
-  /* main {
-    padding: 0 24px;
-  } */
-
   .tool-card-wrapper, .my-tools-section {
-    width: 960px;
-    margin: 4em auto;
+    width: var(--wd);
+    margin: 2em auto;
   }
 
   .tool-card-wrapper {
@@ -906,4 +916,23 @@ legend {
 
  /* END Tool Detail Styles
  ------------------------------*/
+
+ .my-tools-header {
+    width: var(--wd);
+    margin: 2em auto;
+  }
+
+  .current-checkouts {
+    width: var(--wd);
+    margin-left: auto;
+    margin-right: auto;
+  }  
+  
+  .current-checkouts {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .instructions {
+    margin: 0;
+  }
 }

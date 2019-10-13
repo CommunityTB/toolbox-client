@@ -31,32 +31,15 @@ class AppProvider extends Component {
       })
   }
 
-
-  removeFromBasket = (toolId) => {
-    let updatedBasket = this.state.myBasket.filter(item => {
-      return item !== toolId
-    })
-    this.setState({
-      myBasket: updatedBasket
-    }, console.log(`Removed item. Basket now contains: ${this.state.myBasket}`))
-  }
-
-  checkOut = (toolIds) => {
-    console.log("Doesn't do anything yet, but should reserve tool IDs: ", toolIds)
-    this.setState({
-      myBasket: []
-    }, console.log(`Emptied basket`))
-  }
-
   addToBasket = (toolId) => {
     if (this.state.myBasket.includes(toolId)) {
-      console.log(`Tool ${toolId} is already in your basket`)
+      // console.log(`Tool ${toolId} is already in your basket`)
     } else {
       let updatedBasket = this.state.myBasket
       updatedBasket.push(toolId)
       this.setState({
         myBasket: updatedBasket
-      }, console.log(`Added item. Basket now contains: ${this.state.myBasket}`))
+      })
       BasketService.addItemToBasket(toolId)
     }
   }
@@ -68,17 +51,17 @@ class AppProvider extends Component {
       })
       this.setState({
         myBasket: updatedBasket
-      }, console.log(`Removed item. Basket now contains: ${this.state.myBasket}`))
+      })
       BasketService.removeItemFromBasket(toolId)
     }
   }
   
   checkOut = (toolIds) => {
     // TODO: Update user-api-service.js to make the API call and complete the reserve action.`)
-    console.log("Doesn't do anything yet, but should reserve tool IDs: ", toolIds)
+    // console.log("Doesn't do anything yet, but should reserve tool IDs: ", toolIds)
     this.setState({
       myBasket: []
-    }, console.log(`Emptied basket`))
+    })
     BasketService.clearBasket()
   }
 
