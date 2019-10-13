@@ -43,24 +43,15 @@ class AppProvider extends Component {
       })
   }
 
-  removeFromBasket = (toolId) => {
-    let updatedBasket = this.state.myBasket.filter(item => {
-      return item !== toolId
-    })
-    this.setState({
-      myBasket: updatedBasket
-    }, console.log(`Removed item. Basket now contains: ${this.state.myBasket}`))
-  }
-
   addToBasket = (toolId) => {
     if (this.state.myBasket.includes(toolId)) {
-      console.log(`Tool ${toolId} is already in your basket`)
+      // console.log(`Tool ${toolId} is already in your basket`)
     } else {
       let updatedBasket = this.state.myBasket
       updatedBasket.push(toolId)
       this.setState({
         myBasket: updatedBasket
-      }, console.log(`Added item. Basket now contains: ${this.state.myBasket}`))
+      })
       BasketService.addItemToBasket(toolId)
     }
   }
@@ -72,7 +63,7 @@ class AppProvider extends Component {
       })
       this.setState({
         myBasket: updatedBasket
-      }, console.log(`Removed item. Basket now contains: ${this.state.myBasket}`))
+      })
       BasketService.removeItemFromBasket(toolId)
     }
   }

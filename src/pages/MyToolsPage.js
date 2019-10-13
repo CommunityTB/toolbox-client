@@ -32,16 +32,18 @@ class MyToolsPage extends Component {
   render() {
     const { basketView, tab1, tab2 } = this.state
     return (
-      <section className="my-tools-section">
+      <>
+      <header className="my-tools-header">
         <h2>My Tools</h2>
         <div className="tabs">
           <a href="/" onClick={(e) => this.handleClick(e, 0)}><span className={tab1}>Toolbox</span></a>
           <a href="/" onClick={(e) => this.handleClick(e, 1)}><span className={tab2}>Current Checkouts</span></a>
         </div>
+      </header>
         {
           ( basketView ? <ToolsBasket /> : <CurrentCheckouts /> )
         }
-      </section>
+      </>
     );
   }
 }

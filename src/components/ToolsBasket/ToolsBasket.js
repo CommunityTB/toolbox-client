@@ -21,7 +21,7 @@ class ToolsBasket extends Component {
   }
   render() {
     return (
-      <div className="tools-basket">
+      <section className="tools-basket">
         <AppContext.Consumer>
           {
             value => {
@@ -36,10 +36,12 @@ class ToolsBasket extends Component {
                   basketOfTools.push(item)
                 })
                 return (
-                  <div>
-                    {listHeader}
-                    {basketOfTools.map(t => <BasketItem key={t.id} tool={t} checkoutStatus={completedCheckout} />)}
-                    {!completedCheckout && <button className="checkout-btn" onClick={(e) => this.handleClick(e, myBasket)}>Check Out</button>}
+                  <>
+                    <div className="my-tools-section">
+                      {listHeader}
+                      {basketOfTools.map(t => <BasketItem key={t.id} tool={t} checkoutStatus={completedCheckout} />)}
+                      {!completedCheckout && <button className="checkout-btn" onClick={(e) => this.handleClick(e, myBasket)}>Check Out</button>}
+                    </div>
                     {completedCheckout &&
                       <div className="pickup-info">
                         <div className="instructions">
@@ -48,43 +50,46 @@ class ToolsBasket extends Component {
                             <span className="pickup-step">1.</span>
                             {' '}
                             Bring your ID (state ID, passport, photo id work badge)
-                          </p>
+                            </p>
 
                           <p>
                             <span className="pickup-step">2.</span>
                             {' '}
                             Bring cash or debit/credit card to join if you aren't already a member of the co-op (if planning on sliding scale or volunteer hours please bring proof of income in the form of two recent paystubs or direct deposit proof of income.)
-                          </p>
+                            </p>
 
                           <p>
                             <span className="pickup-step">3.</span>
                             {' '}
                             Go through safety checklist with staff member
-                          </p>
+                            </p>
 
                           <p>
                             <span className="pickup-step">4.</span>
                             {' '}
                             Checkout your tool(s) and get to work!
-                          </p>
-
+                            </p>
                         </div>
-                        <ToolBoxMap />
+                        <div>
+                          <ToolBoxMap />
+                        </div>
                       </div>
                     }
-                  </div>
+                  </>
                 )
               }
               return (
-                <div>
-                  {listHeader}
-                  <p className="no-items"><em>Your toolbox is empty</em></p>
+                <div className="my-tools-section">
+                  <div>
+                    {listHeader}
+                    <p className="no-items"><em>Your toolbox is empty</em></p>
+                  </div>
                 </div>
               )
             }
           }
         </AppContext.Consumer>
-      </div>
+      </section>
     );
   }
 }
