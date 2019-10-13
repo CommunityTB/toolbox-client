@@ -3,6 +3,7 @@ import UserApiService from '../services/user-api-service';
 import BasketService from '../services/basket-service';
 import { API_BASE_URL } from '../config';
 import history from '../history';
+import ToolsApiService from '../services/tools-api-service';
 
 export const AppContext = React.createContext();
 
@@ -41,13 +42,6 @@ class AppProvider extends Component {
     }, console.log(`Removed item. Basket now contains: ${this.state.myBasket}`))
   }
 
-  checkOut = (toolIds) => {
-    console.log("Doesn't do anything yet, but should reserve tool IDs: ", toolIds)
-    this.setState({
-      myBasket: []
-    }, console.log(`Emptied basket`))
-  }
-
   addToBasket = (toolId) => {
     if (this.state.myBasket.includes(toolId)) {
       console.log(`Tool ${toolId} is already in your basket`)
@@ -75,13 +69,33 @@ class AppProvider extends Component {
   
   checkOut = (toolIds) => {
     // TODO: Update user-api-service.js to make the API call and complete the reserve action.`)
-    console.log("Doesn't do anything yet, but should reserve tool IDs: ", toolIds)
-    this.setState({
-      myBasket: []
-    }, console.log(`Emptied basket`))
-    BasketService.clearBasket()
-  }
+    // this function will aready contain myBasket. Map the user ID and tool ids into an object to push into the checkoutTools function below
+    const userId = this.state.user.id;
 
+    let myBasketArrOfObjs = [];
+    toolIds.map(tool => {
+      myBasketArrOfObjs.push(
+        {
+          tool_id: tool,
+          user_id: userId
+        }
+      )
+    })
+    // send newly creeated object of tool_ids and user_id to server to store the data
+    ToolsApiService.checkoutTools(myBasketArrOfObjs)
+      .then(newlyCheckedoutTools => 
+        this.setState({
+          myBasket: [],
+          myCheckedOutTools: newlyCheckedoutTools
+        }, console.log(`Emptied basket`))
+      )
+      .catch(err => {
+        this.setState({
+          error: err.message
+        })
+      })
+      BasketService.clearBasket()
+  }
 
   componentDidMount = () => {
     let itemsInBasket = BasketService.getBasket()
@@ -118,7 +132,7 @@ class AppProvider extends Component {
             reserveTool: this.reserveTool,
             addToBasket: this.addToBasket,
             removeFromBasket: this.removeFromBasket,
-            checkOut: this.checkOut,
+            checkOut: this.checkOut
           },
         }}>
         {this.props.children}
