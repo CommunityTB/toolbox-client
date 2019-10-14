@@ -61,19 +61,19 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px 0 25px;
+  padding: 5px 0 0 25px;
   font-family: 'Barlow', sans-serif;
   background-color: rgb(247, 244, 234, .6);
 }
 
-.nav-items {
+/* .nav-items {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   list-style: none;
   margin-top: 7px;
-}
+} */
 
 a {
   color: var(--gray);
@@ -94,12 +94,106 @@ a {
   margin: 0 4px;
 }
 
-.link_space {
+/* .link_space {
   padding-left: 11px;
+} */
+
+.link_space {
+  padding-left: 0;
+}
+
+.nav-not-logged-in-desktop, .nav-logged-in-desktop {
+  display: none;
 }
 
 /* END Navigation Styles
  ------------------------------*/
+
+/* BEGIN Sidebar Styles
+ ------------------------------*/
+
+#page-wrap {
+  overflow: auto;
+}
+
+.bm-menu-wrap {
+  padding: none;
+  top: 0;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 30px;
+  color: var(--gold);
+  transition: color 0.2s;
+  font-size: 20px;
+}
+
+.bm-item:focus {
+  outline: none;
+}
+
+/* Change color on hover */
+/* .bm-item:hover {
+  color: white;
+} */
+
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: var(--gray);
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: var(--gold);
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: var(--gray);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: var(--gray);
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
+/* END Sidebar Styles
+ ------------------------------*/
+
 
 /* BEGIN Header Styles
  ------------------------------*/
@@ -263,6 +357,10 @@ address {
 
 .availability, .reserve-link a {
   font-weight: normal
+}
+
+.same-line {
+  display: inline-block;
 }
 
 .tool-card .fa-circle {
@@ -762,8 +860,8 @@ legend {
   }
 
   .text-wrapper {
-    padding-top: 120px;
-    padding-bottom: 70px;
+    padding-top: 100px;
+    padding-bottom: 90px;
   }
 
   .tool-card {
@@ -842,6 +940,54 @@ legend {
   }
 
   /* END Header Styles
+ ------------------------------*/
+  /* BEGIN Navigation Styles
+ ------------------------------*/
+ .nav {
+  padding: 5px 25px 0 25px;
+}
+ /* .nav-not-logged-in-desktop {
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-top: 7px;
+  } */
+
+  .nav-not-logged-in-desktop, .nav-logged-in-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin-top: 7px;
+  }
+
+  .link_space {
+    padding-left: 11px;
+  }
+
+  .mobile-cart {
+    display: none;
+  }
+
+ /* END Navigation Styles
+ ------------------------------*/
+ /* BEGIN Sidebar Styles
+ ------------------------------*/
+ .hide-menu {
+   display: none;
+ }
+
+ .bm-overlay {
+   display: none;
+ }
+
+ .bm-burger-button {
+   display: none;
+ }
+ /* END Sidebar Styles
  ------------------------------*/
   /* BEGIN Footer Styles
  ------------------------------*/
