@@ -14,6 +14,7 @@ class AppProvider extends Component {
     myBasket: [], // [21, 22] THIS SHOULD BE EMPTY BY DEFAULT
     myCheckedOutTools: [1, 2, 3], // THIS SHOULD BE EMPTY BY DEFAULT
     isLoggedIn: false,
+    menuOpen: false
   }
 
   handleLoginSuccess = (userId) => {
@@ -100,6 +101,14 @@ class AppProvider extends Component {
       BasketService.clearBasket()
   }
 
+  handleNavStateChange = (state) => {
+    this.setState({ menuOpen: state.isOpen })
+  }
+
+  closeNavMenu = () => {
+    this.setState({ menuOpen: false })
+  }
+
 
 
   componentDidMount = () => {
@@ -125,7 +134,9 @@ class AppProvider extends Component {
             reserveTool: this.reserveTool,
             addToBasket: this.addToBasket,
             removeFromBasket: this.removeFromBasket,
-            checkOut: this.checkOut
+            checkOut: this.checkOut,
+            handleNavStateChange: this.handleNavStateChange,
+            closeNavMenu: this.closeNavMenu
           },
         }}>
         {this.props.children}

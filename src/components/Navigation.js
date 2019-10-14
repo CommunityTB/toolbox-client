@@ -18,61 +18,69 @@ export default class Navigation extends Component {
         history.push('/')
         window.location.reload()
     }
-    
-    
+
+
     renderLoginLinks = () => {
         return (
-            <>
-                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ false }>
-                    <Link
-                        to='/login'>
-                        Login    
-                    </Link>
-                    <Link
-                        className='link_space' 
-                        to='/register'>
-                        Register
-                    </Link>
-                    <Link 
-                        className='link_space' 
-                        to='/'>
-                        Tools
-                    </Link>
-                    <Link
-                        className='link_space' 
-                        to='/about'>
-                        About
-                    </Link>
-                </Menu>
-                <ul className='nav-not-logged-in-desktop'>
-                    <Link
-                        to='/login'>
-                        Login    
-                    </Link>
-                    <Link
-                        className='link_space' 
-                        to='/register'>
-                        Register
-                    </Link>
-                    <Link 
-                        className='link_space' 
-                        to='/'>
-                        Tools
-                    </Link>
-                    <Link
-                        className='link_space' 
-                        to='/about'>
-                        About
-                    </Link>
-                </ul>
-            </>
+            
+            <AppContext.Consumer>
+                
+                {value => (
+                    <>
+                    <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ value.state.menuOpen } onStateChange={(state) => this.context.actions.handleNavStateChange}>
+                        <Link
+                            to='/login'
+                            onClick={this.context.actions.closeNavMenu}>
+                            Login
+                                
+                        </Link>
+                        <Link
+                            className='link_space' 
+                            to='/register'>
+                            Register
+                        </Link>
+                        <Link 
+                            className='link_space' 
+                            to='/'>
+                            Tools
+                        </Link>
+                        <Link
+                            className='link_space' 
+                            to='/about'>
+                            About
+                        </Link>
+                    </Menu>
+                    <ul className='nav-not-logged-in-desktop'>
+                        <Link
+                            to='/login'>
+                            Login    
+                        </Link>
+                        <Link
+                            className='link_space' 
+                            to='/register'>
+                            Register
+                        </Link>
+                        <Link 
+                            className='link_space' 
+                            to='/'>
+                            Tools
+                        </Link>
+                        <Link
+                            className='link_space' 
+                            to='/about'>
+                            About
+                        </Link>
+                    </ul>
+                    </>
+                )}
+            </AppContext.Consumer>
         )
     }
 
     renderLogoutLinks = () => {
         return (
             <>
-                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ false } >
+                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ this.context.state.menuOpen} onStateChange={(state) => this.context.actions.handleNavStateChange} >
                     <Link 
                         to='/'
                         onClick={this.handleUserLogout}
