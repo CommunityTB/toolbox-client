@@ -23,7 +23,7 @@ export default class Navigation extends Component {
     renderLoginLinks = () => {
         return (
             <>
-                <Menu pageWrapId={ 'page-wrap'} className='hide-menu'>
+                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ false }>
                     <Link
                         to='/login'>
                         Login    
@@ -72,7 +72,7 @@ export default class Navigation extends Component {
     renderLogoutLinks = () => {
         return (
             <>
-                <Menu pageWrapId={ 'page-wrap'} className='hide-menu'>
+                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ false } >
                     <Link 
                         to='/'
                         onClick={this.handleUserLogout}
