@@ -93,7 +93,7 @@ export default class Navigation extends Component {
                 <Link
                     className='mobile-cart' 
                     to='/mytools'>
-                    <img src={cart} className="cart-icon" alt="cart" /><BadgeCounter count={this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>} />
+                    <img src={cart} className="mobile-cart-icon" alt="cart" /><BadgeCounter count={this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>} />
                 </Link>
                 <ul className='nav-logged-in-desktop'>
                     <Link 
@@ -125,12 +125,10 @@ export default class Navigation extends Component {
     render() {
        
         return (
-            // <div id='outer-container'>
-                <nav className ='nav'>
-                    <div><Link to='/'><img src={logo} className='logo' alt='Community Toolbox Logo'></img></Link></div>
-                    { TokenService.hasAuthToken() ? this.renderLogoutLinks() : this.renderLoginLinks() }
-                </nav>
-            // </div>
+            <nav className ='nav'>
+                <div><Link to='/'><img src={logo} className='logo' alt='Community Toolbox Logo'></img></Link></div>
+                { TokenService.hasAuthToken() ? this.renderLogoutLinks() : this.renderLoginLinks() }
+            </nav>
         )
     }
 }

@@ -87,23 +87,42 @@ a {
   width: 100px;
 }
 
-.cart-icon {
-  height: 31px;
-  width: 31px;
-  vertical-align: -8px;
-  margin: 0 4px;
+.mobile-cart {
+  display: inline-block;
+  position: absolute;
+  right: 100px;
 }
 
-/* .link_space {
-  padding-left: 11px;
-} */
+.mobile-cart-icon {
+  height: auto;
+  width: 48px;
+  vertical-align: 8px;
+}
 
 .link_space {
   padding-left: 0;
 }
 
-.nav-not-logged-in-desktop, .nav-logged-in-desktop {
+ul.nav-not-logged-in-desktop, ul.nav-logged-in-desktop {
   display: none;
+}
+
+.tools_count {
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  height: 18px;
+  padding: 0 5px;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  color: var(--white);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.08);
+  background: var(--gold);
+  border-color: var(--gold);
 }
 
 /* END Navigation Styles
@@ -123,25 +142,18 @@ a {
 
 /* Individual item */
 .bm-item {
-  display: inline-block;
+  display: block;
   /* Our sidebar item styling */
   text-decoration: none;
   margin-bottom: 30px;
   color: var(--gold);
   transition: color 0.2s;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .bm-item:focus {
   outline: none;
 }
-
-/* Change color on hover */
-/* .bm-item:hover {
-  color: white;
-} */
-
-/* The rest copied directly from react-burger-menu docs */
 
 /* Position and sizing of burger button */
 .bm-burger-button {
@@ -159,8 +171,7 @@ a {
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  transform: scale(1.6);
 }
 
 /* Color/shape of close button cross */
@@ -175,21 +186,17 @@ a {
   font-size: 1.15em;
 }
 
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-
 /* Wrapper for item list */
 .bm-item-list {
   color: var(--gray);
+  text-align: center;
+  padding-top: 35px;
 }
 
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
-
 
 /* END Sidebar Styles
  ------------------------------*/
@@ -750,6 +757,7 @@ legend {
 
 @media only screen and (max-width: 600px) {
   
+ 
   
   /* BEGIN Login + Register Page Styles
  ------------------------------*/
@@ -822,6 +830,11 @@ legend {
 /* Medium devices (landscape tablets, 768px and up) */
 
 @media only screen and (min-width: 768px) {
+  
+  .mobile-cart {
+    right: 105px;
+  }
+  
   /* BEGIN Header Styles
  ------------------------------*/
   .search-input {
@@ -943,19 +956,11 @@ legend {
  ------------------------------*/
   /* BEGIN Navigation Styles
  ------------------------------*/
- .nav {
-  padding: 5px 25px 0 25px;
-}
- /* .nav-not-logged-in-desktop {
-    display: block;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    margin-top: 7px;
-  } */
+  .nav {
+    padding: 5px 25px 0 25px;
+  }
 
-  .nav-not-logged-in-desktop, .nav-logged-in-desktop {
+  ul.nav-not-logged-in-desktop, ul.nav-logged-in-desktop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -970,6 +975,19 @@ legend {
 
   .mobile-cart {
     display: none;
+  }
+
+  .tools_count {
+    top: 36px;
+    right: 12px;
+    font-size: 16px;
+  }
+
+  .cart-icon {
+    height: 31px;
+    width: 31px;
+    vertical-align: -8px;
+    margin: 0 4px;
   }
 
  /* END Navigation Styles
