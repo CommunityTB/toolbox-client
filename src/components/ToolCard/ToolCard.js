@@ -20,7 +20,7 @@ class ToolCard extends Component {
             {
               (!t.return_date)
               ? <><FontAwesomeIcon icon={faCircle} /><span className="" to={toolPageLink}>Available</span></>
-              : <><FontAwesomeIcon className="fa-circle-unavailable" icon={faCircle} /><span className="" to={toolPageLink}><strike>Unavailable</strike></span> </>
+              : <><FontAwesomeIcon className="fa-circle-unavailable" icon={faCircle} /><span className="" to={toolPageLink}><p className="same-line">Unavailable</p></span> </>
             }
           </div>
           <div className="reserve-link"><FontAwesomeIcon icon={faPlus} /><Link className="" to={toolPageLink}>Details</Link></div>
