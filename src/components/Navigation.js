@@ -7,6 +7,7 @@ import TokenService from '../services/token-service'
 import BadgeCounter from './BadgeCounter/BadgeCounter';
 import history from '../history';
 import { AppContext } from './AppProvider';
+import { slide as Menu } from 'react-burger-menu';
 
 
 export default class Navigation extends Component {
@@ -18,10 +19,32 @@ export default class Navigation extends Component {
         window.location.reload()
     }
     
+    
     renderLoginLinks = () => {
         return (
             <>
-                <ul className='nav_not_logged_in'>
+                <Menu pageWrapId={ 'page-wrap'} className='hide-menu'>
+                    <Link
+                        to='/login'>
+                        Login    
+                    </Link>
+                    <Link
+                        className='link_space' 
+                        to='/register'>
+                        Register
+                    </Link>
+                    <Link 
+                        className='link_space' 
+                        to='/'>
+                        Tools
+                    </Link>
+                    <Link
+                        className='link_space' 
+                        to='/about'>
+                        About
+                    </Link>
+                </Menu>
+                <ul className='nav-not-logged-in-desktop'>
                     <Link
                         to='/login'>
                         Login    
@@ -48,29 +71,54 @@ export default class Navigation extends Component {
 
     renderLogoutLinks = () => {
         return (
-            <ul className='nav_logged_in'>
-                <Link 
-                    to='/'
-                    onClick={this.handleUserLogout}
-                    >
-                    Logout
-                </Link>
-                <Link 
-                    className='link_space' 
-                    to='/'>
-                    Tools
-                </Link>
+            <>
+                <Menu pageWrapId={ 'page-wrap'} className='hide-menu'>
+                    <Link 
+                        to='/'
+                        onClick={this.handleUserLogout}
+                        >
+                        Logout
+                    </Link>
+                    <Link 
+                        className='link_space' 
+                        to='/'>
+                        Tools
+                    </Link>
+                    <Link
+                        className='link_space' 
+                        to='/about'>
+                        About
+                    </Link> 
+                </Menu>
                 <Link
-                    className='link_space' 
-                    to='/about'>
-                    About
-                </Link>
-                <Link
-                    className='link_space' 
+                    className='mobile-cart' 
                     to='/mytools'>
-                    <img src={cart} className="cart-icon" alt="cart" /><BadgeCounter count={this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>} />
+                    <img src={cart} className="mobile-cart-icon" alt="cart" /><BadgeCounter count={this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>} />
                 </Link>
-            </ul>
+                <ul className='nav-logged-in-desktop'>
+                    <Link 
+                        to='/'
+                        onClick={this.handleUserLogout}
+                        >
+                        Logout
+                    </Link>
+                    <Link 
+                        className='link_space' 
+                        to='/'>
+                        Tools
+                    </Link>
+                    <Link
+                        className='link_space' 
+                        to='/about'>
+                        About
+                    </Link>
+                    <Link
+                        className='link_space' 
+                        to='/mytools'>
+                        <img src={cart} className="cart-icon" alt="cart" /><BadgeCounter count={this.context.state.myBasket.length > 0 && <span>{this.context.state.myBasket.length}</span>} />
+                    </Link>
+                </ul>
+            </>
         )
     }
 

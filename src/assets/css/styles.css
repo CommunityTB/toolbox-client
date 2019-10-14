@@ -61,19 +61,19 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px 0 25px;
+  padding: 5px 0 0 25px;
   font-family: 'Barlow', sans-serif;
   background-color: rgb(247, 244, 234, .6);
 }
 
-.nav-items {
+/* .nav-items {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   list-style: none;
   margin-top: 7px;
-}
+} */
 
 a {
   color: var(--gray);
@@ -87,19 +87,120 @@ a {
   width: 100px;
 }
 
-.cart-icon {
-  height: 31px;
-  width: 31px;
-  vertical-align: -8px;
-  margin: 0 4px;
+.mobile-cart {
+  display: inline-block;
+  position: absolute;
+  right: 100px;
+}
+
+.mobile-cart-icon {
+  height: auto;
+  width: 48px;
+  vertical-align: 8px;
 }
 
 .link_space {
-  padding-left: 11px;
+  padding-left: 0;
+}
+
+ul.nav-not-logged-in-desktop, ul.nav-logged-in-desktop {
+  display: none;
+}
+
+.tools_count {
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  height: 18px;
+  padding: 0 5px;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  color: var(--white);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.08);
+  background: var(--gold);
+  border-color: var(--gold);
 }
 
 /* END Navigation Styles
  ------------------------------*/
+
+/* BEGIN Sidebar Styles
+ ------------------------------*/
+
+#page-wrap {
+  overflow: auto;
+}
+
+.bm-menu-wrap {
+  padding: none;
+  top: 0;
+}
+
+/* Individual item */
+.bm-item {
+  display: block;
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 30px;
+  color: var(--gold);
+  transition: color 0.2s;
+  font-size: 25px;
+}
+
+.bm-item:focus {
+  outline: none;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: var(--gray);
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  transform: scale(1.6);
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: var(--gold);
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: var(--gray);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: var(--gray);
+  text-align: center;
+  padding-top: 35px;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* END Sidebar Styles
+ ------------------------------*/
+
 
 /* BEGIN Header Styles
  ------------------------------*/
@@ -263,6 +364,10 @@ address {
 
 .availability, .reserve-link a {
   font-weight: normal
+}
+
+.same-line {
+  display: inline-block;
 }
 
 .tool-card .fa-circle {
@@ -659,6 +764,7 @@ legend {
 
 @media only screen and (max-width: 600px) {
   
+ 
   
   /* BEGIN Login + Register Page Styles
  ------------------------------*/
@@ -679,7 +785,7 @@ legend {
     padding-bottom: 75px;
   }
 
-  .Login-Page {
+  .Login-page {
     padding-bottom: 15px;
   }
   
@@ -706,7 +812,7 @@ legend {
     padding-top: 40px;
     margin-right: 15px;
     margin-left: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
   }
 
   .sectionTitle {
@@ -731,6 +837,11 @@ legend {
 /* Medium devices (landscape tablets, 768px and up) */
 
 @media only screen and (min-width: 768px) {
+  
+  .mobile-cart {
+    right: 105px;
+  }
+  
   /* BEGIN Header Styles
  ------------------------------*/
   .search-input {
@@ -769,8 +880,8 @@ legend {
   }
 
   .text-wrapper {
-    padding-top: 120px;
-    padding-bottom: 70px;
+    padding-top: 100px;
+    padding-bottom: 90px;
   }
 
   .tool-card {
@@ -849,6 +960,59 @@ legend {
   }
 
   /* END Header Styles
+ ------------------------------*/
+  /* BEGIN Navigation Styles
+ ------------------------------*/
+  .nav {
+    padding: 5px 25px 0 25px;
+  }
+
+  ul.nav-not-logged-in-desktop, ul.nav-logged-in-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin-top: 7px;
+  }
+
+  .link_space {
+    padding-left: 11px;
+  }
+
+  .mobile-cart {
+    display: none;
+  }
+
+  .tools_count {
+    top: 36px;
+    right: 12px;
+    font-size: 16px;
+  }
+
+  .cart-icon {
+    height: 31px;
+    width: 31px;
+    vertical-align: -8px;
+    margin: 0 4px;
+  }
+
+ /* END Navigation Styles
+ ------------------------------*/
+ /* BEGIN Sidebar Styles
+ ------------------------------*/
+ .hide-menu {
+   display: none;
+ }
+
+ .bm-overlay {
+   display: none;
+ }
+
+ .bm-burger-button {
+   display: none;
+ }
+ /* END Sidebar Styles
  ------------------------------*/
   /* BEGIN Footer Styles
  ------------------------------*/

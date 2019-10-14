@@ -28,6 +28,7 @@ class AppRouter extends Component {
         return (
             <div className='AppRouter'>
                 <main>
+                    <div id='page-wrap'>
                     <Navigation />
                     {this.state.errorPresent && <p className='Error-message'>We have an error! Please try again!</p>}
                     <Switch>
@@ -65,6 +66,7 @@ class AppRouter extends Component {
                         />
                     </Switch>
                     <Footer />
+                    </div>
                 </main>
             </div>
         );
