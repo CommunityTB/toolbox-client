@@ -11,6 +11,7 @@ import { slide as Menu } from 'react-burger-menu';
 
 
 export default class Navigation extends Component {
+    
     static contextType = AppContext
 
     handleUserLogout = () => {
@@ -18,15 +19,14 @@ export default class Navigation extends Component {
         history.push('/')
         window.location.reload()
     }
-    
-    
+
     renderLoginLinks = () => {
         return (
             <>
-                <Menu pageWrapId={ 'page-wrap'} className='hide-menu'>
+                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ true }>
                     <Link
                         to='/login'>
-                        Login    
+                        Login  
                     </Link>
                     <Link
                         className='link_space' 
@@ -72,7 +72,7 @@ export default class Navigation extends Component {
     renderLogoutLinks = () => {
         return (
             <>
-                <Menu pageWrapId={ 'page-wrap'} className='hide-menu'>
+                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ true }>
                     <Link 
                         to='/'
                         onClick={this.handleUserLogout}
