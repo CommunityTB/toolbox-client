@@ -100,8 +100,6 @@ class AppProvider extends Component {
       BasketService.clearBasket()
   }
 
-
-
   componentDidMount = () => {
     let itemsInBasket = BasketService.getBasket()
     let myBasket = itemsInBasket.map(item => parseInt(item))
@@ -111,6 +109,7 @@ class AppProvider extends Component {
       myBasket
     })
   }
+
 
   render() {
     return (
@@ -125,7 +124,7 @@ class AppProvider extends Component {
             reserveTool: this.reserveTool,
             addToBasket: this.addToBasket,
             removeFromBasket: this.removeFromBasket,
-            checkOut: this.checkOut
+            checkOut: this.checkOut,
           },
         }}>
         {this.props.children}
