@@ -769,7 +769,6 @@ legend {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    
   }
 
   .not-found-title {
@@ -1148,9 +1147,8 @@ legend {
     font-size: 18px;
   }
 
- /* END Tool Detail Styles
+  /* BEGIN Check Out Page Styles
  ------------------------------*/
-
  .my-tools-header {
     width: var(--wd);
     margin: 2em auto;
@@ -1173,4 +1171,6 @@ legend {
   .not-found-title {
     font-size: 70px;
   }
+  /* END Check Out Page Styles
+ ------------------------------*/
 }
