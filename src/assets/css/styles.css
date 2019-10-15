@@ -504,9 +504,9 @@ address {
 }
 
 .instructions {
-  padding: 1em 2em 1em 1em;
+  padding: 2em;
   background-color: var(--gold);
-  margin: 0 0.5em 1em 0.5em;
+  margin: 0;
 }
 
 .instructions h3 {
@@ -764,8 +764,6 @@ legend {
 
 @media only screen and (max-width: 600px) {
   
- 
-  
   /* BEGIN Login + Register Page Styles
  ------------------------------*/
   .login-form, .register-form {
@@ -822,16 +820,28 @@ legend {
 
   /* END About Us Styles
  ------------------------------*/
+  /* BEGIN Tool Card Detail Styles
+ ------------------------------*/
+
+  .keep-browsing {
+    padding-top: 16px;
+  }
+
+ /* END Tool Card Detail Styles
+ ------------------------------*/
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 
 @media only screen and (min-width: 600px) {
+  
   .tool-card-wrapper {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 30px;
   }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -880,7 +890,7 @@ legend {
   }
 
   .text-wrapper {
-    padding-top: 100px;
+    padding-top: 90px;
     padding-bottom: 90px;
   }
 
@@ -897,7 +907,7 @@ legend {
 
    /* END Login + Register Page  Styles
  ------------------------------*/
-
+ 
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -977,7 +987,7 @@ legend {
   }
 
   .link_space {
-    padding-left: 11px;
+    padding-left: 16px;
   }
 
   .mobile-cart {
@@ -986,7 +996,7 @@ legend {
 
   .tools_count {
     top: 36px;
-    right: 12px;
+    right: 18px;
     font-size: 16px;
   }
 
