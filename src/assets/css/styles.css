@@ -761,6 +761,27 @@ legend {
 /* END About Us Styles
  ------------------------------*/
 
+
+ /* BEGIN Not Found Page Styles
+ ------------------------------*/
+  .not-found-page {
+    background-image: url('../images/hero_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    
+  }
+
+  .not-found-title {
+    text-align: center;
+    font-family: 'Holtwood One SC', serif;
+    color: var(--white);
+    font-size: 40px;
+    padding-top: 4em;
+  }
+
+ /* END Not Found Page Styles
+ ------------------------------*/
 /**************************************************************** 
  * Responsive Styles
  ****************************************************************/
@@ -928,6 +949,10 @@ legend {
    /* END Login + Register Page  Styles
  ------------------------------*/
  
+ .not-found-title {
+   font-size: 50px;
+ }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -1139,5 +1164,9 @@ legend {
   }
   .instructions {
     margin: 0;
+  }
+
+  .not-found-title {
+    font-size: 70px;
   }
 }

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 class NotFoundPage extends Component {
 
-    state = {
-    }
 
     render() {
         return (
-          <p>NOT FOUND, SORRY</p>
+          <div className="not-found-page">
+            <h1 className="not-found-title">NOT FOUND, SORRY</h1>
+          </div>
         );
     }
 }
