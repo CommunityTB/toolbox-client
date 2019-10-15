@@ -882,6 +882,10 @@ legend {
     padding: 70px 30px 50px 30px;
   }
 
+  .tool-card {
+    margin-bottom: 0;
+  }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
