@@ -528,6 +528,10 @@ address {
   padding: 0 1em;
 }
 
+.full-page {
+  min-height: 100vh;
+}
+
 /* END Checkout Styles
  ------------------------------*/
 
