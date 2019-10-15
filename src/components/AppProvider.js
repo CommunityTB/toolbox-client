@@ -103,6 +103,7 @@ class AppProvider extends Component {
 
 
   componentDidMount = () => {
+    console.log(process.env)
     let itemsInBasket = BasketService.getBasket()
     let myBasket = itemsInBasket.map(item => parseInt(item))
 
