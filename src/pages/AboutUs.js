@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import ToolBoxMap from '../components/ToolBoxMap/ToolBoxMap'
 
 export default class AboutUs extends Component {
 
@@ -27,7 +27,7 @@ export default class AboutUs extends Component {
               <li className='bold-list'>4.{' '}Checkout your tool(s) and get to work!</li>
             </ul>
           </article>
-
+<ToolBoxMap />
       </div>
       </div>
     );
