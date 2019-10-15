@@ -71,7 +71,7 @@ class AppProvider extends Component {
   checkOut = (toolIds) => {
     // this function will aready contain myBasket. Map the user ID and tool ids into an object to push into the checkoutTools function below
     const userId = this.state.user.id;
-
+    
     let myBasketArrOfObjs = [];
     toolIds.map(tool => {
       myBasketArrOfObjs.push(
