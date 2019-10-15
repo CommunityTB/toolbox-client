@@ -761,6 +761,26 @@ legend {
 /* END About Us Styles
  ------------------------------*/
 
+
+ /* BEGIN Not Found Page Styles
+ ------------------------------*/
+  .not-found-page {
+    background-image: url('../images/hero_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .not-found-title {
+    text-align: center;
+    font-family: 'Holtwood One SC', serif;
+    color: var(--white);
+    font-size: 40px;
+    padding-top: 4em;
+  }
+
+ /* END Not Found Page Styles
+ ------------------------------*/
 /**************************************************************** 
  * Responsive Styles
  ****************************************************************/
@@ -854,6 +874,14 @@ legend {
     grid-gap: 30px;
   }
 
+  .bm-burger-button {
+    top: 43px;
+  }
+
+  .text-wrapper {
+    padding: 70px 30px 50px 30px;
+  }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -862,6 +890,10 @@ legend {
   
   .mobile-cart {
     right: 105px;
+  }
+
+  .bm-burger-button {
+    top: 43px;
   }
   
   /* BEGIN Header Styles
@@ -920,6 +952,10 @@ legend {
    /* END Login + Register Page  Styles
  ------------------------------*/
  
+ .not-found-title {
+   font-size: 50px;
+ }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -1111,9 +1147,11 @@ legend {
     font-size: 18px;
   }
 
- /* END Tool Detail Styles
+  /* END Tool Detail Styles
  ------------------------------*/
 
+  /* BEGIN Check Out Page Styles
+ ------------------------------*/
  .my-tools-header {
     width: var(--wd);
     margin: 2em auto;
@@ -1132,4 +1170,10 @@ legend {
   .instructions {
     margin: 0;
   }
+
+  .not-found-title {
+    font-size: 70px;
+  }
+  /* END Check Out Page Styles
+ ------------------------------*/
 }
