@@ -854,6 +854,10 @@ legend {
     grid-gap: 30px;
   }
 
+  .bm-burger-button {
+    top: 43px;
+  }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -862,6 +866,10 @@ legend {
   
   .mobile-cart {
     right: 105px;
+  }
+
+  .bm-burger-button {
+    top: 43px;
   }
   
   /* BEGIN Header Styles
