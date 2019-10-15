@@ -19,7 +19,9 @@
         "dest": "/index.html"
       }
   ],
-  "env": {
-    "REACT_APP_MAPS_API_KEY": "@maps-api-key"
+  "build": {
+    "env": {
+      "REACT_APP_MAPS_API_KEY": "@maps-api-key"
+    }
   }
 }
