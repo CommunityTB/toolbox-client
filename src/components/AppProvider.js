@@ -14,6 +14,7 @@ class AppProvider extends Component {
     myBasket: [], // [21, 22] THIS SHOULD BE EMPTY BY DEFAULT
     myCheckedOutTools: [], // THIS SHOULD BE EMPTY BY DEFAULT
     isLoggedIn: false,
+    menuOpen: false,
   }
 
   handleLoginSuccess = (userId) => {
@@ -110,7 +111,18 @@ class AppProvider extends Component {
     })
   }
 
+  handleStateChange = (state) => {
+    this.setState({
+        menuOpen: state.isOpen
+    })
+  }
 
+  closeMenu = () => {
+      this.setState({
+          menuOpen: false
+      })
+  }
+  
   render() {
     return (
       <AppContext.Provider
@@ -125,6 +137,8 @@ class AppProvider extends Component {
             addToBasket: this.addToBasket,
             removeFromBasket: this.removeFromBasket,
             checkOut: this.checkOut,
+            handleStateChange: this.handleStateChange,
+            closeMenu: this.closeMenu
           },
         }}>
         {this.props.children}
