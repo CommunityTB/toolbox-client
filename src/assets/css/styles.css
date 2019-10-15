@@ -882,6 +882,18 @@ legend {
     padding: 70px 30px 50px 30px;
   }
 
+  .tool-card {
+    margin-bottom: 0;
+  }
+
+  .form-space {
+    padding-top: 125px;
+  }
+
+  .Register-page {
+    padding-bottom: 125px;
+  }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
