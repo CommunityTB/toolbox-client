@@ -95,8 +95,8 @@ a {
 
 .mobile-cart-icon {
   height: auto;
-  width: 48px;
-  vertical-align: 8px;
+  width: 45px;
+  vertical-align: -14px;
 }
 
 .link_space {
@@ -161,7 +161,8 @@ ul.nav-not-logged-in-desktop, ul.nav-logged-in-desktop {
   width: 36px;
   height: 30px;
   right: 36px;
-  top: 36px;
+  top: 33px;
+  transform: scale(.9);
 }
 
 /* Color/shape of burger icon bars */
@@ -171,11 +172,15 @@ ul.nav-not-logged-in-desktop, ul.nav-logged-in-desktop {
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  transform: scale(1.6);
+  padding-bottom: 4px;
+  padding-right: 7px;
+  transform: scale(2);
 }
 
 /* Color/shape of close button cross */
 .bm-cross {
+  top: 7px;
+  right: 7px;
   background: var(--gold);
 }
 
@@ -763,7 +768,14 @@ legend {
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
-  
+  /* BEGIN Navigation Styles
+ ------------------------------*/
+  .logo {
+    height: 80px;
+    width: 80px;
+  }
+ /* END Navigation Styles
+ ------------------------------*/
   /* BEGIN Login + Register Page Styles
  ------------------------------*/
   .login-form, .register-form {
