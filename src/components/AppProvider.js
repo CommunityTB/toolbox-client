@@ -73,7 +73,7 @@ class AppProvider extends Component {
     const userId = this.state.user.id;
 
     let myBasketArrOfObjs = [];
-    toolIds.map(tool => {
+    toolIds.forEach(tool => {
       myBasketArrOfObjs.push(
         {
           tool_id: tool,
