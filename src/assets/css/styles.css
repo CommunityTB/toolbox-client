@@ -528,6 +528,10 @@ address {
   padding: 0 1em;
 }
 
+.full-page {
+  min-height: 100vh;
+}
+
 /* END Checkout Styles
  ------------------------------*/
 
@@ -594,7 +598,7 @@ a.keep-browsing:active, a.keep-browsing:hover, a.keep-browsing:visited {
   margin-top: 18px;
   margin-bottom: 18px;
   background-color: var(--gray);
-  border-color: var(--gray);
+  border: none;
   color: var(--white);
   border-radius: 10px;
 }
@@ -880,6 +884,18 @@ legend {
 
   .text-wrapper {
     padding: 70px 30px 50px 30px;
+  }
+
+  .tool-card {
+    margin-bottom: 0;
+  }
+
+  .form-space {
+    padding-top: 125px;
+  }
+
+  .Register-page {
+    padding-bottom: 125px;
   }
 
 }
