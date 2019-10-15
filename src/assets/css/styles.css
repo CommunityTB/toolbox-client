@@ -1147,6 +1147,9 @@ legend {
     font-size: 18px;
   }
 
+  /* END Tool Detail Styles
+ ------------------------------*/
+
   /* BEGIN Check Out Page Styles
  ------------------------------*/
  .my-tools-header {
@@ -1171,6 +1174,6 @@ legend {
   .not-found-title {
     font-size: 70px;
   }
-  /* END Check Out Page Styles Styles
+  /* END Check Out Page Styles
  ------------------------------*/
 }
