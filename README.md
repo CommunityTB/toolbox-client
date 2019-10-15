@@ -111,3 +111,4 @@
       Authentication is currently completed using JWT but with the future option for O-Auth based on our client's needs. 
 
       Our demo is available at https://toolbox-client-git-master.teamredpanda.now.sh/
+      Demo Login:Demo   Password: Demo1234!
