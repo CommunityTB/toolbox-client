@@ -12,7 +12,7 @@ class AppProvider extends Component {
     tools: [],
     user: {},
     myBasket: [], // [21, 22] THIS SHOULD BE EMPTY BY DEFAULT
-    myCheckedOutTools: [1, 2, 3], // THIS SHOULD BE EMPTY BY DEFAULT
+    myCheckedOutTools: [], // THIS SHOULD BE EMPTY BY DEFAULT
     isLoggedIn: false,
   }
 
