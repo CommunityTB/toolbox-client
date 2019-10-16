@@ -22,10 +22,12 @@ export default class Navigation extends Component {
 
     renderLoginLinks = () => {
         return (
-            <>
-                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ true }>
+            // isOpen={this.context.state.menuOpen} onStateChange={(state) => this.context.actions.handleStateChange(state) }
+            <>  
+                <Menu  className='hide-menu' >
                     <Link
-                        to='/login'>
+                        to='/login'
+                        onClick={() => this.context.actions.closeMenu()}>
                         Login  
                     </Link>
                     <Link
@@ -72,7 +74,7 @@ export default class Navigation extends Component {
     renderLogoutLinks = () => {
         return (
             <>
-                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ true }>
+                <Menu className='hide-menu'>
                     <Link 
                         to='/'
                         onClick={this.handleUserLogout}

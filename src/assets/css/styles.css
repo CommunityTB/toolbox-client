@@ -131,9 +131,9 @@ ul.nav-not-logged-in-desktop, ul.nav-logged-in-desktop {
 /* BEGIN Sidebar Styles
  ------------------------------*/
 
-#page-wrap {
+/* #page-wrap {
   overflow: auto;
-}
+} */
 
 .bm-menu-wrap {
   padding: none;
