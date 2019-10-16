@@ -26,7 +26,18 @@ const ToolsApiService = {
         }
           return toolsResponse.json()
       })
-    }
+    },
+    getUserTools(userId) {
+      return fetch(`${API_BASE_URL}/tools/for_user/${userId}`, {
+        method: 'GET',
+        })
+      .then((toolsResponse) => {
+        if (!toolsResponse.ok) {
+          return toolsResponse.json().then(error => Promise.reject(error))
+        }
+          return toolsResponse.json()
+      })
+    }    
 }
 
 export default ToolsApiService;

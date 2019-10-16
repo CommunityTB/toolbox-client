@@ -20,7 +20,7 @@ class AppProvider extends Component {
     UserApiService.getUser(userId)
       .then(user => this.setState({
         user, isLoggedIn: true
-      }))
+      }, console.log(this.state)))
       .then(() => {
         history.push('/')
       })
@@ -42,6 +42,20 @@ class AppProvider extends Component {
         });
       })
   }
+
+  retrieveUserTools = () => {
+    const userId = 7;
+    ToolsApiService.getUserTools(userId)
+      .then((checkedOutToolIds) => {
+        let myCheckedOutTools = checkedOutToolIds.map(item => item.tool_id)
+        this.setState({ myCheckedOutTools })
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        }, console.log('well that is not good:', err));
+      })
+  }  
 
   addToBasket = (toolId) => {
     if (this.state.myBasket.includes(toolId)) {
@@ -83,11 +97,14 @@ class AppProvider extends Component {
     })
     // send newly creeated object of tool_ids and user_id to server to store the data
     ToolsApiService.checkoutTools(myBasketArrOfObjs)
-      .then(newlyCheckedoutTools => 
-        this.setState({
-          myBasket: [],
-          myCheckedOutTools: newlyCheckedoutTools
-        }, console.log(`Emptied basket`))
+      .then(newlyCheckedoutTools => {
+          let listOfCheckedOutTools = this.state.myCheckedOutTools
+          listOfCheckedOutTools.push(...newlyCheckedoutTools)
+          this.setState({
+            myBasket: [],
+            myCheckedOutTools: listOfCheckedOutTools
+          })
+        }
       )
       .then(() => {
         this.retrieveTools()
@@ -103,11 +120,10 @@ class AppProvider extends Component {
   componentDidMount = () => {
     let itemsInBasket = BasketService.getBasket()
     let myBasket = itemsInBasket.map(item => parseInt(item))
-
     this.retrieveTools()
     this.setState({
       myBasket
-    })
+    }, this.retrieveUserTools(7))
   }
 
 
