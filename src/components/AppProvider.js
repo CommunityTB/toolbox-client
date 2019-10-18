@@ -3,6 +3,7 @@ import UserApiService from '../services/user-api-service';
 import BasketService from '../services/basket-service';
 import history from '../history';
 import ToolsApiService from '../services/tools-api-service';
+import TokenService from '../services/token-service';
 
 export const AppContext = React.createContext();
 
@@ -29,8 +30,11 @@ class AppProvider extends Component {
           error: err.message
         })
       })
+    this.retrieveUserInfo(userId)
   }
 
+  // Get all of the tools in the database and update
+  // application state
   retrieveTools = () => {
     ToolsApiService.getAllTools()
       .then((tools) => {
@@ -41,6 +45,32 @@ class AppProvider extends Component {
           error: err.message
         });
       })
+  }
+
+  // Find out if this user has items already checked out
+  retrieveUserInfo = (userId) => {
+      ToolsApiService.getUserTools(userId)
+        .then((checkedOutToolIds) => {
+          let myCheckedOutTools = checkedOutToolIds.map(item => item.tool_id)
+          this.setState({ myCheckedOutTools })
+        })
+        .catch(err => {
+          this.setState({
+            error: err.message
+          }, console.log(`Error retrieving ${userId}'s tools:`, err));
+        })
+  }
+
+  // We check login status onComponentDidMount, whenever
+  // user visits the app. See if they've previously logged
+  // in. If so, set user in app state. Then find out if
+  // this user has items already checked out.
+  checkLoginStatus = () => {
+    if (TokenService.hasAuthToken()) {
+      const userId = UserApiService.getCurrentUser()
+      this.handleLoginSuccess(userId)
+      this.retrieveUserInfo(userId)
+    }
   }
 
   addToBasket = (toolId) => {
@@ -55,7 +85,7 @@ class AppProvider extends Component {
       BasketService.addItemToBasket(toolId)
     }
   }
-  
+
   removeFromBasket = (toolId) => {
     if (this.state.myBasket.includes(toolId)) {
       let updatedBasket = this.state.myBasket.filter(item => {
@@ -67,11 +97,12 @@ class AppProvider extends Component {
       BasketService.removeItemFromBasket(toolId)
     }
   }
-  
+
   checkOut = (toolIds) => {
-    // this function will aready contain myBasket. Map the user ID and tool ids into an object to push into the checkoutTools function below
+    // this function will aready contain myBasket. Map the user ID and tool
+    // ids into an object to push into the checkoutTools function below
     const userId = this.state.user.id;
-    
+
     let myBasketArrOfObjs = [];
     toolIds.forEach(tool => {
       myBasketArrOfObjs.push(
@@ -83,11 +114,14 @@ class AppProvider extends Component {
     })
     // send newly creeated object of tool_ids and user_id to server to store the data
     ToolsApiService.checkoutTools(myBasketArrOfObjs)
-      .then(newlyCheckedoutTools => 
+      .then(newlyCheckedoutTools => {
+        let listOfCheckedOutTools = this.state.myCheckedOutTools
+        listOfCheckedOutTools.push(...newlyCheckedoutTools)
         this.setState({
           myBasket: [],
-          myCheckedOutTools: newlyCheckedoutTools
-        }, console.log(`Emptied basket`))
+          myCheckedOutTools: listOfCheckedOutTools
+        })
+      }
       )
       .then(() => {
         this.retrieveTools()
@@ -97,17 +131,16 @@ class AppProvider extends Component {
           error: err.message
         })
       })
-      BasketService.clearBasket()
+    BasketService.clearBasket()
   }
 
   componentDidMount = () => {
     let itemsInBasket = BasketService.getBasket()
     let myBasket = itemsInBasket.map(item => parseInt(item))
-
     this.retrieveTools()
     this.setState({
       myBasket
-    })
+    }, this.checkLoginStatus())
   }
 
 

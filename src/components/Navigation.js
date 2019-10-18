@@ -8,6 +8,7 @@ import BadgeCounter from './BadgeCounter/BadgeCounter';
 import history from '../history';
 import { AppContext } from './AppProvider';
 import { slide as Menu } from 'react-burger-menu';
+import UserApiService from '../services/user-api-service';
 
 
 export default class Navigation extends Component {
@@ -16,6 +17,7 @@ export default class Navigation extends Component {
 
     handleUserLogout = () => {
         TokenService.clearAuthToken()
+        UserApiService.forgetUser()
         history.push('/')
         window.location.reload()
     }

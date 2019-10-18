@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import { Button, Input } from '../../helpers/Helpers';
+import UserApiService from '../../services/user-api-service';
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -20,10 +21,12 @@ export default class LoginForm extends Component {
       user_password: user_password.value,
     })
     .then(response => {
+      let { userId, authToken } = response
       user_name.value=''
       user_password.value=''
-      TokenService.saveAuthToken(response.authToken)
-      this.props.onLoginSuccess(response.userId)
+      TokenService.saveAuthToken(authToken)
+      UserApiService.setCurrentUser(userId)
+      this.props.onLoginSuccess(userId)
     })
     .catch(response => {
       this.setState({ error: response.error})
