@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config'
+import TokenService from './token-service'
 
 const ToolsApiService = {
     checkoutTools(myBasketObj) {
@@ -30,6 +31,9 @@ const ToolsApiService = {
     getUserTools(userId) {
       return fetch(`${API_BASE_URL}/tools/for_user/${userId}`, {
         method: 'GET',
+        headers: {
+          'authorization': `bearer ${TokenService.getAuthToken()}`,
+          },        
         })
       .then((toolsResponse) => {
         if (!toolsResponse.ok) {
