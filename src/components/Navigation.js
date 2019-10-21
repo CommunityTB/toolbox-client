@@ -7,7 +7,9 @@ import TokenService from '../services/token-service'
 import BadgeCounter from './BadgeCounter/BadgeCounter';
 import history from '../history';
 import { AppContext } from './AppProvider';
-import { slide as Menu } from 'react-burger-menu';
+// import { slide as Menu } from 'react-burger-menu';
+import Sidebar from './Sidebar';
+import SidebarNotLoggedIn from './SidebarNotLoggedIn';
 import UserApiService from '../services/user-api-service';
 
 
@@ -25,7 +27,7 @@ export default class Navigation extends Component {
     renderLoginLinks = () => {
         return (
             <>
-                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ true }>
+                {/* <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ true }>
                     <Link
                         to='/login'>
                         Login  
@@ -45,7 +47,8 @@ export default class Navigation extends Component {
                         to='/about'>
                         About
                     </Link>
-                </Menu>
+                </Menu> */}
+                <Sidebar />
                 <ul className='nav-not-logged-in-desktop'>
                     <Link
                         to='/login'>
@@ -74,7 +77,7 @@ export default class Navigation extends Component {
     renderLogoutLinks = () => {
         return (
             <>
-                <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ true }>
+                {/* <Menu pageWrapId={ 'page-wrap'} className='hide-menu' isOpen={ true }>
                     <Link 
                         to='/'
                         onClick={this.handleUserLogout}
@@ -91,7 +94,8 @@ export default class Navigation extends Component {
                         to='/about'>
                         About
                     </Link> 
-                </Menu>
+                </Menu> */}
+                <SidebarNotLoggedIn />
                 <Link
                     className='mobile-cart' 
                     to='/mytools'>

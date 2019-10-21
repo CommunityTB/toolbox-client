@@ -15,6 +15,7 @@ class AppProvider extends Component {
     myBasket: [], // [21, 22] THIS SHOULD BE EMPTY BY DEFAULT
     myCheckedOutTools: [], // THIS SHOULD BE EMPTY BY DEFAULT
     isLoggedIn: false,
+    menuOpen: false
   }
 
   handleLoginSuccess = (userId) => {
